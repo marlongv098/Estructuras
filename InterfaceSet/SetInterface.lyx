@@ -1,0 +1,793 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass report
+\begin_preamble
+\usepackage{latexsym}
+\usepackage{epsfig}\usepackage{multicol}\usepackage{anysize}\usepackage{graphicx}\usepackage[spanish]{babel}
+\parindent=0pt
+
+
+
+\DeclareMathOperator{\sen}{sen}
+\DeclareMathOperator{\arcsen}{arcsen}
+\DeclareMathOperator{\arcsec}{arcsec}
+\DeclareMathOperator{\arccot}{arccot} \DeclareMathOperator{\e}{e}
+\DeclareMathOperator{\Arctan}{arctan}
+
+%NORMAS
+\newcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\Abs}[1]{\bigl\lvert #1 \bigr\rvert}
+\newcommand{\ABS}[1]{\left\lvert #1 \right\rvert}
+\newcommand{\nor}[1]{\lVert #1 \rVert}
+\newcommand{\Nor}[1]{\bigl\lVert #1 \bigr\rVert}
+\newcommand{\NOR}[1]{\left\lVert#1\right\rVert}
+
+%PRODUCTOS
+\newcommand{\pro}[2]{\langle #1,#2 \rangle}
+\newcommand{\PRO}[2]{\left\langle #1,#2 \right\rangle}
+
+%LETRAS
+\newcommand{\ope}[1]{\mathcal{#1}}
+\newcommand{\dl}[1]{\mathbb{#1}}
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding iso8859-1
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 12
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\backgroundcolor #ebebeb
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter*
+Interface Set.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Características
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HashSet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LinkedHashSet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TreeSet
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permite duplicados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ordena los elementos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orden de inserción 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orden alfabetico
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Complejidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(1)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(log(n))
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permite (null)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si, 1 valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si, 1 valor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Estructura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tabla Hash
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tabla Hash + Lista enlazada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbol Rojo - Negro
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Tabla Hash
+\end_layout
+
+\begin_layout Standard
+Una tabla hash es una estructura de datos que asocia claves (keys) con valores
+ (values) mediante una función de hash.
+ Su objetivo es permitir búsquedas, inserciones y eliminaciones rápidas
+ en tiempo promedio O(1).
+\end_layout
+
+\begin_layout Subsection*
+Características Principales
+\end_layout
+
+\begin_layout Itemize
+Almacenamiento basado en clave-valor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Uso de una función hash para calcular la posición de almacenamiento.
+ 
+\end_layout
+
+\begin_layout Itemize
+Eficiencia alta en búsquedas, inserciones y eliminaciones (O(1) en promedio).
+ 
+\end_layout
+
+\begin_layout Itemize
+Puede manejar colisiones mediante técnicas como encadenamiento o direccionamient
+o abierto.
+\end_layout
+
+\begin_layout Subsection*
+Cómo Funciona una Tabla Hash
+\end_layout
+
+\begin_layout Itemize
+Función Hash: Convierte una clave (key) en un índice de la tabla.
+ 
+\end_layout
+
+\begin_layout Itemize
+Inserción: El valor se almacena en la posición dada por la función hash.
+ 
+\end_layout
+
+\begin_layout Itemize
+Búsqueda: Se usa la clave para calcular la posición y acceder rápidamente
+ al valor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Colisiones: Cuando dos claves generan el mismo índice, se maneja con estrategias
+ como listas enlazadas.
+\end_layout
+
+\begin_layout Subsection*
+Manejo de Colisiones
+\end_layout
+
+\begin_layout Standard
+Cuando dos claves producen el mismo índice en la tabla hash, se usa una
+ estrategia para resolverlo.
+\end_layout
+
+\begin_layout Itemize
+Encadenamiento (Chaining): Se usa una lista enlazada en cada celda para
+ almacenar múltiples valores.
+\end_layout
+
+\begin_layout Itemize
+Direccionamiento Abierto (Open Addressing): Se buscan otras posiciones libres
+ dentro de la tabla.
+\end_layout
+
+\begin_layout Standard
+Nota: En Java, HashMap usa encadenamiento para manejar colisiones.
+\end_layout
+
+\begin_layout Subsection*
+¿Cuándo Usar una Tabla Hash?
+\end_layout
+
+\begin_layout Itemize
+Cuando necesitas búsquedas rápidas por clave.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cuando no importa el orden de los elementos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Cuando el número de elementos es grande y necesitas eficiencia.
+\end_layout
+
+\begin_layout Section*
+Lista Enlazada
+\end_layout
+
+\begin_layout Standard
+Una lista enlazada (Linked List) es una estructura de datos lineal y dinámica
+ donde los elementos (nodos) están conectados mediante punteros o referencias
+ en lugar de ocupar posiciones contiguas en memoria.
+ Cada nodo contiene: 
+\end_layout
+
+\begin_layout Itemize
+Un dato (valor almacenado).
+ 
+\end_layout
+
+\begin_layout Itemize
+Una referencia al siguiente nodo en la lista.
+\end_layout
+
+\begin_layout Subsection*
+Tipos de Listas Enlazadas 
+\end_layout
+
+\begin_layout Itemize
+Lista Enlazada Simple (SLL): Cada nodo apunta al siguiente.
+ Se recorre en una sola dirección.
+ 
+\end_layout
+
+\begin_layout Itemize
+Lista Doblemente Enlazada (DLL): Cada nodo apunta al siguiente y al anterior.
+ Se puede recorrer en ambas direcciones.
+ 
+\end_layout
+
+\begin_layout Itemize
+Lista Circular
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En la versión simple, el último nodo apunta al primero.
+ 
+\end_layout
+
+\begin_layout Itemize
+En la versión doble, el primer y el último nodo están conectados en ambos
+ sentidos.
+\end_layout
+
+\end_deeper
+\begin_layout Section*
+Arbol Rojo-Negro
+\end_layout
+
+\begin_layout Standard
+\align left
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Características
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BST
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbol Rojo - Negro
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Orden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I<R<D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+I<R<D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Balanceo automático
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Si
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Complejidad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(N) peor caso (Totalmente desbalanceado)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O(log(n))
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Coloración nodos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+No usa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nodo, Rojo -Negro
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Uso en java
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TreeSet o TreeMap.
+ No.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TreeSet o TreeMap, Si.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+¿Qué es un Árbol Rojo-Negro?
+\end_layout
+
+\begin_layout Standard
+Es un árbol binario de búsqueda (BST) balanceado donde cada nodo tiene un
+ color rojo o negro y sigue estas reglas:
+\end_layout
+
+\begin_layout Itemize
+Cada nodo es rojo o negro.
+ 
+\end_layout
+
+\begin_layout Itemize
+La raíz siempre es negra.
+ 
+\end_layout
+
+\begin_layout Itemize
+Un nodo rojo no puede tener un hijo rojo (no hay nodos rojos consecutivos).
+ 
+\end_layout
+
+\begin_layout Itemize
+Cada camino desde la raíz hasta una hoja tiene el mismo número de nodos
+ negros (propiedad de balanceo).
+ 
+\end_layout
+
+\begin_layout Itemize
+Si un nodo es rojo, sus hijos deben ser negros.
+\end_layout
+
+\begin_layout Itemize
+Un nodo negro puede tener hijos negros.
+\end_layout
+
+\begin_layout Standard
+Estas reglas garantizan que el árbol esté siempre balanceado, manteniendo
+ la altura en O(log N), lo que lo hace más eficiente que un BST simple.
+\end_layout
+
+\begin_layout Subsection*
+¿Cuándo usar un Árbol Rojo-Negro?
+\end_layout
+
+\begin_layout Itemize
+Cuando necesitas búsquedas, inserciones y eliminaciones rápidas (O(log N)).
+ 
+\end_layout
+
+\begin_layout Itemize
+Cuando el orden es importante (como en TreeSet y TreeMap).
+ 
+\end_layout
+
+\begin_layout Itemize
+Cuando quieres evitar que un BST se desbalancee.
+\end_layout
+
+\begin_layout Subsection*
+Conclusión
+\end_layout
+
+\begin_layout Standard
+Permitir que un nodo negro tenga hijos negros ayuda a: 
+\end_layout
+
+\begin_layout Itemize
+Mantener la propiedad de balanceo del árbol rojo-negro.
+ 
+\end_layout
+
+\begin_layout Itemize
+Evitar que la altura crezca demasiado, garantizando O(log N).
+\end_layout
+
+\begin_layout Itemize
+Reducir la necesidad de demasiadas rotaciones y recoloreos.
+\end_layout
+
+\begin_layout Standard
+En resumen, un nodo negro puede tener hijos negros porque es una estrategia
+ clave para el balanceo del árbol y su eficiencia.
+\end_layout
+
+\end_body
+\end_document
