@@ -2,44 +2,44 @@
 
 1. ## Lógica formal [4 sesiones] 
 
-    • Método de demostración directa 
-    • Métodos de demostración indirecta 
-    • Introducción a Coq 
-    • Uso de tácticas en Coq para realizar demostraciones 
+    1. Método de demostración directa 
+    2. Métodos de demostración indirecta 
+    3. ntroducción a Coq 
+    4. Uso de tácticas en Coq para realizar demostraciones 
 
 2. ## Introducción a la Teoría de Conjuntos y Funciones [4 sesiones] 
 
-    • Noción de conjunto y elemento 
-    • Relación de pertenencia e inclusión 
-    • Operaciones entre conjuntos 
-    • Propiedades de las operaciones entre conjuntos 
-    • Funciones inyectivas, sobreyectivas y biyectivas 
-    • Álgebra de funciones 
-    • Función inversa 
-    • Funciones especiales 
+    1. Noción de conjunto y elemento 
+    2. Relación de pertenencia e inclusión 
+    3. Operaciones entre conjuntos 
+    4. Propiedades de las operaciones entre conjuntos 
+    5. Funciones inyectivas, sobreyectivas y biyectivas 
+    6. Álgebra de funciones 
+    7. Función inversa 
+    8. Funciones especiales 
 
 3. ## Estructuras Discretas no recursivas y análisis de algoritmos [7 sesiones] 
 
-    • Análisis de Complejidad Temporal de Algoritmos 
-    • Notación asintótica 
-    • Análisis de complejidad espacial 
-    • Generics 
-    • Desacoplamiento 
-    • Diseño de Tipos Abstractos de Datos 
-    • Hash tables 
-    • Pilas y colas 
-    • Montículos y colas de prioridad 
+    1. Análisis de Complejidad Temporal de Algoritmos 
+    2. Notación asintótica 
+    3. Análisis de complejidad espacial 
+    4. Generics 
+    5. Desacoplamiento 
+    6. Diseño de Tipos Abstractos de Datos 
+    7. Hash tables 
+    8. Pilas y colas 
+    9. Montículos y colas de prioridad 
 
 4. ## Algoritmos y estructuras discretas recursivas [3 sesiones] 
 
-    • Árboles N-Arios. 
-    • Árboles de Búsqueda Binaria 
-    • Árboles AVL 
+    1. Árboles N-Arios. 
+    2. Árboles de Búsqueda Binaria 
+    3. Árboles AVL 
 
 
 5. ## Grafos [6 sesiones] 
 
-    • Introducción a la teoría de grafos 
-    • Recorridos BFS y DFS 
-    • Caminos mínimos 
-    • Árboles de expansión mínima 
+    1. Introducción a la teoría de grafos 
+    2. Recorridos BFS y DFS 
+    3. Caminos mínimos 
+    4. Árboles de expansión mínima 
