@@ -1,85 +1,54 @@
-# Métodos de Demostración
+# Análisis de la marcha mediante homología persistente
 
 ## Introducción
 
-En matemáticas, una demostración es un argumento lógico que establece la verdad de una proposición. Existen diversos métodos de demostración, cada uno adecuado para diferentes tipos de afirmaciones. A continuación, se describen algunos de los métodos más comunes.
+El análisis de la marcha es una herramienta fundamental en biomecánica para evaluar patrones de movimiento y detectar alteraciones en la locomoción humana. En este documento, abordamos el análisis de la marcha desde la perspectiva del análisis de componentes principales (PCA) y la homología persistente, con el fin de extraer información relevante sobre la relación entre variables clínicas y de movimiento.
 
-## 1. Demostración Directa
+## Filtración y Complejo Simplicial Filtrado
 
-Este método se usa cuando se parte de hipótesis verdaderas y se aplican reglas lógicas y propiedades matemáticas para llegar a la conclusión deseada.
+Dado un conjunto de datos que representan la marcha, podemos construir una secuencia de complejos simpliciales, llamados **complejo simplicial filtrado**. La filtración se define como una colección de subcomplejos:
 
-**Ejemplo:** Demostrar que la suma de dos números pares es un número par.
+$$ \emptyset \subseteq K_0 \subseteq K_1 \subseteq \dots \subseteq K_n = K $$
 
-**Demostración:**
-Sean $\( a \) y \( b \)$ dos números pares. Entonces existen enteros $\( k \)$ y $\( m \)$ tales que:
-\[
-    $a = 2k, \quad b = 2m$
-\]
-Sumando ambos números,
-\[
-    a + b = 2k + 2m = 2(k + m)
-\]
-Dado que \( k + m \) es un número entero, se concluye que \( a + b \) es par.
+donde cada $ K_i $ representa un complejo simplicial asociado a un umbral creciente en la métrica de distancia entre puntos del conjunto de datos.
 
-## 2. Demostración por Contraposición
+## Homología y Grupos de Homología
 
-Se basa en demostrar que la negación de la conclusión implica la negación de la hipótesis.
+La homología simplicial permite describir los huecos y cavidades dentro de un espacio topológico. Los grupos de homología $ H_k(K) $ son definidos como:
 
-**Ejemplo:** Demostrar que si \( n^2 \) es impar, entonces \( n \) es impar.
+$$ H_k(K) = \frac{\ker(\partial_k)}{\text{im}(\partial_{k+1})} $$
 
-**Demostración:**
-Supongamos que \( n \) es par. Entonces \( n = 2k \) para algún entero \( k \). Elevando al cuadrado:
-\[
-    n^2 = (2k)^2 = 4k^2 = 2(2k^2)
-\]
-Como \( n^2 \) es múltiplo de 2, es par. Esto contradice la hipótesis, por lo que \( n \) debe ser impar.
+donde $ \partial_k $ es el operador frontera que asigna cada $ k $-símplice a su frontera de $(k-1)$-símplices.
 
-## 3. Demostración por Reducción al Absurdo
+## Homología Persistente
 
-Se asume que la proposición es falsa y se llega a una contradicción lógica.
+La homología persistente rastrea la aparición y desaparición de características topológicas en la filtración. Formalmente, para cada dimensión $ k $, obtenemos una secuencia de grupos de homología:
 
-**Ejemplo:** Demostrar que \( \sqrt{2} \) es irracional.
+$$ H_k(K_0) \to H_k(K_1) \to \dots \to H_k(K_n) $$
 
-**Demostración:**
-Supongamos que \( \sqrt{2} \) es racional. Entonces se puede escribir como $\( \frac{p}{q} \), con \( p \) y \( q \)$ enteros primos entre sí. Elevando al cuadrado,
-\[
-    $2 = \frac{p^2}{q^2} \Rightarrow p^2 = 2q^2$
-\]
-Esto implica que \( p^2 \) es par, lo que implica que \( p \) también es par. Sea \( p = 2k \), entonces,
-\[
-    (2k)^2 = 2q^2 \Rightarrow 4k^2 = 2q^2 \Rightarrow q^2 = 2k^2
-\]
-Por lo tanto, \( q^2 \) es par, lo que implica que \( q \) también es par. Pero esto contradice la suposición de que \( p \) y \( q \) son primos entre sí. Por lo tanto, \( \sqrt{2} \) es irracional.
+y analizamos la persistencia de los generadores de homología a lo largo de la filtración.
 
-## 4. Demostración por Inducción Matemática
+## Diagramas de Barras y Diagramas de Persistencia
 
-Se usa para demostrar afirmaciones sobre los números naturales.
+Las características persistentes se visualizan mediante **diagramas de barras** y **diagramas de persistencia**. Un diagrama de barras representa la vida de cada clase de homología en función del umbral de filtración. Formalmente, una clase de homología $ [c] $ nace en $ K_i $ y muere en $ K_j $, lo que se denota como:
 
-**Ejemplo:** Demostrar que para todo \( n \geq 1 \):
-\[
-    1 + 2 + \dots + n = \frac{n(n+1)}{2}
-\]
+$$ [c] : (b, d) $$
 
-**Paso Base:** Para \( n = 1 \):
-\[
-    1 = \frac{1(1+1)}{2} = 1
-\]
-Lo cual es cierto.
+donde $ b $ y $ d $ son los valores de filtración en los que la característica aparece y desaparece, respectivamente.
 
-**Paso Inductivo:** Supongamos que la fórmula es cierta para algún \( n = k \), es decir:
-\[
-    1 + 2 + \dots + k = \frac{k(k+1)}{2}
-\]
-Demostramos que es cierta para \( n = k + 1 \):
-\[
-    1 + 2 + \dots + k + (k+1) = \frac{k(k+1)}{2} + (k+1)
-\]
-Sacamos factor común \( k+1 \):
-\[
-    = \frac{k(k+1) + 2(k+1)}{2} = \frac{(k+1)(k+2)}{2}
-\]
-Que es la fórmula para \( n = k+1 \). Por lo tanto, la afirmación es verdadera para todo \( n \geq 1 \).
+El **diagrama de persistencia** representa estas clases en el plano $(b, d)$, permitiendo identificar estructuras relevantes en la marcha.
+
+## Aplicación al Análisis de la Marcha
+
+Para analizar datos de marcha con homología persistente:
+
+1. Se obtiene una nube de puntos a partir de mediciones de movimiento.
+2. Se construye un complejo simplicial filtrado basado en distancias entre puntos.
+3. Se calculan los grupos de homología en cada etapa de la filtración.
+4. Se representan los resultados mediante diagramas de barras y diagramas de persistencia.
+
+Estos resultados permiten identificar patrones en la marcha y su relación con variables clínicas.
 
 ## Conclusión
 
-Cada método de demostración tiene su utilidad y aplicación dependiendo del tipo de problema a resolver. La práctica y la comprensión de estos métodos son fundamentales en la matemática y otras disciplinas científicas.
+El uso de homología persistente en el análisis de la marcha proporciona una herramienta poderosa para capturar información topológica que complementa los métodos tradicionales basados en estadística y análisis de componentes principales.
