@@ -11,9 +11,9 @@ Este método se usa cuando se parte de hipótesis verdaderas y se aplican reglas
 **Ejemplo:** Demostrar que la suma de dos números pares es un número par.
 
 **Demostración:**
-Sean \( a \) y \( b \) dos números pares. Entonces existen enteros \( k \) y \( m \) tales que:
+Sean $\( a \) y \( b \)$ dos números pares. Entonces existen enteros $\( k \)$ y $\( m \)$ tales que:
 \[
-    a = 2k, \quad b = 2m
+    $a = 2k, \quad b = 2m$
 \]
 Sumando ambos números,
 \[
@@ -41,9 +41,9 @@ Se asume que la proposición es falsa y se llega a una contradicción lógica.
 **Ejemplo:** Demostrar que \( \sqrt{2} \) es irracional.
 
 **Demostración:**
-Supongamos que \( \sqrt{2} \) es racional. Entonces se puede escribir como \( \frac{p}{q} \), con \( p \) y \( q \) enteros primos entre sí. Elevando al cuadrado,
+Supongamos que \( \sqrt{2} \) es racional. Entonces se puede escribir como $\( \frac{p}{q} \), con \( p \) y \( q \)$ enteros primos entre sí. Elevando al cuadrado,
 \[
-    2 = \frac{p^2}{q^2} \Rightarrow p^2 = 2q^2
+    $2 = \frac{p^2}{q^2} \Rightarrow p^2 = 2q^2$
 \]
 Esto implica que \( p^2 \) es par, lo que implica que \( p \) también es par. Sea \( p = 2k \), entonces,
 \[
