@@ -4,7 +4,7 @@
 
     1. Método de demostración directa 
     2. Métodos de demostración indirecta 
-    3. ntroducción a Coq 
+    3. Introducción a Coq 
     4. Uso de tácticas en Coq para realizar demostraciones 
 
 2. ## Introducción a la Teoría de Conjuntos y Funciones [4 sesiones] 
