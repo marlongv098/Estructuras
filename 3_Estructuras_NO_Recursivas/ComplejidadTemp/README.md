@@ -1,6 +1,5 @@
 # Complejidad Temporal del Algoritmo de Búsqueda Lineal
 
-## Definición  
 La **búsqueda lineal** es un algoritmo que busca un elemento dentro de una lista recorriéndola secuencialmente desde el inicio hasta encontrar el elemento deseado o llegar al final de la lista.
 
 ## Código en Java  
@@ -41,7 +40,6 @@ public class BusquedaLineal {
 
 # Complejidad Temporal del Algoritmo de Búsqueda Binaria
 
-## Definición  
 La **búsqueda binaria** es un algoritmo eficiente para encontrar un elemento en una lista **ordenada**. En cada paso, **divide el espacio de búsqueda a la mitad**, reduciendo significativamente el número de comparaciones en comparación con la búsqueda lineal.
 
 ## Código en Java  
