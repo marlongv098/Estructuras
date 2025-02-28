@@ -66,12 +66,29 @@ public class Fibonacci {
 
 # Análisis de Complejidad
 
+### Recursivo
+
 * La recursión genera un árbol binario de llamadas.
 * Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de: $$T(n)=T(n−1)+T(n−2)+O(1)$$
 * La solución de esta recurrencia es O(2ⁿ), un crecimiento exponencial, lo que lo hace ineficiente.
 
+### Método Iterativo (sin optimización de espacio)
 
-# Comparación de Complejidades
+Utiliza un array para almacenar los valores previos de Fibonacci.
+
+* Complejidad de tiempo: $$O(n)$$
+
+* Complejidad de espacio: $$O(n)$$ (debido al almacenamiento de todos los valores previos en un array)
+
+### Método Optimizado con Espacio
+
+Solo mantiene en memoria los dos últimos valores de la secuencia en lugar de todo el array.
+
+* Complejidad de tiempo: $$O(n)$$
+
+* Complejidad de espacio: $$O(1)$$ (ya que solo usa unas pocas variables, independientemente del tamaño de $n$
+
+# Otros algoritmos y Comparación de sus complejidades
 
 | Método                   | Complejidad de Tiempo | Complejidad de Espacio |
 |--------------------------|----------------------|------------------------|
@@ -81,28 +98,23 @@ public class Fibonacci {
 | Matrices                 | O(log n)             | O(1) |
 
    
-# Método Iterativo (sin optimización de espacio)
 
-Utiliza un array para almacenar los valores previos de Fibonacci.
 
-* Complejidad de tiempo: $$O(n)$$
+# Conclusiónes
 
-* Complejidad de espacio: $$O(n)$$ (debido al almacenamiento de todos los valores previos en un array)
+### Iterativo y optimización
 
-# Método Optimizado con Espacio
+* Ambos métodos son iterativos y tienen complejidad de tiempo $$O(n)$$.
+* La diferencia está en el espacio usado: el primero usa un array $$O(n)$$, mientras que el segundo usa solo dos variables $$O(1)$$.
+* Si buscas eficiencia en memoria, el método optimizado con espacio es mejor.
 
-Solo mantiene en memoria los dos últimos valores de la secuencia en lugar de todo el array.
-
-* Complejidad de tiempo: $$O(n)$$
-
-* Complejidad de espacio: $$O(1)$$ (ya que solo usa unas pocas variables, independientemente del tamaño de $n$
-
-# Conclusión
+### Otros métodos
 
 * El método recursivo es ineficiente (O(2ⁿ)), solo útil para valores pequeños.
 * La versión optimizada con espacio O(1) es la más usada en la práctica.
 * El método de matrices es el más rápido (O(log n)), recomendado para valores grandes de n.
 * La programación dinámica mejora el rendimiento a O(n), pero consume más espacio.
 * Si necesitas eficiencia en cálculos grandes, usa el método de matrices o la versión optimizada con espacio O(1).
+
  
    
