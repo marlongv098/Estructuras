@@ -1,3 +1,5 @@
+package QuickSort;
+
 public class QuickSort {
     public static void quicksort(int[] arr, int izq, int der) {
         if (izq < der) {

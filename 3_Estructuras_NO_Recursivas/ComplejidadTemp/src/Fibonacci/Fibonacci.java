@@ -1,3 +1,5 @@
+package Fibonacci;
+
 public class Fibonacci {
     public static int fibonacciRec(int n) {
         if (n <= 1) return n;

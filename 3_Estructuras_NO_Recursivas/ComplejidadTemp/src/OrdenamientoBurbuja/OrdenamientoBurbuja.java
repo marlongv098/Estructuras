@@ -1,3 +1,5 @@
+package OrdenamientoBurbuja;
+
 public class OrdenamientoBurbuja {
     public static void ordenar(int[] arr) {
         int n = arr.length;

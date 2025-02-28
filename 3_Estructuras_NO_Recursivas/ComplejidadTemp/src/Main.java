@@ -1,5 +1,11 @@
 import java.util.Arrays;
 import java.util.Scanner;
+import BusquedaBinaria.*;
+import BusquedaLineal.*;
+import Fibonacci.*;
+import OrdenamientoBurbuja.*;
+import QuickSort.*;
+
 
 public class Main {
     public static void main(String[] args) {
