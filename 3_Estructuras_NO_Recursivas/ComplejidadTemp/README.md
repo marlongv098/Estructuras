@@ -19,17 +19,24 @@ public class BusquedaLineal {
 
 # Análisis de Complejidad Temporal
 
-## Mejor Caso - O(1)
+### Mejor Caso - O(1)
 
 Si el primer elemento del arreglo es el buscado, solo se realiza una comparación.
 
-## Peor Caso - O(n)
+### Peor Caso - O(n)
 
 El elemento se encuentra en al final de la lista, requiriendo aproximadamente n comparaciones. En términos de complejidad asintótica, O(n).
 
-## Caso Promedio  - O(n)
+### Caso Promedio  - O(n)
 
 El elemento se encuentra a la mitad de la lista, requiriendo aproximadamente n/2 comparaciones. En términos de complejidad asintótica, sigue siendo O(n).
+
+
+# Conclusion 
+
+* La búsqueda lineal no es eficiente para grandes listas, ya que en el peor caso requiere recorrer todos los elementos.
+* Es útil para listas desordenadas o de tamaño pequeño.
+* Para listas ordenadas, se recomienda búsqueda binaria (O(log n)).
 
 
 # Complejidad Temporal del Algoritmo de Búsqueda Binaria
@@ -55,22 +62,28 @@ public class BusquedaBinaria {    public static int buscarIterativo(int[] arr, i
 
 # Análisis de Complejidad Temporal
 
-## Mejor Caso  - O(1)
+### Mejor Caso  - O(1)
 
 Si el elemento buscado está en el centro del arreglo en la primera comparación, la búsqueda termina inmediatamente.
 
-## Peor Caso - O(log n)
+### Peor Caso - O(log n)
 
 En cada iteración, el tamaño de la lista se reduce a la mitad. El número máximo de comparaciones es aproximadamente log₂(n).
 
-## Ejemplo:
+### Ejemplo:
 
 Para una lista de n = 16, se necesitan como máximo log₂(16) = 4 comparaciones.
 
 
-## Caso Promedio - O(log n)
+### Caso Promedio - O(log n)
 
 Dado que en cada iteración se descarta la mitad de los elementos, el tiempo de ejecución promedio sigue siendo O(log n).
+
+# Conclusión
+
+* La búsqueda binaria es mucho más eficiente que la búsqueda lineal para listas ordenadas.
+* Su complejidad O(log n) la hace ideal para grandes conjuntos de datos.
+* Limitación: Solo funciona en listas ordenadas. Si la lista está desordenada, primero hay que ordenarla (O(n log n)) antes de aplicar la búsqueda binaria.
 
 
 
