@@ -73,10 +73,10 @@ public class Fibonacci {
 # Conclusión
 
 * El método recursivo es ineficiente (O(2ⁿ)), solo útil para valores pequeños.
-*La versión optimizada con espacio O(1) es la más usada en la práctica.
-*El método de matrices es el más rápido (O(log n)), recomendado para valores grandes de n.
-*La programación dinámica mejora el rendimiento a O(n), pero consume más espacio.
-*Si necesitas eficiencia en cálculos grandes, usa el método de matrices o la versión optimizada con espacio O(1).
+* La versión optimizada con espacio O(1) es la más usada en la práctica.
+* El método de matrices es el más rápido (O(log n)), recomendado para valores grandes de n.
+* La programación dinámica mejora el rendimiento a O(n), pero consume más espacio.
+* Si necesitas eficiencia en cálculos grandes, usa el método de matrices o la versión optimizada con espacio O(1).
 
 
 # Comparación de Complejidades
