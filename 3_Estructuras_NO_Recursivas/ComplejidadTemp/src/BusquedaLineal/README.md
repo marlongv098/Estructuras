@@ -19,11 +19,11 @@ public class BusquedaLineal {
 
 
 
-### Mejor Caso - O(1)
+## Mejor Caso - O(1)
 
 Si el primer elemento del arreglo es el buscado, solo se realiza una comparación.
 
-### Caso Promedio  - O(n)
+## Caso Promedio  - O(n)
 
 El elemento se encuentra a la mitad de la lista, requiriendo aproximadamente n/2 comparaciones. En términos de complejidad asintótica, sigue siendo O(n).
 
