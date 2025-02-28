@@ -19,13 +19,9 @@ public class BusquedaLineal {
 
 
 
-* Mejor Caso(Best Case) - O(1)
+### Mejor Caso - O(1)
 
 Si el primer elemento del arreglo es el buscado, solo se realiza una comparación.
-
-### Ejemplo:
-
-Buscar 10 en [10, 20, 30, 40, 50] requiere 1 comparación.
 
 ### Caso Promedio  - O(n)
 
