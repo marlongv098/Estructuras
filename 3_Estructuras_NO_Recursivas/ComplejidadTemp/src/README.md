@@ -14,13 +14,13 @@ El análisis de la complejidad temporal es fundamental para:
 
 Algunas de las complejidades temporales más comunes son:
 
-* $**O(1)**$ - Tiempo constante, no depende del tamaño de la entrada.
-* $**O(log n)**$ - Crecimiento logarítmico, como en la búsqueda binaria.
-* $**O(n)**$ - Tiempo lineal, típico en algoritmos de recorrido.
-* $**O(n log n)**$ - Algoritmos eficientes de ordenamiento, como MergeSort y QuickSort.
-* $**O(n²)**$ - Algoritmos cuadráticos, como la ordenación por burbuja.
-* $**O(2ⁿ)**$ - Tiempo exponencial, común en soluciones de fuerza bruta.
-* $**O(n!)**$ - Factorial, extremadamente ineficiente para valores grandes.
+*  $**O(1)**$  Tiempo constante, no depende del tamaño de la entrada.
+*  $**O(log n)**$  Crecimiento logarítmico, como en la búsqueda binaria.
+*  $**O(n)**$  Tiempo lineal, típico en algoritmos de recorrido.
+*  $**O(n log n)**$  Algoritmos eficientes de ordenamiento, como MergeSort y QuickSort.
+*  $**O(n²)**$  Algoritmos cuadráticos, como la ordenación por burbuja.
+*  $**O(2ⁿ)**$  Tiempo exponencial, común en soluciones de fuerza bruta.
+*  $**O(n!)**$  Factorial, extremadamente ineficiente para valores grandes.
 
 ## Contenido del Repositorio
 
