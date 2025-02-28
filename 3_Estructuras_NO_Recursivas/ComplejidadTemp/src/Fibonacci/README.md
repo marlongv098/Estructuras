@@ -29,13 +29,12 @@ public class Fibonacci {
 # Análisis de Complejidad
 
 * La recursión genera un árbol binario de llamadas.
-* Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de:
-$$T(n)=T(n−1)+T(n−2)+O(1)$$
+* Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de: $$T(n)=T(n−1)+T(n−2)+O(1)$$
 * La solución de esta recurrencia es O(2ⁿ), un crecimiento exponencial, lo que lo hace ineficiente.
 
 
-## Código en Java. Iterativo
-
+## Código en Java. Optimizado
+```java
  public class Fibonacci {
  	public static int fibonacciOptimizado(int n) {
        		 if (n <= 1) return n;
@@ -46,17 +45,32 @@ $$T(n)=T(n−1)+T(n−2)+O(1)$$
             		b = temp;
         		}
         		return b;
-     }
+        }
+
+	public int fibonacciIterativo(int n) {
+       		if (n <= 1) return n;
+
+       		int[] fib = new int[n + 1];
+        		fib[0] = 0;
+        		fib[1] = 1;
+
+        		for (int i = 2; i <= n; i++) {
+            		fib[i] = fib[i - 1] + fib[i - 2];
+        		}
+        		return fib[n];
+    	}
+
+
 }   
+``` 
 
 # Análisis de Complejidad
 
 * La recursión genera un árbol binario de llamadas.
-* Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de:
-$$T(n)=T(n−1)+T(n−2)+O(1)$$
+* Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de: $$T(n)=T(n−1)+T(n−2)+O(1)$$
 * La solución de esta recurrencia es O(2ⁿ), un crecimiento exponencial, lo que lo hace ineficiente.
 
-Conclusión
+# Conclusión
 
 * El método recursivo es ineficiente (O(2ⁿ)), solo útil para valores pequeños.
 *La versión optimizada con espacio O(1) es la más usada en la práctica.
@@ -78,22 +92,17 @@ Conclusión
 # Método Iterativo (sin optimización de espacio)
 
 Utiliza un array para almacenar los valores previos de Fibonacci.
-* Complejidad de tiempo: 
-$$O(n)$$
 
-* Complejidad de espacio: 
+* Complejidad de tiempo: $$O(n)$$
 
-$$O(n)$$ (debido al almacenamiento de todos los valores previos en un array)
+* Complejidad de espacio: $$O(n)$$ (debido al almacenamiento de todos los valores previos en un array)
 
 # Método Optimizado con Espacio
 
 Solo mantiene en memoria los dos últimos valores de la secuencia en lugar de todo el array.
 
-* Complejidad de tiempo: 
-$$O(n)$$
+* Complejidad de tiempo: $$O(n)$$
 
-* Complejidad de espacio: 
-
-$$O(1)$$ (ya que solo usa unas pocas variables, independientemente del tamaño de $n$
+* Complejidad de espacio: $$O(1)$$ (ya que solo usa unas pocas variables, independientemente del tamaño de $n$
  
    

@@ -48,7 +48,7 @@ public class Main {
                 System.out.print("Ingrese el número de Fibonacci: ");
                 int n = sc.nextInt();
                 System.out.println("Recursivo: " + Fibonacci.fibonacciRec(n));
-                System.out.println("Iterativo: " + Fibonacci.fibonacciIter(n));
+                System.out.println("Iterativo: " + Fibonacci.fibonacciOptimizado(n));
             }
             default -> System.out.println("Opción inválida");
         }
