@@ -70,14 +70,6 @@ public class Fibonacci {
 * Cada llamada recursiva crea dos subproblemas, lo que da una recurrencia de: $$T(n)=T(n−1)+T(n−2)+O(1)$$
 * La solución de esta recurrencia es O(2ⁿ), un crecimiento exponencial, lo que lo hace ineficiente.
 
-# Conclusión
-
-* El método recursivo es ineficiente (O(2ⁿ)), solo útil para valores pequeños.
-* La versión optimizada con espacio O(1) es la más usada en la práctica.
-* El método de matrices es el más rápido (O(log n)), recomendado para valores grandes de n.
-* La programación dinámica mejora el rendimiento a O(n), pero consume más espacio.
-* Si necesitas eficiencia en cálculos grandes, usa el método de matrices o la versión optimizada con espacio O(1).
-
 
 # Comparación de Complejidades
 
@@ -104,5 +96,13 @@ Solo mantiene en memoria los dos últimos valores de la secuencia en lugar de to
 * Complejidad de tiempo: $$O(n)$$
 
 * Complejidad de espacio: $$O(1)$$ (ya que solo usa unas pocas variables, independientemente del tamaño de $n$
+
+# Conclusión
+
+* El método recursivo es ineficiente (O(2ⁿ)), solo útil para valores pequeños.
+* La versión optimizada con espacio O(1) es la más usada en la práctica.
+* El método de matrices es el más rápido (O(log n)), recomendado para valores grandes de n.
+* La programación dinámica mejora el rendimiento a O(n), pero consume más espacio.
+* Si necesitas eficiencia en cálculos grandes, usa el método de matrices o la versión optimizada con espacio O(1).
  
    
