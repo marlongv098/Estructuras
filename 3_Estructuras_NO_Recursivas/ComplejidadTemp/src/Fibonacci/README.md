@@ -3,14 +3,12 @@
 La **sucesión de Fibonacci** se define de la siguiente manera:
 
 $$
-\[
 F(n) =
 \begin{cases} 
     0, & \text{si } n = 0 \\
     1, & \text{si } n = 1 \\
     F(n-1) + F(n-2), & \text{si } n \geq 2
 \end{cases}
-\]
 $$
 
 Cada término es la suma de los dos anteriores.
