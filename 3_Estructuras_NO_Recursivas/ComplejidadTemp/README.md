@@ -21,15 +21,15 @@ public class BusquedaLineal {
 
 ### Mejor Caso - O(1)
 
-Si el primer elemento del arreglo es el buscado, solo se realiza una comparación.
+* Si el primer elemento del arreglo es el buscado, solo se realiza una comparación.
 
 ### Peor Caso - O(n)
 
-El elemento se encuentra en al final de la lista, requiriendo aproximadamente n comparaciones. En términos de complejidad asintótica, O(n).
+* El elemento se encuentra en al final de la lista, requiriendo aproximadamente n comparaciones. En términos de complejidad asintótica, O(n).
 
 ### Caso Promedio  - O(n)
 
-El elemento se encuentra a la mitad de la lista, requiriendo aproximadamente n/2 comparaciones. En términos de complejidad asintótica, sigue siendo O(n).
+* El elemento se encuentra a la mitad de la lista, requiriendo aproximadamente n/2 comparaciones. En términos de complejidad asintótica, sigue siendo O(n).
 
 
 # Conclusion 
@@ -64,20 +64,20 @@ public class BusquedaBinaria {    public static int buscarIterativo(int[] arr, i
 
 ### Mejor Caso  - O(1)
 
-Si el elemento buscado está en el centro del arreglo en la primera comparación, la búsqueda termina inmediatamente.
+* Si el elemento buscado está en el centro del arreglo en la primera comparación, la búsqueda termina inmediatamente.
 
 ### Peor Caso - O(log n)
 
-En cada iteración, el tamaño de la lista se reduce a la mitad. El número máximo de comparaciones es aproximadamente log₂(n).
+* En cada iteración, el tamaño de la lista se reduce a la mitad. El número máximo de comparaciones es aproximadamente log₂(n).
 
 ### Ejemplo:
 
-Para una lista de n = 16, se necesitan como máximo log₂(16) = 4 comparaciones.
+* Para una lista de n = 16, se necesitan como máximo log₂(16) = 4 comparaciones.
 
 
 ### Caso Promedio - O(log n)
 
-Dado que en cada iteración se descarta la mitad de los elementos, el tiempo de ejecución promedio sigue siendo O(log n).
+* Dado que en cada iteración se descarta la mitad de los elementos, el tiempo de ejecución promedio sigue siendo O(log n).
 
 # Conclusión
 
