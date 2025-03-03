@@ -31,10 +31,10 @@ Sean tres algoritmos A, B, C tal que:
 
 | $n$  |  $T_A(n)$  | $T_B(n)$ | $T_C(n)$ |
 |----|-------------|-------------|-------------|
-| 1  | 100         | 12          | 6           |
-| 5  | 100         | 20          | 30          |
-| 10 | 100         | 30          | 105         |
-| 100| 100         | 210         | 10005       |
+| $1$  | $100$         | $12$          | $6$           |
+| $5$  | $100$         | $20$          | $30$          |
+| $10$ | $100$         | $30$          | $105$         |
+| $100$ | $100$         | $210$         | $10005$       |
 
 ---
 
@@ -60,7 +60,7 @@ Sean tres algoritmos A, B, C tal que:
 * Notación  $O$ .
 * Notación $\Omega$ .
 
-### ¿Qué es la notación $\Theta$ ?
+## ¿Qué es la notación $\Theta$ ?
 
 * Representa una función que sirve de cota tanto superior como inferior de otra función cuando el argumento tiende a infinito.
 * Es una cota ajustada de una función.
@@ -139,7 +139,7 @@ $$
 p(n) = \Theta(n^d)
 $$
 
-### ¿Qué es la notación $O$?
+## ¿Qué es la notación $O$?
 
 - Representa una función que sirve de **cota superior** de otra función cuando el argumento tiende a infinito.
 - Formalmente, se dice que para una función $g(n)$, se denota a $O(g(n))$ como el conjunto de funciones tal que:
@@ -191,7 +191,7 @@ c = 7, \quad n_0
 $$
 
 
-### ¿Qué es la notación $\Omega$?
+## ¿Qué es la notación $\Omega$?
 
 - Representa una función que sirve de **cota inferior** de otra función cuando el argumento tiende a infinito.
 - Formalmente, se dice que para una función $g(n)$, se denota a $\Omega(g(n))$ como el conjunto de funciones tal que:
