@@ -181,7 +181,7 @@
 
 ## Máquinas de Turing
 
-![Máquina de Turing](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/Images/turing.png)
+![Máquina de Turing](Images/turing.png)
 
 - Es el modelo de autómata con máxima capacidad computacional.
 - **Entradas:** cinta sin fin formada por celdas que almacenan símbolos.
