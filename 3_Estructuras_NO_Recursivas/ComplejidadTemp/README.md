@@ -174,21 +174,21 @@ $$
 * Utilizamos la definición de cota superior asintótica.  
 * Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
 
-   $$
-   7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0
-   $$  
+$$
+7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0
+$$  
 
 3. Dividimos por $n^3$:  
 
-   $$
-   \frac{7}{n} \leq c
-   $$  
+$$
+\frac{7}{n} \leq c
+$$  
 
 4. Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:  
 
-   $$
-   c = 7, \quad n_0
-   $$
+$$
+c = 7, \quad n_0
+$$
 
 
 ### ¿Qué es la notación $\Omega$?
@@ -337,9 +337,9 @@ int sum(int A[i], int n){
 | Salida  | `sum` | 32 bits | `1` |
 
 
-- Complejidad Espacial Total$=\text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
+- Complejidad Espacial Total$= \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
 
-- Complejidad Espacial Auxiliar$=1 = \Theta(1)$
+- Complejidad Espacial Auxiliar$= 1 = \Theta(1)$
 
 - Complejidad Espacial Auxiliar + Salida $= 1 + 1 = \Theta(1)$
 
