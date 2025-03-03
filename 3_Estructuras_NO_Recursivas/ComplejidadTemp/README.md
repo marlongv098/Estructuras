@@ -74,7 +74,7 @@ $$
 
 ### Representación gráfica de $\Theta$
 
-![Notación Theta](Images/theta.pdf)
+![Notación Theta](3_Estructuras_NO_Recursivas/ComplejidadTemp/Images/theta.pdf)
 
 ### ¿Qué hace $\Theta$?
 
