@@ -67,7 +67,7 @@ Sean tres algoritmos A, B, C tal que:
 * Formalmente, para una función  $g(n)$ , se define:
 
 $$
-\Theta(g(n)) = { f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0}
+\Theta(g(n)) = {f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0}
 $$
 
 * Se dice que $f(n)$ pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
@@ -164,24 +164,37 @@ $$
 ### **Ejemplo 2**  
 
 Sea  
-$$T(n) = 7n^2$$  
+
+$$
+T(n) = 7n^2
+$$  
+
 queremos probar que:  
-$$7n^2 = O(n^3)$$  
+
+$$
+7n^2 = O(n^3)
+$$  
 
 #### Solución  
 
 1. Utilizamos la definición de cota superior asintótica.  
 2. Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
 
-   $$7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0$$  
+   $$
+   7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0
+   $$  
 
 3. Dividimos por $n^3$:  
 
-   $$\frac{7}{n} \leq c$$  
+   $$
+   \frac{7}{n} \leq c
+   $$  
 
 4. Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:  
 
-   $$c = 7, \quad n_0$$
+   $$
+   c = 7, \quad n_0
+   $$
 
 
 ### ¿Qué es la notación $\Omega$?
