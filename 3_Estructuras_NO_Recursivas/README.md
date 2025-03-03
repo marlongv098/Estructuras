@@ -116,8 +116,6 @@ public class Fibonacci {
 
 ## Algoritmos y Complejidad
 
-### Introducción
-
 ### ¿Cuál es el objetivo del análisis de algoritmos?
 
 * Comparar algoritmos que resuelven un mismo problema.
@@ -130,3 +128,96 @@ public class Fibonacci {
 * **Espacio**
 * **Estructuras de datos**
 * **El tipo y número de datos con los que se trabaja**
+
+
+## Análisis de Complejidad Temporal
+
+### Indique cuántas líneas de código se ejecutan en el siguiente algoritmo
+
+
+[Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal)
+![Algoritmo 1](alg1)
+
+---
+
+## Modelos de Computación
+
+### Introducción
+
+#### ¿Qué es un modelo de computación?
+
+- Una definición formal y abstracta de un computador.
+- Un modelo abstracto que describe una forma de computar.
+- Es la definición de un conjunto de operaciones permitidas utilizadas en el cómputo y sus respectivos costos.
+- Al asumir un cierto modelo de computación es posible analizar los recursos de cómputo requeridos, como el tiempo de ejecución o el espacio de memoria, o discutir las limitaciones de algoritmos o computadores.
+
+#### ¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?
+
+- Representación de las entradas y salidas.
+- Operaciones elementales.
+- Combinación de las operaciones para el desarrollo del programa.
+
+#### ¿Qué modelos de computación existen?
+
+- Existe una amplia variedad de modelos de computación que difieren en el conjunto de operaciones permitidas y su costo de computación.
+- Máquinas de acceso aleatorio (RAM).
+- Circuitos combinacionales.
+- Autómatas finitos.
+- Máquinas de Turing.
+- ...
+
+---
+
+## Modelo RAM
+
+![Modelo RAM](ram.jpg)
+
+- Es un modelo simple de cómo los computadores se desempeñan.
+- Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.
+- Está formado por una cinta de entrada, una de salida, un conjunto de registros y un programa (secuencia de instrucciones).
+
+### ¿Qué se debe tener en cuenta en el modelo RAM?
+
+- Cada operación simple solo toma un paso.
+- Los ciclos y las subrutinas no se consideran operaciones simples.
+- Estas operaciones se consideran una composición de operaciones de un solo paso.
+- Cada acceso a memoria toma un solo paso.
+- El modelo RAM no tiene en cuenta si un elemento está en caché o en disco, lo cual simplifica el análisis.
+
+---
+
+## Circuitos Combinacionales
+
+![Compuertas lógicas](compuertas.png)
+
+- **Entradas:** codificación binaria.
+- **Salidas:** codificación binaria.
+- **Operaciones elementales:** compuertas lógicas.
+
+---
+
+## Autómatas Finitos
+
+![Autómata](automata.png)
+
+- Procesan cadenas de entrada, las cuales son aceptadas o rechazadas.
+- Leen símbolos escritos sobre una cinta semi infinita, dividida en celdas, sobre la cual se escribe una cadena de entrada.
+- Poseen una cabeza lectora que contiene configuraciones internas llamadas estados.
+
+---
+
+## Máquinas de Turing
+
+![Máquina de Turing](turing.png)
+
+- Es el modelo de autómata con máxima capacidad computacional.
+- **Entradas:** cinta sin fin formada por celdas que almacenan símbolos.
+- **Salidas:** contenido final de la cinta.
+- **Operaciones elementales:**
+  - Transición de estado.
+  - Lectura de un símbolo de la cinta.
+  - Escritura de un símbolo en la cinta.
+  - Movimiento sobre la cinta (izquierda o derecha).
+
+
+
