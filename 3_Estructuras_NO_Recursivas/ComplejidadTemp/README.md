@@ -337,9 +337,9 @@ int sum(int A[i], int n){
 | Salida  | `sum` | 32 bits | `1` |
 
 
-- Complejidad Espacial Total$= \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
+- Complejidad Espacial Total $= \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
 
-- Complejidad Espacial Auxiliar$= 1 = \Theta(1)$
+- Complejidad Espacial Auxiliar $= 1 = \Theta(1)$
 
 - Complejidad Espacial Auxiliar + Salida $= 1 + 1 = \Theta(1)$
 
