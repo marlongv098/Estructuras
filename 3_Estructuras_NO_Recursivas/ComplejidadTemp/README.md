@@ -294,25 +294,24 @@ int sum(int A[i], int n){
 	}    
 	return sum	    
 }
-``
+```
 
-### **Tabla de memoria utilizada:**
+### Tabla de memoria utilizada:
 
 | Tipo       | Variable | Tamaño de 1 valor atómico | Cantidad de valores atómicos |
 |-----------|---------|--------------------------|-----------------------------|
-| **Entrada**  | `A`  | 32 bits | `n` |
+| Entrada  | `A`  | 32 bits | `n` |
 |            | `n`  | 32 bits | `1` |
-| **Auxiliar** | `i`  | 32 bits | `1` |
-| **Salida**  | `sum` | 32 bits | `1` |
+| Auxiliar | `i`  | 32 bits | `1` |
+| Salida  | `sum` | 32 bits | `1` |
 
----
 
-- **Complejidad Espacial Total:**  
+- Complejidad Espacial Total:  
   $$ \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n) $$  
 
-- **Complejidad Espacial Auxiliar:**  
+- Complejidad Espacial Auxiliar:
   $$ 1 = \Theta(1) $$  
 
-- **Complejidad Espacial Auxiliar + Salida:**  
+- Complejidad Espacial Auxiliar + Salida:  
   $$ 1 + 1 = \Theta(1) $$  
 
