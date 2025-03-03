@@ -18,8 +18,10 @@
 
 ### ¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?
 
-[Fibonacci](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/Fibonacci)
+* Recursiva 
+* Iterativa
 
+[Fibonacci](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/Fibonacci)
 
 ### ¿Para qué utilizamos algoritmos?
 
