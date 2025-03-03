@@ -74,7 +74,7 @@ $$
 
 ### Representación gráfica de $\Theta$
 
-![Notación Theta](Images/theta.pdf)
+![Notación Theta](Images/theta.png)
 
 ### ¿Qué hace $\Theta$?
 
