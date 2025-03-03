@@ -42,35 +42,35 @@ Sean tres algoritmos A, B, C tal que:
 
 ### ¿Qué es la notación asintótica?
 
-- Son aquellas notaciones utilizadas para describir el tiempo de ejecución asintótico de un algoritmo.
-- Se definen en términos de funciones cuyo dominio es el conjunto de los números naturales.
-- Se aplica sobre funciones:
-  - Aquellas que caracterizan el tiempo de ejecución de un algoritmo.
-  - Otros aspectos de los algoritmos (espacio).
-  - Funciones que nada tienen que ver con algoritmos.
+* Son aquellas notaciones utilizadas para describir el tiempo de ejecución asintótico de un algoritmo.
+* Se definen en términos de funciones cuyo dominio es el conjunto de los números naturales.
+* Se aplica sobre funciones:
+* Aquellas que caracterizan el tiempo de ejecución de un algoritmo.
+* Otros aspectos de los algoritmos (espacio).
+* Funciones que nada tienen que ver con algoritmos.
 
 ### ¿Qué se debe tener en cuenta antes de aplicar la notación asintótica?
 
-- El tiempo de ejecución sobre el que se va a trabajar:
-  - Peor caso, mejor caso, para cualquier instancia del problema.
+* El tiempo de ejecución sobre el que se va a trabajar:
+* Peor caso, mejor caso, para cualquier instancia del problema.
 
 ### ¿Qué notaciones conocemos?
 
-- Notación $\Theta$ .
-- Notación  $O$ .
-- Notación $\Omega$ .
+* Notación $\Theta$ .
+* Notación  $O$ .
+* Notación $\Omega$ .
 
 ### ¿Qué es la notación $\Theta$ ?
 
-- Representa una función que sirve de cota tanto superior como inferior de otra función cuando el argumento tiende a infinito.
-- Es una cota ajustada de una función.
-- Formalmente, para una función  $g(n)$ , se define:
+* Representa una función que sirve de cota tanto superior como inferior de otra función cuando el argumento tiende a infinito.
+* Es una cota ajustada de una función.
+* Formalmente, para una función  $g(n)$ , se define:
 
 $$
 \Theta(g(n)) = { f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0}
 $$
 
-- Se dice que $f(n)$ pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
+* Se dice que $f(n)$ pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
 
 ### Representación gráfica de $\Theta$
 
@@ -80,14 +80,12 @@ $$
 
 ### ¿Qué hace $\Theta$?
 
-- Acota una función dentro de unos factores constantes para un tamaño de entrada suficientemente grande.
+* Acota una función dentro de unos factores constantes para un tamaño de entrada suficientemente grande.
 
 ### ¿Cómo decir que $g(n)$ es una cota ajustada de $f(n)$?
 
 * $f(n) \in \Theta (g(n))$
 * $f(n) = \Theta (g(n))$ (notación informal)
-
-## Notación Asintótica
 
 ### Ejemplo 1
 
@@ -99,22 +97,22 @@ $$
 
 ### Solución
 
-- Utilizamos la definición de cota ajustada asintótica.
-- Debemos encontrar constantes positivas $c_1, c_2, n_0$ tal que:
+* Utilizamos la definición de cota ajustada asintótica.
+* Debemos encontrar constantes positivas $c_1, c_2, n_0$ tal que:
 
 $$
 c_1 \, n^2 \leq \frac{1}{2} n^2 - 3n \leq c_2 \, n^2, \quad \forall n \geq n_0
 $$
 
-- Dividiendo por $n^2$, llegamos a:
+* Dividiendo por $n^2$, llegamos a:
 
 $$
 c_1 \leq \frac{1}{2} - \frac{3}{n} \leq c_2
 $$
 
-- Analizamos las desigualdades:
-  - $$\frac{1}{2} - \frac{3}{n} \leq c_2$$ se mantiene para cualquier $n \geq 1$ y para $c_2 \geq \frac{1}{2}$.
-  - $$c_1 \leq \frac{1}{2} - \frac{3}{n}$$ se mantiene para $n \geq 7$ y para $c_1 \leq \frac{1}{14}$.
+* Analizamos las desigualdades:
+  * $$\frac{1}{2} - \frac{3}{n} \leq c_2$$ se mantiene para cualquier $n \geq 1$ y para $c_2 \geq \frac{1}{2}$.
+  * $$c_1 \leq \frac{1}{2} - \frac{3}{n}$$ se mantiene para $n \geq 7$ y para $c_1 \leq \frac{1}{14}$.
 
 Finalmente, tenemos:
 
@@ -127,9 +125,6 @@ Por lo tanto, se valida la definición:
 $$
 \Theta (n^2) = \frac{1}{2} n^2 - 3n.
 $$
-
-
-## Notación Asintótica
 
 ### ¿Qué se puede decir con respecto a cualquier polinomio?
 
@@ -146,20 +141,17 @@ $$
 p(n) = \Theta(n^d)
 $$
 
----
-
 ### ¿Qué es la notación $O$?
 
 - Representa una función que sirve de **cota superior** de otra función cuando el argumento tiende a infinito.
 - Formalmente, se dice que para una función $g(n)$, se denota a $O(g(n))$ como el conjunto de funciones tal que:
 
 $$
-O(g(n)) =\{f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq f(n) \leq c \, g(n), \, \forall n \geq n_0 \}
+O(g(n)) ={f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq f(n) \leq c \, g(n), \, \forall n \geq n_0}
 $$
 
 - Se dice que $f(n)$ pertenece a $O(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por debajo de $c \, g(n)$ para un $n$ suficientemente grande.
 
----
 
 ### Propiedades de la notación $O$
 
@@ -167,21 +159,17 @@ $$
 - Al usar la notación $O$, se puede describir el tiempo de ejecución de un algoritmo inspeccionando solo su estructura general.
 
 
-## Notación Asintótica
-
 ### ¿Qué es la notación $\Omega$?
 
 - Representa una función que sirve de **cota inferior** de otra función cuando el argumento tiende a infinito.
 - Formalmente, se dice que para una función $g(n)$, se denota a $\Omega(g(n))$ como el conjunto de funciones tal que:
 
 $$
-\Omega(g(n)) =\{f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq c \cdot g(n) \leq f(n), \, \forall n \geq n_0 \}
+\Omega(g(n)) ={f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq c \cdot g(n) \leq f(n), \, \forall n \geq n_0}
 $$
 
-- Se dice que $f(n)$ pertenece a $\Omega(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por encima de $c \cdot g(n)$ para un $n$ suficientemente grande.
-- Representa una función que sirve de **cota inferior dentro de un factor constante**.
-
----
+* Se dice que $f(n)$ pertenece a $\Omega(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por encima de $c \cdot g(n)$ para un $n$ suficientemente grande.
+* Representa una función que sirve de **cota inferior dentro de un factor constante**.
 
 ### Ejemplo 3  
 
@@ -199,8 +187,8 @@ $$
 
 #### Solución  
 
-- Utilizamos la definición de **cota inferior asintótica**.
-- Debemos encontrar constantes positivas $c, n_0$ tal que:
+* Utilizamos la definición de **cota inferior asintótica**.
+* Debemos encontrar constantes positivas $c, n_0$ tal que:
 
 $$
 c \cdot n^3 \leq 8n^3+5n^2+7, \quad \forall n \geq n_0
@@ -217,9 +205,6 @@ $$
 $$
 c = 8, \quad n_0 = 1
 $$
-
-
-## Combinaciones de funciones
 
 ### ¿De qué otras formas se puede utilizar la notación asintótica?
 
@@ -239,7 +224,6 @@ $$
 
 donde $f(n) \in \Theta(n)$. En este caso, $f(n) = 3n + 1$, que es $\Theta(n)$.
 
----
 
 ### ¿Cuál es la necesidad de incluir una función en notación asintótica dentro de otra?
 
@@ -259,4 +243,55 @@ Algunas de las complejidades temporales más comunes son:
 *  Algoritmos cuadráticos, como la ordenación por burbuja. $O(n^2)$  
 *  Tiempo exponencial, común en soluciones de fuerza bruta. $O(2^n)$
 *  Factorial, extremadamente ineficiente para valores grandes. $O(n!)$  
+
+
+# Complejidad Espacial
+
+### ¿Para qué se requiere memoria dentro de un algoritmo?
+
+Para guardar:
+
+- Instrucciones del programa  
+- Valores constantes  
+- Valores variables  
+- ...  
+
+### ¿Cómo se define la complejidad espacial?
+
+La cantidad total de **memoria computacional** necesaria para completar la ejecución de un algoritmo.
+
+---
+
+### ¿Cuáles son las razones por las que un programa utiliza memoria computacional?
+
+- **Espacio de instrucciones** (versión compilada del programa).  
+- **Espacio de la pila** (información de funciones en ejecución).  
+- **Espacio de datos** (variables y constantes).  
+
+**Nota:** Al analizar la **complejidad espacial**, solo se considera el **espacio de datos**.
+
+---
+
+### ¿Qué cantidad de memoria se requiere para guardar distintos tipos de datos?
+
+| Tipo de dato | Tamaño |
+|-------------|--------|
+| Entero (`int`) | 32 bits (4 bytes) |
+| Punto flotante (`float`) | 32 bits (4 bytes) |
+| Carácter (`char`) | 16 bits (2 bytes) |
+| Doble precisión (`double`) | 64 bits (8 bytes) |
+| ... | ... |
+
+---
+
+### ¿Cómo se realizaría el análisis de complejidad para este fragmento de código?
+
+*(Aquí se debe insertar una imagen o código en Markdown, por ejemplo:)*  
+
+```c
+int sum = 0;
+for (int i = 0; i < n; i++) {
+    sum += A[i];
+}
+
 
