@@ -110,6 +110,7 @@
 * [Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal)
 * [Busqueda_Binaria](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaBinaria)
 * [Ordenamiento_Burbuja](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/OrdenamientoBurbuja)
+* [Quick_Sort](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/QuickSort)
 
 ---
 
