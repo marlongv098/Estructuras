@@ -286,12 +286,33 @@ La cantidad total de **memoria computacional** necesaria para completar la ejecu
 
 ### ¿Cómo se realizaría el análisis de complejidad para este fragmento de código?
 
-*(Aquí se debe insertar una imagen o código en Markdown, por ejemplo:)*  
-
 ```c
-int sum = 0;
-for (int i = 0; i < n; i++) {
-    sum += A[i];
+int sum(int A[i], int n){
+	int sum = 0;
+	for (int i = 0; i < n; i++) {
+	    sum += A[i];
+	}    
+	return sum	    
 }
+``
 
+### **Tabla de memoria utilizada:**
+
+| Tipo       | Variable | Tamaño de 1 valor atómico | Cantidad de valores atómicos |
+|-----------|---------|--------------------------|-----------------------------|
+| **Entrada**  | `A`  | 32 bits | `n` |
+|            | `n`  | 32 bits | `1` |
+| **Auxiliar** | `i`  | 32 bits | `1` |
+| **Salida**  | `sum` | 32 bits | `1` |
+
+---
+
+- **Complejidad Espacial Total:**  
+  $$ \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n) $$  
+
+- **Complejidad Espacial Auxiliar:**  
+  $$ 1 = \Theta(1) $$  
+
+- **Complejidad Espacial Auxiliar + Salida:**  
+  $$ 1 + 1 = \Theta(1) $$  
 
