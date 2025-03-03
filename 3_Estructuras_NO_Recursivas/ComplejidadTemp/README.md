@@ -87,6 +87,52 @@ $$
 * $f(n) \in \Theta (g(n))$
 * $f(n) = \Theta (g(n))$ (notación informal)
 
+## Notación Asintótica
+
+### Ejemplo 1
+
+Sea $T(n) = \frac{1}{2} n^2 - 3n$, queremos probar que:
+
+$$
+\Theta (n^2) = \frac{1}{2} n^2 - 3n
+$$
+
+### Solución
+
+- Utilizamos la definición de cota ajustada asintótica.
+- Debemos encontrar constantes positivas $c_1, c_2, n_0$ tal que:
+
+$$
+c_1 \, n^2 \leq \frac{1}{2} n^2 - 3n \leq c_2 \, n^2, \quad \forall n \geq n_0
+$$
+
+- Dividiendo por $n^2$, llegamos a:
+
+$$
+c_1 \leq \frac{1}{2} - \frac{3}{n} \leq c_2
+$$
+
+- Analizamos las desigualdades:
+  - $$\frac{1}{2} - \frac{3}{n} \leq c_2$$ se mantiene para cualquier $n \geq 1$ y para $c_2 \geq \frac{1}{2}$.
+  - $$c_1 \leq \frac{1}{2} - \frac{3}{n}$$ se mantiene para $n \geq 7$ y para $c_1 \leq \frac{1}{14}$.
+
+Finalmente, tenemos:
+
+$$
+c_1 = \frac{1}{14}, \quad c_2 = \frac{1}{2}, \quad n_0 = 7
+$$
+
+Por lo tanto, se valida la definición:
+
+$$
+\Theta (n^2) = \frac{1}{2} n^2 - 3n.
+$$
+
+
+
+
+
+
 ### Clasificación de la Complejidad
 
 Algunas de las complejidades temporales más comunes son:
