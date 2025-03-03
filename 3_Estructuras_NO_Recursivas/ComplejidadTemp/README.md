@@ -307,11 +307,11 @@ int sum(int A[i], int n){
 
 
 - Complejidad Espacial Total:  
-  $$ \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n) $$  
+  $$\text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$$  
 
 - Complejidad Espacial Auxiliar:
-  $$ 1 = \Theta(1) $$  
+  $$1 = \Theta(1)$$  
 
 - Complejidad Espacial Auxiliar + Salida:  
-  $$ 1 + 1 = \Theta(1) $$  
+  $$1 + 1 = \Theta(1)$$  
 
