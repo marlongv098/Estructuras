@@ -129,8 +129,123 @@ $$
 $$
 
 
+## Notación Asintótica
+
+### ¿Qué se puede decir con respecto a cualquier polinomio?
+
+#### Teorema  
+Para todo polinomio 
+
+$$
+p(n) = \sum\limits_{i=0}^d a_i \cdot n^i
+$$ 
+
+donde $a_i$ son constantes y $a_d > 0$, entonces:
+
+$$
+p(n) = \Theta(n^d)
+$$
+
+---
+
+### ¿Qué es la notación $O$?
+
+- Representa una función que sirve de **cota superior** de otra función cuando el argumento tiende a infinito.
+- Formalmente, se dice que para una función $g(n)$, se denota a $O(g(n))$ como el conjunto de funciones tal que:
+
+$$
+O(g(n)) =\{f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq f(n) \leq c \, g(n), \, \forall n \geq n_0 \}
+$$
+
+- Se dice que $f(n)$ pertenece a $O(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por debajo de $c \, g(n)$ para un $n$ suficientemente grande.
+
+---
+
+### Propiedades de la notación $O$
+
+- Representa una función que sirve de **cota superior dentro de un factor constante**.
+- Al usar la notación $O$, se puede describir el tiempo de ejecución de un algoritmo inspeccionando solo su estructura general.
 
 
+## Notación Asintótica
+
+### ¿Qué es la notación $\Omega$?
+
+- Representa una función que sirve de **cota inferior** de otra función cuando el argumento tiende a infinito.
+- Formalmente, se dice que para una función $g(n)$, se denota a $\Omega(g(n))$ como el conjunto de funciones tal que:
+
+$$
+\Omega(g(n)) =\{f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq c \cdot g(n) \leq f(n), \, \forall n \geq n_0 \}
+$$
+
+- Se dice que $f(n)$ pertenece a $\Omega(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por encima de $c \cdot g(n)$ para un $n$ suficientemente grande.
+- Representa una función que sirve de **cota inferior dentro de un factor constante**.
+
+---
+
+### Ejemplo 3  
+
+Sea 
+
+$$
+T(n) = 8n^3+5n^2+7
+$$ 
+
+Queremos probar que:
+
+$$
+T(n) = \Omega(n^3)
+$$
+
+#### Solución  
+
+- Utilizamos la definición de **cota inferior asintótica**.
+- Debemos encontrar constantes positivas $c, n_0$ tal que:
+
+$$
+c \cdot n^3 \leq 8n^3+5n^2+7, \quad \forall n \geq n_0
+$$
+
+- Dividiendo por $n^3$ obtenemos:
+
+$$
+c \leq 8 + \frac{5}{n} + \frac{7}{n^2}
+$$
+
+- Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:
+
+$$
+c = 8, \quad n_0 = 1
+$$
+
+
+## Combinaciones de funciones
+
+### ¿De qué otras formas se puede utilizar la notación asintótica?
+
+#### Dentro de fórmulas matemáticas
+
+$$
+2n^2 + 3n + 1 = 2n^2 + \Theta(n)
+$$
+
+### ¿Y qué quiere decir esto?
+
+- Que:
+
+$$
+2n^2 + 3n + 1 = 2n^2 + f(n)
+$$ 
+
+donde $f(n) \in \Theta(n)$. En este caso, $f(n) = 3n + 1$, que es $\Theta(n)$.
+
+---
+
+### ¿Cuál es la necesidad de incluir una función en notación asintótica dentro de otra?
+
+- Se eliminan **detalles innecesarios** y se **depura la ecuación**.
+- Muchos algoritmos consisten en **dos o más subprocesos separados**.
+- El número de pasos realizados por un computador para solucionar un problema es la **suma** del número de pasos realizados por todos sus subprocesos.
 
 
 ### Clasificación de la Complejidad
