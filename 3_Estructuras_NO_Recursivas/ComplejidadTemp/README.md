@@ -163,13 +163,7 @@ $$
 
 ### **Ejemplo 2**  
 
-Sea  
-
-$$
-T(n) = 7n^2
-$$  
-
-queremos probar que:  
+Sea  $T(n) = 7n^2$ queremos probar que:  
 
 $$
 7n^2 = O(n^3)
@@ -177,8 +171,8 @@ $$
 
 #### Solución  
 
-1. Utilizamos la definición de cota superior asintótica.  
-2. Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
+* Utilizamos la definición de cota superior asintótica.  
+* Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
 
    $$
    7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0
@@ -216,13 +210,7 @@ $$
 
 ### Ejemplo 3  
 
-Sea 
-
-$$
-T(n) = 8n^3+5n^2+7
-$$ 
-
-Queremos probar que:
+Sea $T(n) = 8n^3+5n^2+7$ queremos probar que:
 
 $$
 T(n) = \Omega(n^3)
@@ -237,13 +225,13 @@ $$
 c \cdot n^3 \leq 8n^3+5n^2+7, \quad \forall n \geq n_0
 $$
 
-- Dividiendo por $n^3$ obtenemos:
+* Dividiendo por $n^3$ obtenemos:
 
 $$
 c \leq 8 + \frac{5}{n} + \frac{7}{n^2}
 $$
 
-- Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:
+* Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:
 
 $$
 c = 8, \quad n_0 = 1
@@ -349,12 +337,9 @@ int sum(int A[i], int n){
 | Salida  | `sum` | 32 bits | `1` |
 
 
-- Complejidad Espacial Total:  
-  $$\text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$$  
+- Complejidad Espacial Total$=\text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
 
-- Complejidad Espacial Auxiliar:
-  $$1 = \Theta(1)$$  
+- Complejidad Espacial Auxiliar$=1 = \Theta(1)$
 
-- Complejidad Espacial Auxiliar + Salida:  
-  $$1 + 1 = \Theta(1)$$  
+- Complejidad Espacial Auxiliar + Salida $= 1 + 1 = \Theta(1)$
 
