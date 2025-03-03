@@ -25,11 +25,11 @@ El análisis de la complejidad temporal es fundamental para:
 
 Sean tres algoritmos A, B, C tal que:
 
-- \( T_A(n) = 100 \)
-- \( T_B(n) = 2n + 10 \)
-- \( T_C(n) = n^2 + 5 \)
+* $ T_A(n) = 100 $
+* $T_B(n) = 2n + 10$ 
+* $T_C(n) = n^2 + 5$ 
 
-| n  | \( T_A(n) \) | \( T_B(n) \) | \( T_C(n) \) |
+| $n$  |  $T_A(n)$  | $ T_B(n) $ | $ T_C(n) $ |
 |----|-------------|-------------|-------------|
 | 1  | 100         | 12          | 6           |
 | 5  | 100         | 20          | 30          |
@@ -56,34 +56,34 @@ Sean tres algoritmos A, B, C tal que:
 
 ### ¿Qué notaciones conocemos?
 
-- Notación \( \Theta \).
-- Notación \( O \).
-- Notación \( \Omega \).
+- Notación $\Theta$ .
+- Notación  $O$ .
+- Notación $\Omega$ .
 
-### ¿Qué es la notación \( \Theta \)?
+### ¿Qué es la notación $\Theta$ ?
 
 - Representa una función que sirve de cota tanto superior como inferior de otra función cuando el argumento tiende a infinito.
 - Es una cota ajustada de una función.
-- Formalmente, para una función \( g(n) \), se define:
+- Formalmente, para una función  $g(n)$ , se define:
 
-\[
+$$
 \Theta(g(n)) = \{ f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0 \}
-\]
+$$
 
-- Se dice que \( f(n) \) pertenece a \( \Theta(g(n)) \) si existen constantes positivas \( c_1, c_2, n_0 \) tal que \( f(n) \) pueda ubicarse entre \( c_1 \cdot g(n) \) y \( c_2 \cdot g(n) \) para un \( n \) suficientemente grande.
+- Se dice que \( f(n) \) pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
 
-### Representación gráfica de \( \Theta \)
+### Representación gráfica de $\Theta$
 
 ![Notación Theta](theta.png)
 
-### ¿Qué hace \( \Theta \)?
+### ¿Qué hace $\Theta$?
 
 - Acota una función dentro de unos factores constantes para un tamaño de entrada suficientemente grande.
 
-### ¿Cómo decir que \( g(n) \) es una cota ajustada de \( f(n) \)?
+### ¿Cómo decir que $g(n)$ es una cota ajustada de $f(n)$?
 
-- \( f(n) \in \Theta (g(n)) \)
-- \( f(n) = \Theta (g(n)) \) (notación informal)
+* $f(n) \in \Theta (g(n))$
+* $f(n) = \Theta (g(n))$ (notación informal)
 
 ### Clasificación de la Complejidad
 
