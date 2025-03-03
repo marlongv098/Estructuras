@@ -25,11 +25,11 @@ El análisis de la complejidad temporal es fundamental para:
 
 Sean tres algoritmos A, B, C tal que:
 
-* $ T_A(n) = 100 $
+* $T_A(n) = 100$
 * $T_B(n) = 2n + 10$ 
 * $T_C(n) = n^2 + 5$ 
 
-| $n$  |  $T_A(n)$  | $ T_B(n) $ | $ T_C(n) $ |
+| $n$  |  $T_A(n)$  | $T_B(n)$ | $T_C(n)$ |
 |----|-------------|-------------|-------------|
 | 1  | 100         | 12          | 6           |
 | 5  | 100         | 20          | 30          |
@@ -67,14 +67,14 @@ Sean tres algoritmos A, B, C tal que:
 - Formalmente, para una función  $g(n)$ , se define:
 
 $$
-\Theta(g(n)) = \{ f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0 \}
+\Theta(g(n)) = { f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0}
 $$
 
-- Se dice que \( f(n) \) pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
+- Se dice que $f(n)$ pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
 
 ### Representación gráfica de $\Theta$
 
-![Notación Theta](theta.png)
+![Notación Theta](Images/theta.pdf)
 
 ### ¿Qué hace $\Theta$?
 
