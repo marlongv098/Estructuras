@@ -75,8 +75,6 @@ $$
 ### Representación gráfica de $\Theta$
 
 ![Notación Theta](Images/theta.png) 
-<img src="Images/theta.png" alt="Descripción" width="300">
-
 
 ### ¿Qué hace $\Theta$?
 
@@ -158,6 +156,32 @@ $$
 - Representa una función que sirve de **cota superior dentro de un factor constante**.
 - Al usar la notación $O$, se puede describir el tiempo de ejecución de un algoritmo inspeccionando solo su estructura general.
 
+### Representación gráfica de $O$
+
+![Notación O](Images/o.png)
+
+
+### **Ejemplo 2**  
+
+Sea  
+$$ T(n) = 7n^2, $$  
+queremos probar que:  
+$$ 7n^2 = O(n^3) $$  
+
+#### **Solución**  
+1. Utilizamos la definición de cota superior asintótica.  
+2. Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
+
+   $$ 7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0 $$  
+
+3. Dividimos por $n^3$:  
+
+   $$ \frac{7}{n} \leq c $$  
+
+4. Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:  
+
+   $$ c = 7, \quad n_0
+
 
 ### ¿Qué es la notación $\Omega$?
 
@@ -170,6 +194,11 @@ $$
 
 * Se dice que $f(n)$ pertenece a $\Omega(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por encima de $c \cdot g(n)$ para un $n$ suficientemente grande.
 * Representa una función que sirve de **cota inferior dentro de un factor constante**.
+
+### Representación gráfica de $\Theta$
+
+![Notación O](Images/omega.png)
+
 
 ### Ejemplo 3  
 
