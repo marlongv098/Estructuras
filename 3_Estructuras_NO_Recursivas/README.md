@@ -72,7 +72,7 @@
 
 * Es el subconjunto de los problemas en **NP** tal que todo problema en **NP** se puede reducir en cada uno de los problemas de **NP-completo**.
 
-![Complejidad](complejidad.png)
+![Complejidad](Images/complejidad.png)
 
 ### ¿Por qué resultan tan interesantes los problemas **NP-completo**?
 
@@ -107,15 +107,13 @@
 
 ### Indique cuántas líneas de código se ejecutan en el siguiente algoritmo
 
-
 [Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal)
-![Algoritmo 1](alg1)
+
 
 ---
 
 ## Modelos de Computación
 
-### Introducción
 
 #### ¿Qué es un modelo de computación?
 
@@ -143,7 +141,7 @@
 
 ## Modelo RAM
 
-![Modelo RAM](ram.jpg)
+![Modelo RAM](Images/ram.jpg)
 
 - Es un modelo simple de cómo los computadores se desempeñan.
 - Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.
@@ -161,7 +159,7 @@
 
 ## Circuitos Combinacionales
 
-![Compuertas lógicas](compuertas.png)
+![Compuertas lógicas](Images/compuertas.png)
 
 - **Entradas:** codificación binaria.
 - **Salidas:** codificación binaria.
@@ -171,7 +169,7 @@
 
 ## Autómatas Finitos
 
-![Autómata](automata.png)
+![Autómata](Images/automata.png)
 
 - Procesan cadenas de entrada, las cuales son aceptadas o rechazadas.
 - Leen símbolos escritos sobre una cinta semi infinita, dividida en celdas, sobre la cual se escribe una cadena de entrada.
