@@ -264,6 +264,18 @@ donde $f(n) \in \Theta(n)$. En este caso, $f(n) = 3n + 1$, que es $\Theta(n)$.
 
 ### ¿Cómo se realizaría el análisis de complejidad temporal para este fragmento de código?
 
+|Código                                  | Costo |
+|--------------------------------------|----------|
+```c. |  		|
+i=1	| $c_1$
+while i <= len(mat1): 	| $c_2$	
+	j = 1		|  $c_3$       
+	while j <= len(mat2):		| $c_4$  
+		mat3[i][j] = mat1[i][j] + mat2[i][j]		| $c_5$ 
+		j = j + 1		|  $c_6$
+	i = i + 1      		|  $c_7$
+```
+
 | Línea | Código                                  | Costo |
 |-------|----------------------------------------|-------|
 | 1     | ```java i = 1                                 | c1    |
