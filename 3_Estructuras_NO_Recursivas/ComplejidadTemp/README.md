@@ -1,345 +1,196 @@
-# Análisis de Complejidad Temporal
+# Introducción al Análisis de Complejidad Temporal
 
-En análisis de algoritmos, la **complejidad temporal** es una medida del tiempo que tarda un algoritmo en ejecutarse en función del tamaño de la entrada. Nos permite evaluar el rendimiento y la eficiencia de un algoritmo sin depender del hardware o las condiciones específicas de ejecución.
+### ¿Cuál sería una primera aproximación para medir el desempeño en tiempo de un algoritmo?
 
-### ¿Por qué es importante?
+* Establecer distintos tamaños de entradas y tomar el tiempo que el algoritmo se demora en resolver el problema.  
+* Para obtener una idea del comportamiento temporal del algoritmo, se grafica tamaño de entrada vs tiempo para la solución.  
 
-El análisis de la complejidad temporal es fundamental para:
 
-* Comparar diferentes algoritmos que resuelven el mismo problema.
-* Identificar cuellos de botella y optimizar el rendimiento.
-* Predecir el comportamiento del algoritmo a medida que aumenta el tamaño de los datos.
+### ¿Cómo compararía el desempeño temporal de dos algoritmos que solucionan el mismo problema?
 
-### ¿Para qué sirve el orden de crecimiento del tiempo de ejecución de un algoritmo?
+* Graficando tamaño de entradas vs tiempo.  
 
-- Caracterización simple de la eficiencia de un algoritmo.
-- Comparación con el desempeño de algoritmos alternativos para solucionar el problema dado.
-- Para evitar esfuerzo innecesario.
 
-### ¿Por qué esfuerzo innecesario?
+### ¿Cuál es la sucesión de Fibonacci?
 
-- Las constantes, coeficientes y términos de menor orden de un tiempo de ejecución exacto son dominados por los efectos del tamaño de la entrada cuando este es significativo.
-- Cuando se estudian entradas de tamaño suficientemente grande para hacer relevante solamente el orden de crecimiento del tiempo de ejecución del algoritmo, estamos trabajando con su eficiencia asintótica.
+* Es la sucesión que comienza con los números 0 y 1, y a partir de estos, cada término es la suma de los dos anteriores.  
+* Los números de esta sucesión se definen mediante la siguiente ecuación de recurrencia: $$f_n = f_{n-1} + f_{n-2} \quad \text{para } n \geq 2$$ Con valores iniciales: $$f_0 = 0, \quad f_1 = 1$$
 
-### Ejemplo
+### ¿De qué manera podría implementar un algoritmo que calcule el n-ésimo elemento de la sucesión de Fibonacci?
 
-Sean tres algoritmos A, B, C tal que:
+* Recursiva 
+* Iterativa
 
-* $T_A(n) = 100$
-* $T_B(n) = 2n + 10$ 
-* $T_C(n) = n^2 + 5$ 
+[Fibonacci](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/Fibonacci)
 
-| $n$  |  $T_A(n)$  | $T_B(n)$ | $T_C(n)$ |
-|----|-------------|-------------|-------------|
-| $1$  | $100$         | $12$          | $6$           |
-| $5$  | $100$         | $20$          | $30$          |
-| $10$ | $100$         | $30$          | $105$         |
-| $100$ | $100$         | $210$         | $10005$       |
+### ¿Para qué utilizamos algoritmos?
+
+* En ciencias de la computación utilizamos algoritmos para resolver problemas.  
+* Siempre estamos en la búsqueda de los algoritmos más eficientes que resuelvan cierta clase de problemas.
+
+### ¿Cómo son estos problemas a los que nos enfrentamos?
+
+* Problemas con diversos niveles de dificultad.
+
+### ¿Cómo podemos distinguirlos?
+
+* Estableciendo un criterio objetivo que permita diferenciar y categorizar cualquier problema de acuerdo con su nivel de dificultad.
+
+### ¿Cómo se establece ese criterio?
+
+* Ese criterio de dificultad de cada problema se ha establecido como una relación directa con la complejidad temporal del algoritmo que lo resuelve.
+* Existen diversos algoritmos que resuelven un mismo problema, cada uno con una complejidad temporal diferente.
+
+### ¿Cuáles son los tipos básicos de problemas?
+
+* Se considera que el grado de dificultad para resolver un problema está dado por la complejidad del mejor de todos los algoritmos encontrados que lo resuelven.
+* Gran parte de los problemas que inicialmente se estudian en los cursos de algoritmos se pueden solucionar a través de algoritmos **eficientes**. A estos se les llama problemas tratables o fáciles.
+* Sin embargo, aquellos problemas cuyo mejor algoritmo para resolverlo es **ineficiente** se les llama problemas intratables o difíciles.
+
+### ¿Qué es la teoría de la Complejidad Computacional?
+
+* Es la rama de la teoría de la computación que se enfoca en la clasificación de problemas computacionales de acuerdo a su dificultad inherente y en la relación que existe entre dichas clases de complejidad.
+
+### ¿Qué son las clases de complejidad?
+
+* Son las categorías en las cuales se han clasificado los problemas de acuerdo con la complejidad de los algoritmos que los resuelven de forma más eficiente.
+* Existen diversas clases de complejidad, incluso hay una clase para los problemas para los que **NO** existe un algoritmo que entregue la solución.
+* A estos problemas se les llama **indecidibles o irresolubles**.
+
+### ¿Qué es la clase de complejidad **P**?
+
+* Pertenecen a esta clase todos los problemas que pueden ser resueltos por un algoritmo eficiente.
+* Formalmente, la clase **P** consiste de todos aquellos problemas de decisión que pueden ser resueltos en una máquina determinista secuencial en un período de tiempo polinómico en proporción a los datos de entrada.
+
+### ¿Qué es la clase de complejidad **NP**?
+
+* Esta compuesta por los problemas que son verificables de manera eficiente. Es decir, si se ofrece una alternativa de solución, ésta puede ser verificada (indicar si es correcta o no) de manera eficiente.
+* **NP** es el acrónimo en inglés de *nondeterministic polynomial time*, es decir, tiempo polinomial no determinista.
+* Es el conjunto de problemas que pueden ser resueltos en tiempo polinómico por una máquina de Turing no determinista.
+
+### ¿Qué es la clase de complejidad **NP-completo**?
+
+* Es el subconjunto de los problemas en **NP** tal que todo problema en **NP** se puede reducir en cada uno de los problemas de **NP-completo**.
+
+![Complejidad](Images/complejidad.png)
+
+### ¿Por qué resultan tan interesantes los problemas **NP-completo**?
+
+* La razón es que de tenerse una solución polinómica para un problema **NP-completo**, todos los problemas de **NP** tendrían también una solución en tiempo polinómico.
+* Si se demostrase que un problema **NP-completo**, llamémoslo **A**, no se pudiese resolver en tiempo polinómico, el resto de los problemas **NP-completos** tampoco se podrían resolver en tiempo polinómico.
+* Esto se debe a que si uno de los problemas **NP-completos** distintos de **A**, digamos **X**, se pudiese resolver en tiempo polinómico, entonces **A** se podría resolver en tiempo polinómico, por definición de **NP-completo**.
+
+
+* Varios problemas **NP-completo** son similares a otros problemas a los que se les conocen algoritmos eficientes para solucionarlos.
+* Un pequeño cambio a la declaración del problema puede causar un gran cambio en lo que respecta a la eficiencia del mejor algoritmo para solucionar dicho problema.
+* Es importante conocer acerca de problemas **NP-completo** ya que, sorprendentemente, su aparición resulta frecuente en aplicaciones de la vida real.
+* Al poder reconocer un problema como **NP-completo** se puede evitar realizar un trabajo infructuoso tratando de conseguir la mejor solución.
+* Si se prueba que el problema encontrado es **NP-completo**, se puede dedicar el tiempo a encontrar un algoritmo que dé una solución correcta, aunque no sea la óptima.
+
+## Algoritmos y Complejidad
+
+### ¿Cuál es el objetivo del análisis de algoritmos?
+
+* Comparar algoritmos que resuelven un mismo problema.
+
+### ¿A través de qué se pueden comparar?
+
+* **Correctitud**
+* **Eficiencia**
+* **Tiempo**
+* **Espacio**
+* **Estructuras de datos**
+* **El tipo y número de datos con los que se trabaja**
+
+
+## Análisis de Complejidad Temporal
+
+### Indique cuántas líneas de código se ejecutan en el siguiente algoritmo
+
+* [Busqueda_Lineal](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaLineal)
+* [Busqueda_Binaria](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/BusquedaBinaria)
+* [Ordenamiento_Burbuja](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/OrdenamientoBurbuja)
+* [Quick_Sort](https://github.com/marlongv098/Estructuras/tree/master/3_Estructuras_NO_Recursivas/ComplejidadTemp/src/QuickSort)
 
 ---
 
-## Notación Asintótica
+## Modelos de Computación
 
-### ¿Qué es la notación asintótica?
 
-* Son aquellas notaciones utilizadas para describir el tiempo de ejecución asintótico de un algoritmo.
-* Se definen en términos de funciones cuyo dominio es el conjunto de los números naturales.
-* Se aplica sobre funciones:
-* Aquellas que caracterizan el tiempo de ejecución de un algoritmo.
-* Otros aspectos de los algoritmos (espacio).
-* Funciones que nada tienen que ver con algoritmos.
+#### ¿Qué es un modelo de computación?
 
-### ¿Qué se debe tener en cuenta antes de aplicar la notación asintótica?
+- Una definición formal y abstracta de un computador.
+- Un modelo abstracto que describe una forma de computar.
+- Es la definición de un conjunto de operaciones permitidas utilizadas en el cómputo y sus respectivos costos.
+- Al asumir un cierto modelo de computación es posible analizar los recursos de cómputo requeridos, como el tiempo de ejecución o el espacio de memoria, o discutir las limitaciones de algoritmos o computadores.
 
-* El tiempo de ejecución sobre el que se va a trabajar:
-* Peor caso, mejor caso, para cualquier instancia del problema.
+#### ¿Qué aspectos se deben tener en cuenta al definir un modelo de computación?
 
-### ¿Qué notaciones conocemos?
+- Representación de las entradas y salidas.
+- Operaciones elementales.
+- Combinación de las operaciones para el desarrollo del programa.
 
-* Notación $\Theta$ .
-* Notación  $O$ .
-* Notación $\Omega$ .
+#### ¿Qué modelos de computación existen?
 
-## ¿Qué es la notación $\Theta$ ?
-
-* Representa una función que sirve de cota tanto superior como inferior de otra función cuando el argumento tiende a infinito.
-* Es una cota ajustada de una función.
-* Formalmente, para una función  $g(n)$ , se define:
-
-$$
-\Theta(g(n)) = \{f(n) \mid \exists c_1, c_2, n_0 \in \mathbb{Z^+}, 0  \leq c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0\}
-$$
-
-* Se dice que $f(n)$ pertenece a $\Theta(g(n))$  si existen constantes positivas $c_1, c_2, n_0$ tal que $f(n)$  pueda ubicarse entre $c_1 \cdot g(n)$  y  $c_2 \cdot g(n)$  para un $n$  suficientemente grande.
-
-### Representación gráfica de $\Theta$
-
-![Notación Theta](Images/theta.png) 
-
-### ¿Qué hace $\Theta$?
-
-* Acota una función dentro de unos factores constantes para un tamaño de entrada suficientemente grande.
-
-### ¿Cómo decir que $g(n)$ es una cota ajustada de $f(n)$?
-
-* $f(n) \in \Theta (g(n))$
-* $f(n) = \Theta (g(n))$ (notación informal)
-
-### Ejemplo 1
-
-Sea $T(n) = \frac{1}{2} n^2 - 3n$, queremos probar que:
-
-$$
-\Theta (n^2) = \frac{1}{2} n^2 - 3n
-$$
-
-### Solución
-
-* Utilizamos la definición de cota ajustada asintótica.
-* Debemos encontrar constantes positivas $c_1, c_2, n_0$ tal que:
-
-$$
-c_1 \, n^2 \leq \frac{1}{2} n^2 - 3n \leq c_2 \, n^2, \quad \forall n \geq n_0
-$$
-
-* Dividiendo por $n^2$, llegamos a:
-
-$$
-c_1 \leq \frac{1}{2} - \frac{3}{n} \leq c_2
-$$
-
-* Analizamos las desigualdades:
-  * $$\frac{1}{2} - \frac{3}{n} \leq c_2$$ se mantiene para cualquier $n \geq 1$ y para $c_2 \geq \frac{1}{2}$.
-  * $$c_1 \leq \frac{1}{2} - \frac{3}{n}$$ se mantiene para $n \geq 7$ y para $c_1 \leq \frac{1}{14}$.
-
-Finalmente, tenemos:
-
-$$
-c_1 = \frac{1}{14}, \quad c_2 = \frac{1}{2}, \quad n_0 = 7
-$$
-
-Por lo tanto, se valida la definición:
-
-$$
-\Theta (n^2) = \frac{1}{2} n^2 - 3n.
-$$
-
-### ¿Qué se puede decir con respecto a cualquier polinomio?
-
-#### Teorema  
-Para todo polinomio 
-
-$$
-p(n) = \sum\limits_{i=0}^d a_i \cdot n^i
-$$ 
-
-donde $a_i$ son constantes y $a_d > 0$, entonces:
-
-$$
-p(n) = \Theta(n^d)
-$$
-
-## ¿Qué es la notación $O$?
-
-- Representa una función que sirve de **cota superior** de otra función cuando el argumento tiende a infinito.
-- Formalmente, se dice que para una función $g(n)$, se denota a $O(g(n))$ como el conjunto de funciones tal que:
-
-$$
-O(g(n)) ={f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq f(n) \leq c \, g(n), \, \forall n \geq n_0}
-$$
-
-- Se dice que $f(n)$ pertenece a $O(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por debajo de $c \, g(n)$ para un $n$ suficientemente grande.
-
-
-### Propiedades de la notación $O$
-
-- Representa una función que sirve de **cota superior dentro de un factor constante**.
-- Al usar la notación $O$, se puede describir el tiempo de ejecución de un algoritmo inspeccionando solo su estructura general.
-
-### Representación gráfica de $O$
-
-![Notación O](Images/o.png)
-
-
-### **Ejemplo 2**  
-
-Sea  $T(n) = 7n^2$ queremos probar que:  
-
-$$
-7n^2 = O(n^3)
-$$  
-
-#### Solución  
-
-* Utilizamos la definición de cota superior asintótica.  
-* Debemos encontrar constantes positivas $c$ y $n_0$ tal que:  
-
-$$
-7n^2 \leq c \cdot n^3, \quad \forall n \geq n_0
-$$  
-
-3. Dividimos por $n^3$:  
-
-$$
-\frac{7}{n} \leq c
-$$  
-
-4. Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:  
-
-$$
-c = 7, \quad n_0
-$$
-
-
-## ¿Qué es la notación $\Omega$?
-
-- Representa una función que sirve de **cota inferior** de otra función cuando el argumento tiende a infinito.
-- Formalmente, se dice que para una función $g(n)$, se denota a $\Omega(g(n))$ como el conjunto de funciones tal que:
-
-$$
-\Omega(g(n)) ={f(n) \mid \exists c,n_0 \in \mathbb{Z^+}, \, 0  \leq c \cdot g(n) \leq f(n), \, \forall n \geq n_0}
-$$
-
-* Se dice que $f(n)$ pertenece a $\Omega(g(n))$ si existen constantes positivas $c$ y $n_0$ tales que $f(n)$ pueda ubicarse en o por encima de $c \cdot g(n)$ para un $n$ suficientemente grande.
-* Representa una función que sirve de **cota inferior dentro de un factor constante**.
-
-### Representación gráfica de $\Theta$
-
-![Notación O](Images/omega.png)
-
-
-### Ejemplo 3  
-
-Sea $T(n) = 8n^3+5n^2+7$ queremos probar que:
-
-$$
-T(n) = \Omega(n^3)
-$$
-
-#### Solución  
-
-* Utilizamos la definición de **cota inferior asintótica**.
-* Debemos encontrar constantes positivas $c, n_0$ tal que:
-
-$$
-c \cdot n^3 \leq 8n^3+5n^2+7, \quad \forall n \geq n_0
-$$
-
-* Dividiendo por $n^3$ obtenemos:
-
-$$
-c \leq 8 + \frac{5}{n} + \frac{7}{n^2}
-$$
-
-* Esta desigualdad se cumple para $n \geq 1$, por lo que tomamos:
-
-$$
-c = 8, \quad n_0 = 1
-$$
-
-### ¿De qué otras formas se puede utilizar la notación asintótica?
-
-#### Dentro de fórmulas matemáticas
-
-$$
-2n^2 + 3n + 1 = 2n^2 + \Theta(n)
-$$
-
-### ¿Y qué quiere decir esto?
-
-- Que:
-
-$$
-2n^2 + 3n + 1 = 2n^2 + f(n)
-$$ 
-
-donde $f(n) \in \Theta(n)$. En este caso, $f(n) = 3n + 1$, que es $\Theta(n)$.
-
-
-### ¿Cuál es la necesidad de incluir una función en notación asintótica dentro de otra?
-
-- Se eliminan **detalles innecesarios** y se **depura la ecuación**.
-- Muchos algoritmos consisten en **dos o más subprocesos separados**.
-- El número de pasos realizados por un computador para solucionar un problema es la **suma** del número de pasos realizados por todos sus subprocesos.
-
-
-### Clasificación de la Complejidad
-
-Algunas de las complejidades temporales más comunes son:
-
-*  Tiempo constante, no depende del tamaño de la entrada. $$O(1)$$
-*  Crecimiento logarítmico, como en la búsqueda binaria. $$O(log n)$$  
-*  Tiempo lineal, típico en algoritmos de recorrido. $$O(n)$$  
-*  Algoritmos eficientes de ordenamiento, como MergeSort y QuickSort. $O(n log n)$  
-*  Algoritmos cuadráticos, como la ordenación por burbuja. $O(n^2)$  
-*  Tiempo exponencial, común en soluciones de fuerza bruta. $O(2^n)$
-*  Factorial, extremadamente ineficiente para valores grandes. $O(n!)$  
-
-
-# Complejidad Espacial
-
-### ¿Para qué se requiere memoria dentro de un algoritmo?
-
-Para guardar:
-
-- Instrucciones del programa  
-- Valores constantes  
-- Valores variables  
-- ...  
-
-### ¿Cómo se define la complejidad espacial?
-
-La cantidad total de **memoria computacional** necesaria para completar la ejecución de un algoritmo.
+- Existe una amplia variedad de modelos de computación que difieren en el conjunto de operaciones permitidas y su costo de computación.
+- Máquinas de acceso aleatorio (RAM).
+- Circuitos combinacionales.
+- Autómatas finitos.
+- Máquinas de Turing.
+- ...
 
 ---
 
-### ¿Cuáles son las razones por las que un programa utiliza memoria computacional?
+## Modelo RAM
 
-- **Espacio de instrucciones** (versión compilada del programa).  
-- **Espacio de la pila** (información de funciones en ejecución).  
-- **Espacio de datos** (variables y constantes).  
+![Modelo RAM](Images/ram.jpg)
 
-**Nota:** Al analizar la **complejidad espacial**, solo se considera el **espacio de datos**.
+- Es un modelo simple de cómo los computadores se desempeñan.
+- Bajo el modelo RAM se mide el tiempo de ejecución de un algoritmo al contar la cantidad de pasos que se toma para una instancia de problema dada.
+- Está formado por una cinta de entrada, una de salida, un conjunto de registros y un programa (secuencia de instrucciones).
 
----
+### ¿Qué se debe tener en cuenta en el modelo RAM?
 
-### ¿Qué cantidad de memoria se requiere para guardar distintos tipos de datos?
-
-| Tipo de dato | Tamaño |
-|-------------|--------|
-| Entero (`int`) | 32 bits (4 bytes) |
-| Punto flotante (`float`) | 32 bits (4 bytes) |
-| Carácter (`char`) | 16 bits (2 bytes) |
-| Doble precisión (`double`) | 64 bits (8 bytes) |
-| ... | ... |
+- Cada operación simple solo toma un paso.
+- Los ciclos y las subrutinas no se consideran operaciones simples.
+- Estas operaciones se consideran una composición de operaciones de un solo paso.
+- Cada acceso a memoria toma un solo paso.
+- El modelo RAM no tiene en cuenta si un elemento está en caché o en disco, lo cual simplifica el análisis.
 
 ---
 
-### ¿Cómo se realizaría el análisis de complejidad para este fragmento de código?
+## Circuitos Combinacionales
 
-```c
-int sum(int A[i], int n){
-	int sum = 0;
-	for (int i = 0; i < n; i++) {
-	    sum += A[i];
-	}    
-	return sum	    
-}
-```
+![Compuertas lógicas](Images/compuertas.png)
 
-### Tabla de memoria utilizada:
+- **Entradas:** codificación binaria.
+- **Salidas:** codificación binaria.
+- **Operaciones elementales:** compuertas lógicas.
 
-| Tipo       | Variable | Tamaño de 1 valor atómico | Cantidad de valores atómicos |
-|-----------|---------|--------------------------|-----------------------------|
-| Entrada  | `A`  | 32 bits | `n` |
-|            | `n`  | 32 bits | `1` |
-| Auxiliar | `i`  | 32 bits | `1` |
-| Salida  | `sum` | 32 bits | `1` |
+---
+
+## Autómatas Finitos
+
+![Autómata](Images/automata.png)
+
+- Procesan cadenas de entrada, las cuales son aceptadas o rechazadas.
+- Leen símbolos escritos sobre una cinta semi infinita, dividida en celdas, sobre la cual se escribe una cadena de entrada.
+- Poseen una cabeza lectora que contiene configuraciones internas llamadas estados.
+
+---
+
+## Máquinas de Turing
+
+![Máquina de Turing](Images/turing.png)
+
+- Es el modelo de autómata con máxima capacidad computacional.
+- **Entradas:** cinta sin fin formada por celdas que almacenan símbolos.
+- **Salidas:** contenido final de la cinta.
+- **Operaciones elementales:**
+  - Transición de estado.
+  - Lectura de un símbolo de la cinta.
+  - Escritura de un símbolo en la cinta.
+  - Movimiento sobre la cinta (izquierda o derecha).
 
 
-- Complejidad Espacial Total $= \text{Entrada} + \text{Auxiliar} + \text{Salida} = n + 3 = \Theta(n)$
-
-- Complejidad Espacial Auxiliar $= 1 = \Theta(1)$
-
-- Complejidad Espacial Auxiliar + Salida $= 1 + 1 = \Theta(1)$
 

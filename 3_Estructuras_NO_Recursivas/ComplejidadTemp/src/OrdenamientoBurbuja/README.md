@@ -18,15 +18,17 @@ public class OrdenamientoBurbuja {
         }
     }
 }
+```
 
 # Análisis Complejidad Temporal
 
 ### Caso Mejor Caso  - O(n)
+
 * Si el arreglo ya está ordenado, el algoritmo solo hace una pasada completa (n iteraciones) y termina sin hacer intercambios.
 
 ### Peor Caso  - O(n²)
 
-Ocurre cuando el arreglo está ordenado de forma inversa. En este caso, el algoritmo debe realizar $$(n-1) + (n-2) + ... + 1 = n(n-1)/2 ≈ O(n²)$$ comparaciones e intercambios.
+* Ocurre cuando el arreglo está ordenado de forma inversa. En este caso, el algoritmo debe realizar $$(n-1) + (n-2) + ... + 1 = n(n-1)/2 ≈ O(n²)$$ comparaciones e intercambios.
 
 ### Caso Promedio  - O(n²)
 

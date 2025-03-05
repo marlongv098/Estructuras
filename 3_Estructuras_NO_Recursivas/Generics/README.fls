@@ -1,0 +1,6 @@
+PWD /Users/marlong/Desktop/Repositorios/Estructuras/3_Estructuras_NO_Recursivas/Generics
+INPUT /usr/local/texlive/2023basic/texmf.cnf
+INPUT /usr/local/texlive/2023basic/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2023basic/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT README.md
+OUTPUT README.log
