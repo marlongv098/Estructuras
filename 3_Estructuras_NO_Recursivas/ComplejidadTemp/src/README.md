@@ -278,13 +278,13 @@ while i <= len(mat1): 	| $c_2$
 
 | Línea | Código                                  | Costo |
 |-------|----------------------------------------|-------|
-| 1     | ```java i = 1                                 | c1    |
+| 1     | i = 1                                 | c1    |
 | 2     | while i <= len(mat1):                 | c2    |
-| 3     | 	j = 1                                 | c3    |
-| 4     | 	while j <= len(mat2):                 | c4    |
-| 5     | 		mat3[i][j] = mat1[i][j] + mat2[i][j]  | c5    |
-| 6     | 		j = j + 1                             | c6    |
-| 7     | 	i = i + 1```                             | c7    |
+| 3     |->->	j = 1                                 | c3    |
+| 4     |->-> while j <= len(mat2):                 | c4    |
+| 5     |->->-> 	mat3[i][j] = mat1[i][j] + mat2[i][j]  | c5    |
+| 6     |->->-> 	j = j + 1                             | c6    |
+| 7     |->-> i = i + 1                             | c7    |
 
 
 ### ¿Qué significa "Costo" en cada línea de código?
