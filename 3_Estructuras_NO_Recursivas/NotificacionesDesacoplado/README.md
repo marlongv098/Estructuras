@@ -1,12 +1,21 @@
 📦 src
+
  ┣ 📂 notificacion   --> (Contiene la interfaz y las implementaciones concretas)
+ 
  ┃ ┣ 📜 Notificador.java
+ 
  ┃ ┣ 📜 NotificadorEmail.java
+ 
  ┃ ┣ 📜 NotificadorSMS.java
+ 
  ┃ ┗ 📜 NotificadorWhatsApp.java (Opcional)
+ 
  ┣ 📂 servicio       --> (Contiene la clase de alto nivel que usa Notificador)
+ 
  ┃ ┗ 📜 ServicioNotificacion.java
+ 
  ┣ 📂 main           --> (Contiene la clase principal que ejecuta el programa)
+ 
  ┃ ┗ 📜 Main.java
 
 
