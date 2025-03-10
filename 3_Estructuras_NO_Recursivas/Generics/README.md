@@ -267,7 +267,7 @@ public class Main {
 
 ### ¿Cual sería una interfaz genérica estándar en java?
 
-[Ver el documento PDF](Images/list.pdf)
+[Lista](Images/list.pdf)
 
 
 ### ¿Se pueden restringir los tipos genéricos?

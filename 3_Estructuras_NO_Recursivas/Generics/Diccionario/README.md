@@ -148,7 +148,7 @@ Cada una de estas operaciones tiene un tiempo de ejecución de $O(1)$.
 
 Dado el universo $U={0,1,...,9}$ y el conjunto de claves $K={2,3,5,8}$:
 
-![Directo](Images/hash.pdf)
+[Directo](Images/hash.pdf)
 
 ### ¿Cuál es la desventaja del direccionamiento directo?
 
@@ -176,7 +176,7 @@ $$
 * La función hash reduce el rango de índices del array y, por lo tanto, el tamaño del array.
 * En lugar de tener un tamaño de $|U|$, la tabla puede tener un tamaño de $m$.
 
-![HashMap](Images/hash1.pdf)
+[HashMap](Images/hash1.pdf)
 
 
 
