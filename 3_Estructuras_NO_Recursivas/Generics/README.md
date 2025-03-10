@@ -286,15 +286,15 @@ public class CajaNumeros<T extends Number> {
 		this .dato = dato;
 	}
 }
-``
+```
 
 ### Tipos Raw
 
 - Es el nombre de una clase o interfaz genérica cuando no se le pasa ningún argumento de tipo.  
 
-	```java
+```java
 	 Caja cajaCruda = new Caja();
-	 ``  
+```  
 
 - En este caso, $Caja$ es un tipo raw de $Caja<T>$.  
 - Un tipo de clase o interfaz no genérica no es un tipo raw.  
@@ -313,8 +313,8 @@ Se presenta una advertencia pues el tipo raw se salta los chequeos de tipo
 genérico y así pasa su manejo de código inseguro a tiempo de ejecución.
 
 ```java
-Caja<String> stringCaja = new Caja<>();
-Caja cajaCruda = stringCa
+	Caja<String> stringCaja = new Caja<>();
+	Caja cajaCruda = stringCa
 ```
 
 ### ¿Qué son los métodos genéricos?
