@@ -36,7 +36,8 @@
 ---
 
 ### ¿Cómo se especifica un TAD de manera formal?
-![Especificación formal del TAD](tad.png)
+
+[Especificación formal del TAD](tad.pdf)
 
 ---
 
@@ -86,6 +87,7 @@
 ---
 
 ### Primera aproximación al TAD Empleado
+
 [Primera aproximación](Images/tad2.pdf)
 
 #### Operaciones formales:
@@ -118,7 +120,8 @@
 ---
 
 ### Segunda aproximación al TAD Empleado
-[Segunda aproximación](tad12.pdf)
+
+[Segunda aproximación](Images/tad12.pdf)
 
 #### Operaciones formales:
 - **CrearEmpleado**  
