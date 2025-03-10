@@ -63,7 +63,8 @@
 ---
 
 ### ¿Cómo se describen formalmente las operaciones?
-![Descripción formal de las operaciones](Images/tad1.png)
+
+[Descripción formal de las operaciones](Images/tad1.pdf)
 
 ---
 

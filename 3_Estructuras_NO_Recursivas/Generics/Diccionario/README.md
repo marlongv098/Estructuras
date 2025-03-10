@@ -266,7 +266,3 @@ $$
 * La búsqueda toma tiempo constante en promedio.
 * Todas las operaciones del diccionario pueden realizarse en $O(1)$ en promedio.
 
-
-
-
-
