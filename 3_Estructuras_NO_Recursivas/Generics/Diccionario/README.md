@@ -179,9 +179,92 @@ $$
 [HashMap](Images/hash1.pdf)
 
 
+### ¿Cuál es el problema con esta solución?
+
+- **Dos claves pueden generar el mismo valor hash**, es decir, pueden ser asignadas al mismo espacio en la tabla.
+- A esta situación se le llama **colisión**.
+
+### ¿Cómo resolver el problema de las colisiones?
+
+- La solución ideal sería evitarlas por completo:
+	- Elegir una función de hash $h$ adecuada.
+	- Hacer que $h$ parezca aleatoria para minimizar las colisiones.
+	- Sin embargo, dado que $|U| > m$, al menos dos claves deben compartir el mismo valor hash, por lo que **es imposible evitarlas por completo**.
+
+---
+
+### ¿Cuál es otra manera de resolver este problema?
+
+- Mediante técnicas de **resolución de colisiones**, como **encadenamiento**.
+
+#### ¿Qué es el encadenamiento?
+
+- Es un mecanismo donde todos los elementos que generan el mismo hash se agrupan en una **lista enlazada**.
+- El **espacio $j$ de la tabla contiene un puntero** a la cabeza de la lista de elementos que tienen el mismo hash.
+- Si no hay elementos en ese espacio, **contiene NIL**.
+
+[Encadenamiento](Images/hash2.pdf)
+
+---
+
+### Implementación de operaciones en diccionario usando hash y encadenamiento
+
+```java
+// Inserción en hash con encadenamiento
+CHAINED-HASH-INSERT(T, x)
+  insertar x al inicio de la lista T[h(x.key)]
+
+// Búsqueda en hash con encadenamiento
+CHAINED-HASH-SEARCH(T, k)
+  buscar un elemento con clave k en la lista T[h(k)]
+
+// Eliminación en hash con encadenamiento
+CHAINED-HASH-DELETE(T, x)
+  eliminar x de la lista T[h(x.key)]
+```
+
+### ¿Cuáles son los tiempos de ejecución de estas operaciones?
+* Inserción: $O(1)$ en el peor caso.
+* Búsqueda: depende de la longitud de la lista, en el peor caso puede ser $O(n)$.
+* Eliminación: $O(1)$ si las listas están doblemente enlazadas.
+
+Nota: En la eliminación, la función CHAINED-HASH-DELETE recibe el elemento $x$ en lugar de su clave $k$, para evitar una búsqueda adicional.
+
+### ¿Cuánto tiempo toma buscar un elemento en una tabla hash con encadenamiento?
+
+* Sea una tabla hash $T$ con $m$ espacios y $n$ elementos. Se define el factor de carga $α$ como: $\alpha$ de $T$ como $\frac{n}{m}$
+* $\alpha$ representa el número promedio de elementos en cada lista.
+* En el peor caso, todas las claves colisionan en el mismo espacio, generando una lista de longitud $n$. En este caso, el tiempo de búsqueda sería $Θ(n)$, más el tiempo para calcular la función hash.
+* Conclusión: No usamos tablas hash por su rendimiento en el peor caso, sino por su rendimiento en promedio.
+
+### Rendimiento promedio
+
+* El rendimiento promedio del hashing con encadenamiento depende de qué tan bien la función hash $h$ distribuya uniformemente los elementos.
+* Se asume hashing uniforme simple, donde cada elemento es igualmente probable de ser asignado a cualquier espacio en la tabla.
+
+### Casos de búsqueda:
+
+* Búsqueda sin éxito: no hay un elemento con clave $k$.
+* Búsqueda exitosa: encontramos un elemento con clave $k$.
 
 
+### Teoremas:
 
+* Búsqueda sin éxito: en promedio, toma tiempo $Θ(1+\alpha)$.
+* Búsqueda exitosa: en promedio, toma tiempo $Θ(1+\alpha)$.
+
+**Nota:** ambos resultados bajo el supuesto de estar haciendo hashing uniforme.
+
+### ¿Qué significa este análisis?
+
+* Si el número de espacios en la tabla es proporcional al número de elementos, es decir, $n=O(m)$ 
+
+$$
+ \alpha=O(m)/m=O(1)
+$$
+
+* La búsqueda toma tiempo constante en promedio.
+* Todas las operaciones del diccionario pueden realizarse en $O(1)$ en promedio.
 
 
 
