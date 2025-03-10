@@ -85,27 +85,27 @@
 ---
 
 ### Primera aproximación al TAD Empleado
-![Primera aproximación](Images/tad2.png)
+[Primera aproximación](Images/tad2.pdf)
 
 #### Operaciones formales:
 - **CrearEmpleado**  
-  ![CrearEmpleado](Images/tad3.png)
+  [Empleado](Images/tad3.pdf)
 - **AgregarNombre**  
-  ![AgregarNombre](Images/tad4.png)
+  [AgregarNombre](Images/tad4.pdf)
 - **AgregarCedula**  
-  ![AgregarCedula](Images/tad5.png)
+  [AgregarCedula](Images/tad5.pdf)
 - **CambiarSalario**  
-  ![CambiarSalario](Images/tad6.png)
+  [CambiarSalario](Images/tad6.pdf)
 - **CambiarCargo**  
-  ![CambiarCargo](Images/tad7.png)
+  [CambiarCargo](Images/tad7.pdf)
 - **CambiarFoto**  
-  ![CambiarFoto](Images/tad8.png)
+  [CambiarFoto](Images/tad8.pdf)
 - **InfoSalario**  
-  ![InfoSalario](Images/tad9.png)
+  [InfoSalario](Images/tad9.pdf)
 - **InfoCargo**  
-  ![InfoCargo](Images/tad10.png)
+  [InfoCargo](Images/tad10.pdf)
 - **TieneFoto**  
-  ![TieneFoto](Images/tad11.png)
+  [TieneFoto](Images/tad11.pdf)
 
 ---
 
@@ -117,27 +117,27 @@
 ---
 
 ### Segunda aproximación al TAD Empleado
-![Segunda aproximación](tad12.png)
+[Segunda aproximación](tad12.pdf)
 
 #### Operaciones formales:
 - **CrearEmpleado**  
-  ![CrearEmpleado](Images/tad13.png)
+[CrearEmpleado](Images/tad13.pdf)
 - **AgregarNombre**  
-  ![AgregarNombre](Images/tad14.png)
+[AgregarNombre](Images/tad14.pdf)
 - **AgregarCedula**  
-  ![AgregarCedula](Images/tad15.png)
+[AgregarCedula](Images/tad15.pdf)
 - **CambiarSalario**  
-  ![CambiarSalario](Images/tad16.png)
+[CambiarSalario](Images/tad16.pdf)
 - **CambiarCargo**  
-  ![CambiarCargo](Images/tad17.png)
+[CambiarCargo](Images/tad17.pdf)
 - **CambiarFoto**  
-  ![CambiarFoto](Images/tad18.png)
+[CambiarFoto](Images/tad18.pdf)
 - **InfoSalario**  
-  ![InfoSalario](Images/tad19.png)
+[InfoSalario](Images/tad19.pdf)
 - **InfoCargo**  
-  ![InfoCargo](Images/tad20.png)
+[InfoCargo](Images/tad20.pdf)
 - **TieneFoto**  
-  ![TieneFoto](Images/tad21.png)
+[TieneFoto](Images/tad21.pdf)
 
 ---
 
