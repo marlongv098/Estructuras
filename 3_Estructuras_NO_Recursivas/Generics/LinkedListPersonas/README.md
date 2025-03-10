@@ -23,7 +23,7 @@
 ┃ ┣ 📜 ListaEnlazadaTest.java
 
 
-# Crear carpetas de test en un proyecto de IntelliJ IDEA
+### Crear carpetas de test en un proyecto de IntelliJ IDEA
 
 La carpeta test se creo como un directorio dentro de tu módulo principal. Luego, se marca como "Test Sources Root" para que IntelliJ IDEA reconozca que contiene código de prueba. Esta práctica es coherente con las convenciones de desarrollo de Java y facilita la gestión de las pruebas en tu proyecto.
 
