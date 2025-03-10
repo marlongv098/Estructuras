@@ -37,7 +37,7 @@
 
 ### ¿Cómo se especifica un TAD de manera formal?
 
-[Especificación formal del TAD](tad.pdf)
+[Especificación formal del TAD](Images/tad.pdf)
 
 ---
 
