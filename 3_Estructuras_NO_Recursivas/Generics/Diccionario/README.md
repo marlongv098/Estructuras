@@ -266,3 +266,109 @@ $$
 * La búsqueda toma tiempo constante en promedio.
 * Todas las operaciones del diccionario pueden realizarse en $O(1)$ en promedio.
 
+# Funciones Hash 
+
+### ¿Qué hace que una función hash sea buena?
+
+- Que satisfaga (aproximadamente) la suposición de hashing uniforme simple.
+- Es decir, que cada clave tenga la misma probabilidad de dispersarse en cualquiera de los $m$ espacios, independientemente de dónde hayan sido asignadas otras claves.
+- Desafortunadamente, típicamente no tenemos forma de verificar esta condición.
+- Rara vez conocemos la distribución de probabilidad de la que provienen las claves.
+
+---
+
+### Ejemplo: Identificadores similares
+
+- Es bastante común en un programa tener nombres de identificadores similares, como `var1`, `var2`, etc.
+- Una buena función hash debe asignarlos a diferentes espacios.
+- De esta manera, se puede observar la independencia entre cada par de claves.
+
+---
+
+### Ejemplo: Distribución conocida de claves
+
+- Ocasionalmente, conocemos la distribución de las claves.
+- Si sabemos que las claves son números reales aleatorios  $k$, distribuidos de manera uniforme e independiente en el rango $0 \leq k \leq 1$, entonces la función hash:
+
+$$
+h(k) = \lfloor km \rfloor
+$$
+
+  satisface la condición de hashing uniforme simple.
+
+---
+
+### ¿Qué hacer si las claves son cadenas de texto?
+
+- La mayoría de las funciones hash asumen que el universo de claves es el conjunto $\mathbb{N} = \{0,1,...\}$.
+- Si las claves no son números naturales, debemos encontrar una forma de interpretarlas como tales.
+- Para interpretar una cadena de texto, podemos usar la tabla ASCII, que asigna valores entre 0 y 127 a los caracteres.
+- Podemos interpretar el identificador $pt$ como el par de enteros decimales $(112, 116)$, ya que en ASCII:
+	- $p = 112$
+	- $t = 116$
+- Finalmente, lo expresamos como un número en base 128:
+
+$$
+pt = 112 \times 128^1 + 116 \times 128^0 = 14452
+$$
+
+
+# Métodos para crear funciones hash
+
+### Método de división
+
+- $h(k) = k \mod m$
+- En este caso, $m$ no debe ser una potencia de $2$.
+- Si $m = 2^p$, entonces $h(k)$ son simplemente los $p$ bits menos significativos de $k$.
+- Una buena elección para $m$ suele ser un número primo que no esté demasiado cerca de una potencia de $2$.
+
+---
+
+### Ejemplo: Método de división con $m = 2^3 = 8$
+
+Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
+
+- \( k = 0 \quad \longrightarrow \quad 0 \mod 8 = 0 \quad \longrightarrow \quad \underline{000} \)
+- \( k = 8 \quad \longrightarrow \quad 8 \mod 8 = 0 \quad \longrightarrow \quad 1\underline{000} \)
+- \( k = 16 \quad \longrightarrow \quad 16 \mod 8 = 0 \quad \longrightarrow \quad 10\underline{000} \)
+- \( k = 24 \quad \longrightarrow \quad 24 \mod 8 = 0 \quad \longrightarrow \quad 11\underline{000} \)
+- \( k = 4 \quad \longrightarrow \quad 4 \mod 8 = 4 \quad \longrightarrow \quad \underline{100} \)
+- \( k = 12 \quad \longrightarrow \quad 12 \mod 8 = 4 \quad \longrightarrow \quad 1\underline{100} \)
+- \( k = 20 \quad \longrightarrow \quad 20 \mod 8 = 4 \quad \longrightarrow \quad 10\underline{100} \)
+- \( k = 28 \quad \longrightarrow \quad 28 \mod 8 = 4 \quad \longrightarrow \quad 11\underline{100} \)
+
+---
+
+### Método de multiplicación
+
+- $h(k) = \lfloor m \times (k \cdot A \mod 1) \rfloor$
+- Donde $k \cdot A \mod 1$ es la parte fraccionaria de $k \cdot A$, es decir, $(k \cdot A - \lfloor k \cdot A \rfloor)$.
+- Se debe cumplir que  $0 < A < 1$.
+
+---
+
+### Consideraciones sobre el método de multiplicación
+
+- El valor de $m$ no es crítico.
+- No es necesario evitar ciertos valores de $m$ como en el método de división.
+- Comúnmente, $m$ se elige como una potencia de $2$ ( $m = 2^p$ para algún entero $p$).
+- Esto simplifica los cálculos.
+
+---
+
+### Elección óptima del valor de $A$
+
+- Aunque este método funciona con cualquier valor de la constante $A$, algunos valores ofrecen mejores resultados.
+- La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar $A \approx (\sqrt{5} - 1)/2 = 0.6180339887...$.
+
+---
+
+### Hashing universal
+
+- En el hashing universal, al inicio de la ejecución se selecciona aleatoriamente una función hash de una clase cuidadosamente diseñada.
+- Sea $\mathcal{H} = \{h_1, h_2, ..., h_l\}$ una colección finita de funciones hash que asignan un universo $U$ de claves al rango $\{0,1,...,m-1\}$.
+- Dicha colección se considera **universal** si, para cada par de claves distintas $x, y \in U$, la cantidad de funciones hash $h \in \mathcal{H}$ que cumplen $h(x) = h(y) \) es como máximo $|\mathcal{H}| / m$.
+- En otras palabras, al elegir una función hash al azar de $\mathcal{H}$, la probabilidad de colisión entre dos claves distintas  $x, y$ no es mayor que $1/m$, lo que equivale a una asignación aleatoria e independiente en el rango $\{0,1,...,m-1\}$.
+
+
+
