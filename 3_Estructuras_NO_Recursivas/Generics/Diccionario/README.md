@@ -358,7 +358,11 @@ Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
 ### Elección óptima del valor de $A$
 
 - Aunque este método funciona con cualquier valor de la constante $A$, algunos valores ofrecen mejores resultados.
-- La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar $A=\frac{(\sqrt{5} - 1)}{2}=0.6180339887...$.
+- La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar 
+
+$$
+A=\frac{(\sqrt{5} - 1)}{2}=0.6180339887...
+$$
 
 ---
 
