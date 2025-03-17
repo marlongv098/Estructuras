@@ -328,14 +328,13 @@ $$
 
 Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
 
-- \( k = 0 \quad \longrightarrow \quad 0 \mod 8 = 0 \quad \longrightarrow \quad \underline{000} \)
-- \( k = 8 \quad \longrightarrow \quad 8 \mod 8 = 0 \quad \longrightarrow \quad 1\underline{000} \)
-- \( k = 16 \quad \longrightarrow \quad 16 \mod 8 = 0 \quad \longrightarrow \quad 10\underline{000} \)
-- \( k = 24 \quad \longrightarrow \quad 24 \mod 8 = 0 \quad \longrightarrow \quad 11\underline{000} \)
-- \( k = 4 \quad \longrightarrow \quad 4 \mod 8 = 4 \quad \longrightarrow \quad \underline{100} \)
-- \( k = 12 \quad \longrightarrow \quad 12 \mod 8 = 4 \quad \longrightarrow \quad 1\underline{100} \)
-- \( k = 20 \quad \longrightarrow \quad 20 \mod 8 = 4 \quad \longrightarrow \quad 10\underline{100} \)
-- \( k = 28 \quad \longrightarrow \quad 28 \mod 8 = 4 \quad \longrightarrow \quad 11\underline{100} \)
+- $k = 8 \quad \longrightarrow \quad 8 \mod 8 = 0 \quad \longrightarrow \quad 1\underline{000}$
+- $k = 16 \quad \longrightarrow \quad 16 \mod 8 = 0 \quad \longrightarrow \quad 10\underline{000}$
+- $k = 24 \quad \longrightarrow \quad 24 \mod 8 = 0 \quad \longrightarrow \quad 11\underline{000}$
+- $k = 4 \quad \longrightarrow \quad 4 \mod 8 = 4 \quad \longrightarrow \quad \underline{100}$
+- $k = 12 \quad \longrightarrow \quad 12 \mod 8 = 4 \quad \longrightarrow \quad 1\underline{100}$
+- $k = 20 \quad \longrightarrow \quad 20 \mod 8 = 4 \quad \longrightarrow \quad 10\underline{100}$
+- $k = 28 \quad \longrightarrow \quad 28 \mod 8 = 4 \quad \longrightarrow \quad 11\underline{100}$
 
 ---
 
@@ -359,7 +358,7 @@ Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
 ### Elección óptima del valor de $A$
 
 - Aunque este método funciona con cualquier valor de la constante $A$, algunos valores ofrecen mejores resultados.
-- La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar $A \approx (\sqrt{5} - 1)/2 = 0.6180339887...$.
+- La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar $A\approx(\sqrt{5} - 1)/2=0.6180339887...$.
 
 ---
 
@@ -367,7 +366,7 @@ Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
 
 - En el hashing universal, al inicio de la ejecución se selecciona aleatoriamente una función hash de una clase cuidadosamente diseñada.
 - Sea $\mathcal{H} = \{h_1, h_2, ..., h_l\}$ una colección finita de funciones hash que asignan un universo $U$ de claves al rango $\{0,1,...,m-1\}$.
-- Dicha colección se considera **universal** si, para cada par de claves distintas $x, y \in U$, la cantidad de funciones hash $h \in \mathcal{H}$ que cumplen $h(x) = h(y) \) es como máximo $|\mathcal{H}| / m$.
+- Dicha colección se considera **universal** si, para cada par de claves distintas $x, y \in U$, la cantidad de funciones hash $h \in \mathcal{H}$ que cumplen $h(x) = h(y)$ es como máximo $|\mathcal{H}| / m$.
 - En otras palabras, al elegir una función hash al azar de $\mathcal{H}$, la probabilidad de colisión entre dos claves distintas  $x, y$ no es mayor que $1/m$, lo que equivale a una asignación aleatoria e independiente en el rango $\{0,1,...,m-1\}$.
 
 
