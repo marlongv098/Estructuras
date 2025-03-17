@@ -361,7 +361,7 @@ Aquí, $h(k)$ corresponde a los 3 bits menos significativos de $k$:
 - La elección óptima depende de las características de los datos a dispersar. **Knuth** sugiere usar 
 
 $$
-A=\frac{(\sqrt{5} - 1)}{2}=0.6180339887...
+A \approx \frac{(\sqrt{5} - 1)}{2}=0.6180339887...
 $$
 
 ---
