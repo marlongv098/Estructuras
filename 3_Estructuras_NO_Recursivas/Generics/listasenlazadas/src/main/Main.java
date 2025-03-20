@@ -10,6 +10,8 @@ public class Main {
         listaSimple.insertar(20);
         listaSimple.insertar(30);
         listaSimple.imprimir();
+        listaSimple.invertir();
+        listaSimple.imprimir();
 
         System.out.println("\nLista Doblemente Enlazada:");
         ListaDoble<String> listaDoble = new ListaDoble<>();
@@ -17,12 +19,17 @@ public class Main {
         listaDoble.insertar("B");
         listaDoble.insertar("C");
         listaDoble.imprimir();
+        listaDoble.insertarDespuesDe("B","E");
+        listaDoble.imprimir();
 
         System.out.println("\nLista Circular:");
         ListaCircular<Double> listaCircular = new ListaCircular<>();
         listaCircular.insertar(1.1);
         listaCircular.insertar(2.2);
         listaCircular.insertar(3.3);
-        listaCircular.imprimir(6); // Imprime los primeros 6 elementos para mostrar el ciclo
+        listaCircular.imprimir();
+        listaCircular.eliminar(3.3);
+        listaCircular.imprimir();
+
     }
 }
