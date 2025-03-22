@@ -1,6 +1,6 @@
 package pila;
 
-public interface PilaInterfaz<T> {
+public interface Interfaz<T> {
     void apilar(T elemento);
     T desapilar();
     T tope();

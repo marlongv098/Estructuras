@@ -1,13 +1,18 @@
 package editor;
 
-import pila.Pila;
-import pila.PilaInterfaz;
+//import pila.Pila;
+//import pila.Interfaz;
+
+import pilalistaenlazada.Pila;
+import pilalistaenlazada.Interfaz;
+
+
 
 public class EditorTexto implements EditorTextoInterfaz {
 
     private StringBuilder texto;
-    private final PilaInterfaz<String> pilaDeshacer;
-    private final PilaInterfaz<String> pilaRehacer;
+    private final Interfaz<String> pilaDeshacer;
+    private final Interfaz<String> pilaRehacer;
 
     public EditorTexto() {
         this.texto = new StringBuilder();

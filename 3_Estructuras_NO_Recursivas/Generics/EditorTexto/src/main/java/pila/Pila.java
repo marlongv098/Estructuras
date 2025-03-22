@@ -3,7 +3,7 @@ package pila;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pila<T> implements PilaInterfaz<T> {
+public class Pila<T> implements Interfaz<T> {
 
     private final List<T> elementos;
 
