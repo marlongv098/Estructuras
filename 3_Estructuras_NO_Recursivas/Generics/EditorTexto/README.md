@@ -176,26 +176,26 @@ Sea $s$ una pila y $e$ un elemento.
 
 **interfaz?**
 
-![Interfaz de la pila](interfaz.png)
+![Interfaz de la pila](interfaz.pdf)
 
 
 ### ¿Una implementación basada en arreglos?
 
 **Representación gráfica:**
 
-![Pila basada en arreglos](pila.png)
+![Pila basada en arreglos](pila.pdf)
 
 
 ### Implementación dinámica
 
 **Representación gráfica:**
 
-![Pila dinámica](pilad.png)
+![Pila dinámica](pilad.pdf)
 
 ### ¿Una implementación basada en arreglos?
 
 **Representación gráfica:**
-![Pila basada en arreglos](pila.png)
+![Pila basada en arreglos](pila.pdf)
 
 
 
