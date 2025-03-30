@@ -190,12 +190,12 @@ Sea $s$ una pila y $e$ un elemento.
 
 **Representación gráfica:**
 
-![Pila dinámica](pilad.pdf)
+![Pila dinámica](Images/pilad.pdf)
 
 ### ¿Una implementación basada en arreglos?
 
 **Representación gráfica:**
-![Pila basada en arreglos](pila.pdf)
+![Pila basada en arreglos](Images/pila.pdf)
 
 
 
