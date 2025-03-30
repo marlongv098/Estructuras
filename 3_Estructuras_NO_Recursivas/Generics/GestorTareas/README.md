@@ -209,7 +209,7 @@
 
 **Aplique BUILD-HEAP(A) para:**  
 
-$$A = \{5, 7, 10, 1, 4, 6, 8, 2, 9, 12\}$$ con $$heap\_size(A) = 10$$  
+$$A = {5, 7, 10, 1, 4, 6, 8, 2, 9, 12}$$ con $$heapsize(A) = 10$$  
 
 ---
 
