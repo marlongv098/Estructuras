@@ -40,7 +40,7 @@
 
 **Ejemplo de un montículo:**  
 
-[Heap](Images/heap.pdf)
+[Heap](Images/heap.png)
 
 ---
 
