@@ -65,7 +65,7 @@
 
 ### ¿En qué ejemplos del mundo real se pueden usar diccionarios?
 
-[Diccionario](https://github.com/marlongv098/Estructuras/blob/master/3_Estructuras_NO_Recursivas/Generics/Diccionario/src/main/java/diccionario/Diccionario.java)
+[Diccionario]()
 
 ### ¿Cuál es la diferencia entre un array y un diccionario?
 
@@ -104,7 +104,7 @@
 
 - **Utilizando tablas hash**.
 
-[Tabla Hash](https://github.com/marlongv098/Estructuras/blob/master/3_Estructuras_NO_Recursivas/Generics/Diccionario/src/main/java/tablahash/TablaHash.java)
+[Tabla Hash]()
 
 ### ¿Por qué?
 
