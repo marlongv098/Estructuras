@@ -40,7 +40,7 @@
 
 **Ejemplo de un montículo:**  
 
-[Heap](Images/heap.png)
+[Heap](Images/heap.pdf)
 
 ---
 
@@ -88,19 +88,19 @@
 **Analicemos las propiedades de orden y forma de estos montículos:**  
 
 #### Ejemplo 1  
-[Heap 1](Images/heap1.png)  
+[Heap 1](Images/heap1.pdf)  
 
 #### Ejemplo 2  
-[Heap 2](Images/heap2.png)  
+[Heap 2](Images/heap2.pdf)  
 
 #### Ejemplo 3  
-[Heap 3](Images/heap3.png)  
+[Heap 3](Images/heap3.pdf)  
 
 #### Ejemplo 4  
-[Heap 4](Images/heap4.png)  
+[Heap 4](Images/heap4.pdf)  
 
 #### Ejemplo 5  
-[Heap 5](Images/heap5.png)  
+[Heap 5](Images/heap5.pdf)  
 
 ---
 
@@ -109,10 +109,10 @@
 **Indique si se cumplen las propiedades de orden y de forma para los siguientes montículos:**  
 
 #### Ejercicio 1  
-[Heap 6](Images/heap6.png)  
+[Heap 6](Images/heap6.pdf)  
 
 #### Ejercicio 2  
-[Heap 7](Images/heap7.png)  
+[Heap 7](Images/heap7.pdf)  
 
 ---
 
@@ -121,7 +121,7 @@
 
 - Los datos se almacenan en el arreglo recorriendo, por niveles, de izquierda a derecha.  
 
-![Heap 8](heap8.png)  
+[Heap 8](heap8.pdf)  
 
 ---
 
@@ -134,7 +134,7 @@
 
 ### Ejercicio  
 
-![Heap 9](Images/heap9.png)  
+[Heap 9](Images/heap9.pdf)  
 
 ---
 
@@ -171,9 +171,9 @@
 
 #### Ejemplo de MAX-HEAPIFY  
 
-[Heap 11](Images/heap11.png)  
-[Heap 12](Images/heap12.png)  
-[Heap 13](Images/heap13.png)  
+[Heap 11](Images/heap11.pdf)  
+[Heap 12](Images/heap12.pdf)  
+[Heap 13](Images/heap13.pdf)  
 
 ### Ejercicios  
 
@@ -181,10 +181,10 @@
 
 #### Ejercicio 1  
 
-[Heap 14](Images/heap14.png)  
+[Heap 14](Images/heap14.pdf)  
 
 #### Ejercicio 2  
-[Heap 15](Images/heap15.png)  
+[Heap 15](Images/heap15.pdf)  
 
 ---
 
@@ -194,16 +194,16 @@
 
 ### Algoritmo BUILD-MAX-HEAP  
 
-[BUILD-MAX-HEAP](Images/buildmax.png)  
+[BUILD-MAX-HEAP](Images/buildmax.pdf)  
 
 ### Ejemplo de BUILD-MAX-HEAP
  
-[Paso 1](Images/b1.png)  
-[Paso 2](Images/b2.png)  
-[Paso 3](Images/b3.png)  
-[Paso 4](Images/b4.png)  
-[Paso 5](Images/b5.png)  
-[Paso 6](Images/b6.png)  
+[Paso 1](Images/b1.pdf)  
+[Paso 2](Images/b2.pdf)  
+[Paso 3](Images/b3.pdf)  
+[Paso 4](Images/b4.pdf)  
+[Paso 5](Images/b5.pdf)  
+[Paso 6](Images/b6.pdf)  
 
 ### Ejercicio  
 
