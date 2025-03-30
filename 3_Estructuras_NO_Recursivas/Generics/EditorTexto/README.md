@@ -38,7 +38,7 @@
 
 ### Representación visual de una pila  
 
-![Pila](Images/stack.png)  
+[Pila](Images/stack.png)  
 
 ### ¿Cuál sería una definición estructural de una pila?  
 
@@ -58,7 +58,7 @@
 
 ### Otra representación visual  
 
-![Pila Recursiva](Images/stack1.pdf)  
+[Pila Recursiva](Images/stack1.pdf)  
 
 ### Ejemplo  
 
@@ -176,26 +176,26 @@ Sea $s$ una pila y $e$ un elemento.
 
 **interfaz?**
 
-![Interfaz de la pila](Images/interfaz.pdf)
+[Interfaz de la pila](Images/interfaz.pdf)
 
 
 ### ¿Una implementación basada en arreglos?
 
 **Representación gráfica:**
 
-![Pila basada en arreglos](Images/pila.pdf)
+[Pila basada en arreglos](Images/pila.pdf)
 
 
 ### Implementación dinámica
 
 **Representación gráfica:**
 
-![Pila dinámica](Images/pilad.pdf)
+[Pila dinámica](Images/pilad.pdf)
 
 ### ¿Una implementación basada en arreglos?
 
 **Representación gráfica:**
-![Pila basada en arreglos](Images/pila.pdf)
+[Pila basada en arreglos](Images/pila.pdf)
 
 
 
