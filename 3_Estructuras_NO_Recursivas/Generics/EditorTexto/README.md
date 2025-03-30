@@ -179,7 +179,7 @@ Sea $s$ una pila y $e$ un elemento.
 [Interfaz de la pila](Images/interfaz.pdf)
 
 
-### ¿Una implementación basada en arreglos?
+### implementación basada en arreglos
 
 **Representación gráfica:**
 
@@ -192,10 +192,6 @@ Sea $s$ una pila y $e$ un elemento.
 
 [Pila dinámica](Images/pilad.pdf)
 
-### ¿Una implementación basada en arreglos?
-
-**Representación gráfica:**
-[Pila basada en arreglos](Images/pila.pdf)
 
 
 
