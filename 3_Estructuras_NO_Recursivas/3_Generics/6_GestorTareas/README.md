@@ -40,7 +40,7 @@
 
 **Ejemplo de un montículo:**  
 
-![Heap](Images/heap.png)
+[Heap](Images/heap.pdf)
 
 ---
 
@@ -162,7 +162,7 @@
 
 ### Algoritmo MAX-HEAPIFY  
 
-[MAX-HEAPIFY](Images/heap10.png)  
+[MAX-HEAPIFY](Images/heap10.pdf)  
 
 ### ¿Cómo funciona el MAX-HEAPIFY?  
 - Compara $$A[i], A[LEFT(i)], A[RIGHT(i)]$$.  
