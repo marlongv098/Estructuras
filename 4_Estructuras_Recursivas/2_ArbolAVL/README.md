@@ -50,9 +50,9 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ### Imágenes de AVL
 
-![AVL Ejemplo 1](Images/avl1)
+![AVL Ejemplo 1](Images/avl1.pdf)
 
-![AVL Ejemplo 2](Images/avl2)
+![AVL Ejemplo 2](Images/avl2.pdf)
 
 ---
 
@@ -82,7 +82,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ### Imagen de rotaciones
 
-![Rotaciones AVL](Images/avl3)
+![Rotaciones AVL](Images/avl3.pdf)
 
 ---
 
@@ -97,7 +97,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ### ¿Qué hace `LEFT-ROTATE(x)`?
 
-![Rotación izquierda](Images/avl3)
+![Rotación izquierda](Images/avl3.pdf)
 
 - Toma un nodo $x$, que debe tener un hijo derecho $y$  
 - Rota hacia la izquierda a $x$, dejando a $y$ como raíz del subárbol  
@@ -108,7 +108,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ### ¿Qué hace `RIGHT-ROTATE(y)`?
 
-![Rotación derecha](Images/avl3)
+![Rotación derecha](Images/avl3.pdf)
 
 - Toma un nodo $y$, que debe tener un hijo izquierdo $x$  
 - Rota hacia la derecha a $y$, dejando a $x$ como raíz del subárbol  
@@ -138,7 +138,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ### Análisis de caso: fb(p) = 2
 
-![Subárbol desbalanceado](Images/avl4)
+![Subárbol desbalanceado](Images/avl4.pdf)
 
 - Llamemos $p$ a la raíz de un subárbol.  
 - Se toma el caso $fb(p) = 2$.  
@@ -161,7 +161,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 - Como el subárbol derecho de $p$ es mucho más alto que el izquierdo, debemos realizar algún tipo de rotación que traslade peso desde la derecha hacia la izquierda.  
 - Se ejecuta `LEFT-ROTATE(p)` y se restablece el balance.  
 
-![Caso A](Images/avl5)
+![Caso A](Images/avl5.pdf)
 
 ---
 
@@ -170,7 +170,7 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 - De nuevo, el subárbol derecho de $p$ es más alto que el izquierdo.  
 - Se ejecuta `LEFT-ROTATE(p)` y se restablece el balance.  
 
-![Caso B](Images/avl6)
+![Caso B](Images/avl6.pdf)
 
 ---
 
@@ -179,6 +179,85 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 - Este caso requiere un tratamiento especial.  
 - Se verá con una doble rotación: primero `RIGHT-ROTATE(q)`, luego `LEFT-ROTATE(p)`.
 
-![Caso C](Images/avl7)
+![Caso C](Images/avl7.pdf)
+
+---
+
+### Casos de desbalanceo (continuación)
+
+**¿Qué casos restan?**
+
+- Cuando $fb(p) = -2$  
+- Dividimos nuevamente en casos según el valor de $fb(q)$  
+- Como asumimos que todos los nodos debajo de $p$ están balanceados, debe ser $fb(q) \in \{-1, 0, 1\}$.  
+- Estos casos son completamente simétricos a los tres previos (A, B y C).  
+
+---
+
+### Caso D: $fb(q) = -1$
+
+![Caso D](Iamges/avl8.pdf)
+
+---
+
+### Caso E: $fb(q) = 0$
+
+![Caso E](Images/avl9.pdf)
+
+---
+
+### Caso F: $fb(q) = 1$
+
+![Caso F](Images/avl10.pdf)
+
+---
+
+# Inserción
+
+### **¿Cómo es la inserción de un nodo en un árbol AVL?**
+
+- La inserción en un AVL agrega un nuevo nodo como una hoja del árbol.  
+- Esto implica que sólo pueden cambiar los factores de balanceo de nodos que se encuentren en el camino entre la raíz y el nodo agregado.  
+- Si se logra rebalancear cada factor desbalanceado a lo largo de este camino, se restablecería el balance en todo el árbol.  
+- Esta idea motiva el algoritmo de inserción sobre árboles AVL.  
+
+---
+
+### **¿Cuál es el pseudocódigo para el algoritmo de inserción en un árbol AVL?**
+
+![Pseudocódigo de inserción](Images/avl11.pdf)
+
+---
+
+### **¿Cuál es el pseudocódigo para el rebalanceo en un árbol AVL?**
+
+![Pseudocódigo de rebalanceo](Images/avl12.pdf)
+
+---
+
+# Ejemplos de Inserción
+
+### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 7)`**
+
+![AVL Insertar 7](Images/av1.pdf)
+
+---
+
+### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 5)`**
+
+![AVL Insertar 5](Images/av1.pdf)
+
+---
+
+### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 1)`**
+
+![AVL Insertar 1](Images/av2.pdf)
+
+---
+
+### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 4)`**
+
+![AVL Insertar 4](Images/av2.pdf)
+
 
 
