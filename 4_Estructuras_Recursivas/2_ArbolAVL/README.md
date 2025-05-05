@@ -235,29 +235,22 @@ Mientras cada nodo de un árbol rojinegro tiene un color, en el AVL cada nodo ti
 
 ---
 
-# Ejemplos de Inserción
+---
 
-### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 7)`**
+# Eliminación
 
-![AVL Insertar 7](Images/av1.pdf)
+### **¿Cómo es la eliminación de un nodo en un árbol AVL?**
+
+- Al igual que en la inserción, el borrado de nodos sólo modifica, a lo sumo en una unidad, los factores de balanceo de nodos entre cierto nodo particular (que depende del caso de borrado del ABB) y la raíz.  
+- Si se logra rebalancear cada factor desbalanceado a lo largo de este camino, se restablecería el balance en todo el árbol.  
 
 ---
 
-### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 5)`**
+### **¿Cuál es el pseudocódigo para el algoritmo de eliminación en un árbol AVL?**
 
-![AVL Insertar 5](Images/av1.pdf)
+![Pseudocódigo de eliminación](Images/avl13.pdf)
 
----
 
-### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 1)`**
-
-![AVL Insertar 1](Images/av2.pdf)
-
----
-
-### **Dado $T$, siga el algoritmo `AVL-TREE-INSERT(T, 4)`**
-
-![AVL Insertar 4](Images/av2.pdf)
 
 
 
