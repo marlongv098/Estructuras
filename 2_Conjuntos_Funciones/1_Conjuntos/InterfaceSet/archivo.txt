@@ -1,0 +1,48 @@
+A: HasHSet
+
+Definición:
+
+HashSet es una implementación de la interfaz Set basada en una tabla hash. Es la opción más rápida para operaciones básicas (agregar, eliminar, buscar), pero no garantiza ningún orden de los elementos.
+
+Características:
+
+    1. No permite duplicados (se basa en equals() y hashCode()).
+    2. No garantiza orden de los elementos.
+    3. Es la implementación más rápida (O(1) promedio en inserción, eliminación y búsqueda).
+    4. Permite valores null (pero solo uno).
+
+
+B: LinkedHashSet
+
+Definición:
+
+LinkedHashSet es una variante de HashSet que mantiene el orden de inserción de los elementos, gracias a una lista doblemente enlazada.
+
+Características:
+
+    1. No permite duplicados.
+    2. Mantiene el orden en que los elementos fueron insertados.
+    3. Más lento que HashSet, pero aún eficiente (O(1) promedio en operaciones básicas).
+    4. Útil cuando se necesita mantener el orden de entrada.
+
+
+C: TreeSet
+
+Definición:
+
+TreeSet es una implementación de Set basada en un árbol rojo-negro, lo que garantiza que los elementos siempre estén ordenados de forma natural o según un comparador personalizado.
+
+Características:
+
+    1. No permite duplicados.
+    2. Mantiene los elementos ordenados (orden natural o con un Comparator).
+    3. Más lento que HashSet y LinkedHashSet (O(log N) en inserción, eliminación y búsqueda).
+    4. Útil cuando se necesita un conjunto ordenado.
+    5. No permite null (porque intenta compararlo).
+
+
+¿Cuándo usar cada uno?
+
+    1. HashSet → Cuando necesitas rapidez y no importa el orden.
+    2. LinkedHashSet → Cuando necesitas rapidez y preservar el orden de inserción.
+    3. TreeSet → Cuando necesitas los elementos ordenados automáticamente.
