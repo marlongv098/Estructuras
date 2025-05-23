@@ -89,7 +89,7 @@ Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, 
 
 ### ¿Qué es un multigrafo?
 
-Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  $$\{ \{ u,v \} \mid u,v \in V, u \neq v \}$$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
+Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  $$ \{ \{ u,v \} \mid u,v \in V, u \neq v \} $$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
 
 ![Multigrafo](grafo3)
 
