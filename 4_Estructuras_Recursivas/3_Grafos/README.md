@@ -90,7 +90,10 @@ Muchas redes de uso cotidiano pueden representarse como grafos:
 ### ¿Qué es un multigrafo?
 
 - Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
-$$\{u,v\} \ | \ u,v \in V, u \neq v\}$$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
+$$
+\{ u,v \} \ | \ u,v \in V, u \neq v\}
+$$. 
+Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
 
 ![Multigrafo](grafo3)
 
@@ -99,7 +102,10 @@ $$\{u,v\} \ | \ u,v \in V, u \neq v\}$$. Se dice que las aristas $e_1$ y $e_2$ s
 ### ¿Qué es un pseudografo?
 
 - Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
- $$\{ \{u,v\} \ | \ u,v \in V\}$$.  Una arista $e$ es un **bucle o lazo** si $f(e) = \{u, u\}=\{u\}$ para algún $u \in V$.
+ $$
+ \{ \{u,v \} \ | \ u,v \in V \}
+ $$.  
+ Una arista $e$ es un **bucle o lazo** si $f(e) = \{ u, u \}=\{ u \}$ para algún $u \in V$.
 
 ![Pseudografo](grafo4)
 
@@ -116,7 +122,10 @@ $$\{u,v\} \ | \ u,v \in V, u \neq v\}$$. Se dice que las aristas $e_1$ y $e_2$ s
 ### ¿Qué es un multigrafo dirigido?
 
 - Un multigrafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
-$$\{ \{u,v\} \ | \ u,v \in V\}$$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
+$$
+\{ \{u,v\} \ | \ u,v \in V \}
+$$. 
+Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
 
 ![Multigrafo dirigido](directedmg)
 
