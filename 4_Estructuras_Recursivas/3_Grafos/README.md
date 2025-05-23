@@ -4,11 +4,11 @@
 
 ### ¿Cuándo fueron presentadas las ideas básicas sobre grafos?
 
-> Las ideas básicas fueron presentadas por el matemático suizo **Leonhard Euler** en el siglo XVIII.
+Las ideas básicas fueron presentadas por el matemático suizo **Leonhard Euler** en el siglo XVIII.
 
 ### ¿Para qué utilizó Euler la noción de grafo?
 
-> Para resolver el famoso **problema de los puentes de Könisberg**.
+Para resolver el famoso **problema de los puentes de Könisberg**.
 
 ---
 
@@ -23,7 +23,7 @@
 
 ### ¿Cuál es el problema?
 
-> Es un célebre problema matemático que fue resuelto por **Leonhard Euler** en 1736 y dio origen a la teoría de grafos.
+Es un célebre problema matemático que fue resuelto por **Leonhard Euler** en 1736 y dio origen a la teoría de grafos.
 
 - Dos islas en el río Pregel que cruza Könisberg se unen entre ellas y con la tierra firme mediante siete puentes.
 - ¿Es posible dar un paseo empezando por cualquiera de las cuatro partes de tierra firme, cruzando cada puente una sola vez y volviendo al punto de partida?
@@ -46,7 +46,7 @@
 
 ### ¿Qué es un grafo?
 
-> Es una estructura discreta que consta de **vértices** y **aristas** que conectan entre sí esos vértices.
+Es una estructura discreta que consta de **vértices** y **aristas** que conectan entre sí esos vértices.
 
 ![Ejemplo de grafo](grafo1)
 
@@ -81,7 +81,7 @@ Muchas redes de uso cotidiano pueden representarse como grafos:
 
 ### ¿Qué es un grafo simple?
 
-- Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, y de $E$, un conjunto de pares no ordenados de elementos distintos de $V$. A estos pares se les llama **aristas**.
+Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, y de $E$, un conjunto de pares no ordenados de elementos distintos de $V$. A estos pares se les llama **aristas**.
 
 ![Grafo simple](grafo2)
 
@@ -89,13 +89,7 @@ Muchas redes de uso cotidiano pueden representarse como grafos:
 
 ### ¿Qué es un multigrafo?
 
-- Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
-
-$$
-\{ \{ u,v \} \mid u,v \in V, u \neq v \}
-$$
-
-Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
+Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  $$\{ \{ u,v \} \mid u,v \in V, u \neq v \}$$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
 
 ![Multigrafo](grafo3)
 
@@ -103,7 +97,7 @@ Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) 
 
 ### ¿Qué es un pseudografo?
 
-- Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
+Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
  
 $$
 \{ \{ u,v \} \ | \ u,v \in V \}
@@ -117,7 +111,7 @@ $$.
 
 ### ¿Qué es un grafo dirigido?
 
-- Un grafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices y de un conjunto $E$ de aristas, que son **pares ordenados** de elementos de $V$.
+Un grafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices y de un conjunto $E$ de aristas, que son **pares ordenados** de elementos de $V$.
 
 ![Grafo dirigido](grafo5)
 
