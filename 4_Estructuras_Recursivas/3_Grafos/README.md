@@ -120,10 +120,7 @@ Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) 
 ### ¿Qué es un multigrafo dirigido?
 
 - Un multigrafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
-$$
-\{ \{u,v\} \ | \ u,v \in V \}
-$$. 
-Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
+$\{ \{u,v\} \ | \u,v \in V \}$. Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
 
 ![Multigrafo dirigido](directedmg)
 
