@@ -54,7 +54,7 @@
 
 ### ¿Cómo se diferencian los grafos?
 
-> Se diferencian por el tipo y número de aristas que pueden conectar cada par de vértices.
+- Se diferencian por el tipo y número de aristas que pueden conectar cada par de vértices.
 
 ---
 
@@ -81,7 +81,7 @@ Muchas redes de uso cotidiano pueden representarse como grafos:
 
 ### ¿Qué es un grafo simple?
 
-> Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, y de $E$, un conjunto de pares no ordenados de elementos distintos de $V$. A estos pares se les llama **aristas**.
+- Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, y de $E$, un conjunto de pares no ordenados de elementos distintos de $V$. A estos pares se les llama **aristas**.
 
 ![Grafo simple](grafo2)
 
@@ -102,7 +102,9 @@ Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) 
 ### ¿Qué es un pseudografo?
 
 - Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
- $$\{ \{u,v \} \ | \ u,v \in V \}$$.  
+ $$
+ \{ \{ u,v \} \ | \ u,v \in V \}
+ $$.  
  Una arista $e$ es un **bucle o lazo** si $f(e) = \{ u, u \}=\{ u \}$ para algún $u \in V$.
 
 ![Pseudografo](grafo4)
