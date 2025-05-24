@@ -92,7 +92,7 @@ Un grafo simple $G = (V, E)$ consta de $V$, un conjunto no vacío de vértices, 
 Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
 
 <p align="center">
-	\{ \{ $u$, $v$ \} | $u, v ∈ V, u ≠ v$ \} 
+	{ { $u$, $v$ } | $u, v ∈ V, u ≠ v$ } 
 </p>
 
                                        
