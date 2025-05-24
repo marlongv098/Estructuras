@@ -108,7 +108,7 @@ Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) 
 Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
 
 <p align="center"> 
-	{ { $u$, $v$ } | $u,v \in V$ }.  
+	{ { $u$, $v$ } | $u, v \in V$ }.  
  </p>
  
  Una arista $e$ es un **bucle o lazo** si $f(e) =$ { $u$, $u$ }= { $u$ } para algún $u \in V$.
@@ -130,7 +130,7 @@ Un grafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices y de un co
 - Un multigrafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
 
 <p align="center"> 
-	{ { $u,v$ } | $u,v \in V$ }
+	{ { $u, v$ } | $u, v \in V$ }
  </p>
 
 Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
@@ -224,13 +224,13 @@ Representan la **dependencia de ejecución** de sentencias respecto a otras que 
 
 ### ¿Cuándo son dos vértices adyacentes en un grafo no dirigido?
 
-Se dice que dos vértices $u$ y $v$ de un grafo no dirigido $G$ son adyacentes (vecinos) en $G$ si $\{ u,v \}$ es una arista de $G$.
+Se dice que dos vértices $u$ y $v$ de un grafo no dirigido $G$ son adyacentes (vecinos) en $G$ si { $u, v$ } es una arista de $G$.
 
 ---
 
 ### ¿Qué más se puede decir a partir de la definición anterior?
 
-Si $e =$ { $u,v$ }, se dice que la arista $e$ es incidente con los vértices $u$ y $v$. También se dice que la arista $e$ conecta $u$ y $v$. Se dice que los vértices $u$ y $v$ son extremos de la arista $e$.
+Si $e =$ { $u, v$ }, se dice que la arista $e$ es incidente con los vértices $u$ y $v$. También se dice que la arista $e$ conecta $u$ y $v$. Se dice que los vértices $u$ y $v$ son extremos de la arista $e$.
 
 ---
 
@@ -256,14 +256,14 @@ Se dice que un vértice es **colgante**, o que es una **hoja**, si y sólo si ti
 
 ---
 
-### ¿Qué se puede decir si $(u,v)$ es una arista del grafo dirigido $G$?
+### ¿Qué se puede decir si $(u, v)$ es una arista del grafo dirigido $G$?
 
-Si $(u,v)$ es una arista del grafo dirigido $G$, se dice que:
+Si $(u, v)$ es una arista del grafo dirigido $G$, se dice que:
 
 - $u$ es adyacente a $v$  
 - $v$ es adyacente desde $u$  
 
-Al vértice $u$ se le llama **vértice inicial** de $(u,v)$ y a $v$ se le llama **vértice final** o **terminal** de $(u,v)$. Los vértices inicial y final de un **bucle** coinciden.
+Al vértice $u$ se le llama **vértice inicial** de $(u, v)$ y a $v$ se le llama **vértice final** o **terminal** de $(u, v)$. Los vértices inicial y final de un **bucle** coinciden.
 
 ---
 
@@ -306,4 +306,139 @@ Sea $G = (V,E)$ un grafo dirigido. Entonces:
 $$
 \sum\limits_{v \in V} \delta^-(v) = \sum\limits_{v \in V} \delta^+(v) = |E|
 $$
+
+# Tipos de grafos simples
+
+### ¿Cuáles son los tipos de grafos simples?
+
+- Grafos completos  
+- Ciclos  
+- Ruedas  
+- n-Cubos  
+
+---
+
+### ¿Cuáles son los grafos completos?
+
+Un grafo completo de $n$ vértices, que se denota por:
+
+$$
+K_n
+$$
+
+es el grafo simple que contiene exactamente **una arista entre cada par de vértices distintos**.
+
+![Grafo completo](grafo11)
+
+---
+
+### ¿Cuáles son los ciclos?
+
+El ciclo $C_n$, con $n \geq 3$, consta de los vértices:
+
+$$
+v_1, v_2, \dots, v_n
+$$
+
+y las aristas:
+
+<p align="center"> 
+	{ $v_1, v_2$ }, { $v_2, v_3$ }, $\dots$, { $v_{n-1}, v_n$ }, { $v_n, v_1$ }
+ </p>
+
+![Ciclo](grafo12)
+
+---
+
+### ¿Cuáles son las ruedas?
+
+Obtenemos la rueda $W_n$ cuando añadimos un vértice adicional al ciclo $C_n$, con $n \geq 3$, y conectamos este nuevo vértice con cada uno de los $n$ vértices de $C_n$ mediante una nueva arista.
+
+![Rueda](grafo13)
+
+---
+
+### ¿Cuáles son los n-Cubos?
+
+El **cubo n-dimensional**, o **n-cubo**, denotado por:
+
+$$
+Q_n
+$$
+
+es el grafo cuyos vértices representan las $2^n$ cadenas de bits de longitud $n$.  
+Dos vértices son adyacentes **si y solo si** las cadenas de bits que representan difieren **exactamente en un bit**.
+
+![n-Cubo](grafo14)
+
+
+# Grafos bipartitos
+
+### ¿Qué es un grafo bipartito?
+
+Se dice que un grafo simple $G$ es bipartito si su conjunto de vértices $V$ se puede dividir en dos conjuntos disjuntos $V_1$ y $V_2$ tales que cada arista del grafo conecta un vértice de $V_1$ con un vértice de $V_2$, de manera que no haya ninguna arista que conecte entre sí dos vértices de $V_1$ ni tampoco dos vértices de $V_2$.
+
+---
+
+### Características adicionales
+
+- Un grafo es bipartito si, y solo si, se pueden colorear los vértices del grafo con dos colores de modo que ningún par de vértices adyacentes sean del mismo color.
+- También se considera grafo bipartito si cumple con la condición de que no sea posible empezar en un vértice y regresar a ese mismo vértice después de recorrer un número impar de aristas distintas.
+- El grafo bipartito completo $K_{m, n}$ es el grafo cuyo conjunto de vértices está formado por dos subconjuntos con $m$ y $n$ vértices, respectivamente, y hay una arista entre dos vértices si, y sólo si, un vértice está en el primer subconjunto y el otro en el segundo.
+
+---
+
+# Ejemplos gráficos
+
+![Grafo bipartito completo](grafo20)
+
+![Otro ejemplo de grafo bipartito](grafo15)
+
+# Operaciones entre grafos
+
+### ¿Qué es un subgrafo?
+
+Un **subgrafo** de un grafo $G = (V, E)$ es un grafo $H = (W, F)$ tal que:
+
+$$
+W \subseteq V \quad \text{y} \quad F \subseteq E
+$$
+
+![Subgrafo](grafo16)
+
+---
+
+### ¿Cómo es la unión entre grafos?
+
+La **unión** de dos grafos simples $G_1 = (V_1, E_1)$ y $G_2 = (V_2, E_2)$ es el grafo simple cuyo conjunto de vértices es:
+
+$$
+V_1 \cup V_2
+$$
+
+y cuyo conjunto de aristas es:
+
+$$
+E_1 \cup E_2
+$$
+
+La unión de $G_1$ y $G_2$ se denota por $G_1 \cup G_2$.
+
+---
+
+### ¿Cómo es el grafo complementario?
+
+El **grafo complementario** $\overline{G}$ de un grafo simple $G$ tiene los **mismos vértices** que $G$, y dos vértices son adyacentes en $\overline{G}$ **si, y sólo si**, **no son adyacentes en** $G$.
+
+---
+
+### ¿Cómo es el grafo recíproco?
+
+El **recíproco** de un grafo dirigido $G = (V, E)$, que se denota por $G^c$, es el grafo dirigido $G^c = (V, F)$ tal que:
+
+$$
+(u, v) \in F \quad \text{si, y sólo si,} \quad (v, u) \in E
+$$
+
+
 
