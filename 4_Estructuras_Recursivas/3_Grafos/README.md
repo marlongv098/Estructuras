@@ -93,7 +93,7 @@ Un multigrafo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $
 
 $$\{ \{ u,v \} \mid u,v \in V, u \neq v \} $$. 
 
-\{ \{u, v \} | u, v ∈ V, u ≠ v \}
+\{ \{$u$, $v$ \} | $u, v ∈ V, u ≠ v$ \}
 
 
 Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) = f(e_2)$.
