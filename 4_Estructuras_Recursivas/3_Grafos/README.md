@@ -108,10 +108,10 @@ Se dice que las aristas $e_1$ y $e_2$ son **múltiples o paralelas** si $f(e_1) 
 Un pseudografo $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
 
 <p align="center"> 
-	\{ \{ $u$, $v$ \} | $u,v \in V$ \}.  
+	{ { $u$, $v$ } | $u,v \in V$ }.  
  </p>
  
- Una arista $e$ es un **bucle o lazo** si $f(e) =$ \{ $u$, $u$ \}= \{ $u$ \} para algún $u \in V$.
+ Una arista $e$ es un **bucle o lazo** si $f(e) =$ { $u$, $u$ }= { $u$ } para algún $u \in V$.
 
 ![Pseudografo](grafo4)
 
@@ -130,7 +130,7 @@ Un grafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices y de un co
 - Un multigrafo dirigido $G = (V, E)$ consta de un conjunto $V$ de vértices, un conjunto $E$ de aristas y una función $f$ de $E$ en  
 
 <p align="center"> 
-	\{ \{ $u,v$ \} | $u,v \in V$ \}
+	{ { $u,v$ } | $u,v \in V$ }
  </p>
 
 Se dice que las aristas $e_1$ y $e_2$ son **múltiples** si $f(e_1)=f(e_2)$.
@@ -230,7 +230,7 @@ Se dice que dos vértices $u$ y $v$ de un grafo no dirigido $G$ son adyacentes (
 
 ### ¿Qué más se puede decir a partir de la definición anterior?
 
-Si $e =$ \{ $u,v$ \}, se dice que la arista $e$ es incidente con los vértices $u$ y $v$. También se dice que la arista $e$ conecta $u$ y $v$. Se dice que los vértices $u$ y $v$ son extremos de la arista $e$.
+Si $e =$ { $u,v$ }, se dice que la arista $e$ es incidente con los vértices $u$ y $v$. También se dice que la arista $e$ conecta $u$ y $v$. Se dice que los vértices $u$ y $v$ son extremos de la arista $e$.
 
 ---
 
