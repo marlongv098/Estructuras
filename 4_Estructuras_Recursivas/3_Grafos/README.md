@@ -440,5 +440,82 @@ $$
 (u, v) \in F \quad \text{si, y sólo si,} \quad (v, u) \in E
 $$
 
+# Representación de Grafos
+
+### ¿Cómo representar un grafo?
+
+- Existen muchas maneras útiles de representación de grafos.
+- Al trabajar con un grafo, conviene tener la posibilidad de elegir su representación más conveniente.
+- Entre las posibilidades de representación se encuentran:
+  	- Listas de aristas
+  	- Listas de adyacencia
+  	- Matrices de adyacencia
+  	- Matrices de incidencia
+
+---
+
+### ¿Qué es una lista de adyacencia?
+
+- Es una forma de representar grafos sin aristas múltiples.
+- Especifica los vértices que son adyacentes a cada uno de los vértices del grafo.
+
+![Lista de adyacencia](grafo21)
+
+---
+
+### ¿Qué ocurre cuando el grafo es dirigido?
+
+- Cuando el grafo es dirigido, una representación por listas de adyacencia enumera todos los vértices finales de las aristas que salen de cada uno de los vértices del grafo.
+
+![Grafo dirigido con listas](grafo22)
+
+---
+
+### ¿Qué es una matriz de adyacencia?
+
+- Sea $G = (V, E)$ un grafo simple con $|V| = n$.
+- Se enumeran los vértices de $G$ de manera arbitraria como $v_1, v_2, ..., v_n$.
+- La matriz de adyacencia $A$ (o $A_G$) de $G$ con respecto a este listado de los vértices es la matriz booleana $n \times n$ que tiene un $1$ en la posición $(i, j)$ si $v_i$ y $v_j$ son adyacentes, y tiene un $0$ en la posición $(i, j)$ si no lo son.
+- También se expresa como: si la matriz de adyacencia es $A = [a_{ij}]$, entonces:
+
+$$
+a_{ij} =
+\begin{cases}
+1, & \text{si } \{v_i, v_j\} \text{ es una arista de } G \\
+0, & \text{en caso contrario}
+\end{cases}
+$$
+
+---
+
+### ¿Qué más se puede decir sobre una matriz de adyacencia?
+
+- Las matrices de adyacencia pueden usarse para representar grafos dirigidos con bucles y con aristas múltiples.
+- Un bucle en el vértice $a_i$ se representa por medio de un $1$ en la posición $(i, i)$ de la matriz de adyacencia.
+- Cuando hay aristas múltiples, la matriz de adyacencia deja de ser booleana, ya que el elemento en la posición $(i, j)$ de esta matriz es igual al número de aristas asociadas con $\{a_i, a_j\}$.
+
+---
+
+- Todos los grafos no dirigidos, incluyendo multigrafos y pseudografos, tienen matrices de adyacencia simétricas.
+- La matriz de un grafo dirigido $G = (V, E)$ tiene un $1$ en su posición $(i, j)$ si hay una arista de $v_i$ a $v_j$, siendo $v_1, v_2, ..., v_n$ un listado arbitrario de los vértices del grafo dirigido.
+
+![Matriz de adyacencia grafo dirigido](grafo23)
+
+---
+
+### ¿Qué es una matriz de incidencia?
+
+- Sea $G = (V, E)$ un grafo no dirigido y $v_1, v_2, ..., v_n$ los vértices y $e_1, e_2, ..., e_m$ las aristas de $G$.
+- Entonces la matriz de incidencia con respecto a este ordenamiento de $V$ y de $E$ es la matriz $M = [m_{ij}]$ de $n \times m$ dada por:
+
+$$
+m_{ij} =
+\begin{cases}
+1, & \text{si la arista } e_j \text{ es incidente con } v_i \\
+0, & \text{en caso contrario}
+\end{cases}
+$$
+
+![Matriz de incidencia](grafo24)
 
 
