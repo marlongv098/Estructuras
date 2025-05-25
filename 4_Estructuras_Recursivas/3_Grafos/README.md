@@ -666,9 +666,9 @@ En la siguiente figura se presenta una solución del juego de Hamilton.
 
 **Solución:**  
 $G_1$ contiene un circuito hamiltoniano: $a, b, c, d, e, a.$  
-No hay circuitos hamiltonianos en $G_2$ (cualquier circuito que pase por todos los vértices debe contener dos veces la arista {$a$, $b$}).  
+No hay circuitos hamiltonianos en $G_2$ (cualquier circuito que pase por todos los vértices debe contener dos veces la arista { $a$, $b$ }).  
 Pero $G_2$ contiene un camino hamiltoniano: $a, b, c, d.$  
-El grafo $G_3$ no contiene ni circuito ni camino hamiltoniano, ya que cualquier camino debe usar más de una vez alguna de las aristas {$a$, $b$}, {$e$, $f$} o {$c$, $d$}.
+El grafo $G_3$ no contiene ni circuito ni camino hamiltoniano, ya que cualquier camino debe usar más de una vez alguna de las aristas { $a$, $b$ }, { $e$, $f$ } o { $c$, $d$ }.
 
 ---
 
