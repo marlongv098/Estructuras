@@ -519,3 +519,163 @@ $$
 ![Matriz de incidencia](grafo24)
 
 
+
+# Caminos, circuitos y conexión
+
+### ¿Qué es un camino?
+
+- Un camino es una secuencia de aristas que comienza en un vértice del grafo y recorre ciertas aristas del grafo, siempre conectando pares de vértices adyacentes.
+- Sea $n$ un entero no negativo y sea $G$ un grafo no dirigido.
+- Un camino de longitud $n$ de $u$ a $v$ en $G$ es una secuencia de $n$ aristas $a_1, a_2, \ldots, a_n$ de $G$ tal que:
+
+  $$
+  f(a_1) = \{x_0, x_1\},\quad f(a_2) = \{x_1, x_2\},\quad \ldots,\quad f(a_n) = \{x_{n-1}, x_n\},
+  $$
+
+  donde $x_0 = u$ y $x_n = v$.
+- Si el grafo es simple, denotamos este camino por su secuencia de vértices:  
+  $$x_0, x_1, \ldots, x_n$$  
+  (ya que enumerar estos vértices determina el camino de forma única).
+
+---
+
+### ¿Qué es un circuito?
+
+- El camino es un circuito si comienza y termina en el mismo vértice, esto es, si $u = v$, y tiene longitud mayor que cero.
+- Se dice que el camino o circuito pasa por los vértices $x_1, x_2, \ldots, x_{n-1}$ o también que recorre las aristas $a_1, a_2, \ldots, a_n$.
+- Un camino o circuito es *simple* si no contiene la misma arista más de una vez.
+
+---
+
+### ¿Cómo es la conexión en grafos no dirigidos?
+
+- Se dice que un grafo no dirigido es *conexo* si hay un camino entre cada par de vértices distintos del grafo.
+- Hay un camino simple entre cada par de vértices distintos de un grafo no dirigido conexo.
+- Un grafo que no es conexo es la unión de dos o más subgrafos conexos que no tienen ningún vértice en común entre ellos.
+
+---
+
+### ¿Son conexos los siguientes grafos?
+
+![Conexos](grafo29)
+
+---
+
+### ¿Qué es un vértice de corte?
+
+- Se le llama *vértice de corte* o *punto de articulación* a aquel vértice que, al ser eliminado junto a todas las aristas incidentes en él, produce un subgrafo con más componentes conexas.
+- Eliminar un vértice de corte de un grafo conexo produce un grafo que no es conexo.
+
+### ¿Qué es una arista de corte?
+
+- Una arista cuya eliminación produce un grafo con más componentes conexas que el grafo original se llama *arista de corte* o *puente*.
+
+---
+
+### ¿Cuáles son los vértices de corte y aristas de corte del siguiente grafo?
+
+![Ejemplo](grafo30)
+
+---
+
+### ¿Cómo es la conexión en grafos dirigidos?
+
+- Considerando la dirección de las aristas, estos grafos pueden ser *fuertemente conexos* o *débilmente conexos*.
+
+### ¿Cuándo un grafo dirigido es fuertemente conexo?
+
+- Se dice que un grafo dirigido es *fuertemente conexo* si hay un camino de $a$ a $b$ y un camino de $b$ a $a$ para cualesquiera dos vértices $a$ y $b$ del grafo.
+
+### ¿Cuándo un grafo dirigido es débilmente conexo?
+
+- Se dice que un grafo dirigido es *débilmente conexo* si hay un camino entre cada dos vértices del grafo no dirigido subyacente.
+
+
+### ¿Qué es un circuito euleriano?
+
+**Definición:**  
+Un circuito euleriano de un grafo $G$ es un circuito simple que contiene a todas las aristas de $G$.
+
+### ¿Qué es un camino euleriano?
+**Definición:**  
+Un camino euleriano es un camino simple que contiene a todas las aristas de $G$.
+
+**Ejemplo:**  
+¿Cuáles de los grafos no dirigidos de la siguiente figura contienen un circuito euleriano?  
+Entre aquellos que no lo contienen, ¿cuáles contienen un camino euleriano?  
+
+![graph3](graph3)
+
+**Solución:**  
+El grafo $G_1$ contiene un circuito euleriano, por ejemplo, $a,e,c,d,e,b,a.$  
+Ni $G_2$ ni $G_3$ contienen un circuito euleriano.  
+No obstante, $G_3$ contiene un camino euleriano, a saber, $a,c,d,e,b,d,a,b.$  
+El grafo $G_2$ no contiene ningún camino euleriano.
+
+**Ejemplo:**  
+¿Cuáles de los grafos dirigidos de esta figura contienen un circuito euleriano?  
+Entre aquellos que no lo contienen, ¿cuáles contienen un camino euleriano?  
+
+![graph4](graph4)
+
+### ¿Para qué pueden utilizarse los caminos y circuitos eulerianos?
+
+**Aplicaciones:**
+- Los caminos y circuitos eulerianos pueden utilizarse para resolver muchos problemas prácticos.
+- En muchas aplicaciones se requiere hallar un camino o circuito que pase exactamente una vez por cada una de las calles de un barrio, cada una de las carreteras de una red vial, cada conexión de una red de distribución de agua, o cada enlace de una red de comunicaciones.
+- Hallar un camino o un circuito euleriano en un modelo apropiado de grafos puede resolver este tipo de problemas.
+- Por ejemplo, si un cartero puede hallar un camino euleriano en el grafo de las calles por las que debe repartir la correspondencia, este camino produce una ruta que pasa por cada calle exactamente una vez.
+- Si no hay ningún camino euleriano, el cartero tendrá que pasar más de una vez por alguna de las calles.
+- Otras áreas en las que se aplican los circuitos y caminos eulerianos son el diseño de circuitos impresos, redes de multidifusión, y también la biología molecular, donde se utilizan para secuenciar el ADN.
+
+### ¿Qué es un camino hamiltoniano?
+Un camino $x_0, x_1,..., x_{n-1},x_n$ del grafo $G = (V, E)$ es hamiltoniano si  
+$V=\{x_0,x_1,..., x_{n-1},x_n\}$ y $x_i 
+eq x_j$ para $0 \leq i< j \leq n.$
+
+### ¿Qué es un circuito hamiltoniano?
+Un circuito $x_0, x_1,..., x_{n-1},x_n,x_0$ con $n > 1$ del grafo $G = (V, E)$ es hamiltoniano si  
+$x_0,x_1,..., x_{n-1},x_n$ es un camino hamiltoniano.
+
+### ¿Cuál es el origen de esta terminología?
+- El origen es un juego, el juego icosiano, inventado en 1857 por el matemático irlandés Sir William Rowan Hamilton.
+- Consistía en un dodecaedro de madera, un poliedro de 12 caras, cada una un pentágono regular, con un alfiler saliendo de cada vértice y un trozo de cuerda.
+
+![ham1](ham1)
+
+- Los 20 vértices estaban etiquetados con el nombre de distintas ciudades del mundo.
+- El objetivo era comenzar en una ciudad, viajar siguiendo las aristas visitando cada una de las otras 19 ciudades exactamente una vez, y terminar en la primera.
+- El circuito seguido se marcaba utilizando la cuerda y los alfileres.
+
+### ¿Qué pregunta puede ser equivalente al juego?
+- ¿Hay algún circuito en el grafo, que se muestra a continuación, que pase por cada vértice exactamente una vez?
+
+![ham2](ham2)
+
+- Esto resuelve el juego, ya que este grafo es isomorfo al grafo de vértices y aristas del dodecaedro.
+
+**Solución visual:**  
+En la siguiente figura se presenta una solución del juego de Hamilton.  
+
+![ham3](ham3)
+
+**Ejemplo:**  
+¿Cuáles de los grafos simples de esta figura contienen un circuito hamiltoniano o, si no, un camino hamiltoniano?  
+\
+![ham4](ham4)
+
+**Solución:**  
+$G_1$ contiene un circuito hamiltoniano: $a, b, c, d, e, a.$  
+No hay circuitos hamiltonianos en $G_2$ (cualquier circuito que pase por todos los vértices debe contener dos veces la arista $\{a, b\}$).  
+Pero $G_2$ contiene un camino hamiltoniano: $a, b, c, d.$  
+El grafo $G_3$ no contiene ni circuito ni camino hamiltoniano, ya que cualquier camino debe usar más de una vez alguna de las aristas {$a$, $b$}, {$e$, $f$}$ o {$c$, $d$}.
+
+---
+
+### Ejercicios
+**Tarea:**  
+Comience la implementación de su estructura grafo utilizando listas de adyacencia y matriz de adyacencia.
+
+
+
+
