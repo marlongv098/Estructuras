@@ -1,13 +1,13 @@
 # Estructuras_Upgrade
 
-Repositorio reorganizado y documentado (a partir de **Estructuras**) para usar en curso de **Estructuras Discretas** y **Algoritmos**.
+Repositorio reorganizado y documentado (a partir de **Estructuras**) para usar en curso de **Computación y Estructuras Discretas I**.
 
 ## Contenido
 
-- `1_Logica_Formal/`: README introductorio y guía de actividades.
-- `2_Conjuntos_Funciones/`: README introductorio y ejercicios.
-- `3_Estructuras_NO_Recursivas/`: README + ejemplos (Generics, desacoplamiento, TAD, tablas hash, pilas/colas, montículos).
-- `4_Estructuras_Recursivas/`: README + árboles (N-arios, BST, AVL).
+- `1_Logica_Formal/`: introductorio y guía de actividades.
+- `2_Conjuntos_Funciones/`: introductorio y ejercicios.
+- `3_Estructuras_NO_Recursivas/`: ejemplos (Generics, desacoplamiento, TAD, tablas hash, pilas/colas, montículos).
+- `4_Estructuras_Recursivas/`: árboles (N-arios, BST, AVL).
 - `5_Grafos/`: Ejercicios propuestos a los estudiantes. Implementaciones en Java de **BFS, DFS, Dijkstra, Floyd‑Warshall, Prim y Kruskal** 
 
 ## Cómo usar este repositorio
