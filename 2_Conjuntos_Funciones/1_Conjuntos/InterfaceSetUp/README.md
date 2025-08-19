@@ -48,10 +48,15 @@ El sistema está compuesto por cuatro clases:
 # Jerarquia de clases
 
 java.lang.Object
+
    └── java.util.Collection (interface)
+   
          └── java.util.Set (interface)
+         
                └── java.util.SortedSet (interface)
+               
                      └── java.util.NavigableSet (interface)
+                     
                            └── java.util.TreeSet (clase)
 
 
