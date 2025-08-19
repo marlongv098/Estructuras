@@ -43,3 +43,54 @@ El sistema está compuesto por cuatro clases:
 
 * Abre el proyecto en tu IDE.
 * Ejecuta el archivo Main.java.
+
+
+# Jerarquia de clases
+
+java.lang.Object
+   └── java.util.Collection (interface)
+         └── java.util.Set (interface)
+               └── java.util.SortedSet (interface)
+                     └── java.util.NavigableSet (interface)
+                           └── java.util.TreeSet (clase)
+
+
+## Collection<E> (interfaz)
+
+* La raíz de la jerarquía de colecciones en Java. 
+* Define operaciones generales: add, remove, size, iterator, etc. 
+* Es la superinterfaz de casi todas las estructuras de colección.
+
+## Set<E> (interfaz)
+
+* Especializa Collection.
+* Define la colección sin elementos duplicados.
+* **Ejemplos:** HashSet, LinkedHashSet, TreeSet.
+
+## SortedSet<E> (interfaz)
+
+* Extiende Set.
+* Garantiza que los elementos estén ordenados según el orden natural (Comparable) o un Comparator.
+* Métodos adicionales:
+      first(), last()
+      headSet(E toElement)
+      tailSet(E fromElement)
+      subSet(E from, E to)
+      
+## NavigableSet<E> (interfaz)
+
+* Extiende SortedSet.
+* Proporciona métodos de navegación más avanzados:
+      lower(E e) → el elemento inmediatamente menor.
+      floor(E e) → el elemento ≤ e.
+      ceiling(E e) → el elemento ≥ e.
+      higher(E e) → el elemento inmediatamente mayor.
+      pollFirst(), pollLast().
+
+## TreeSet<E> (clase)
+
+* Implementación concreta de NavigableSet.
+* Ordena los elementos con:
+      El orden natural (Comparable).
+      Un Comparator proporcionado en el constructor.
+* Mantiene los elementos ordenados en un árbol rojo-negro (estructura balanceada).
