@@ -5,10 +5,24 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ListaGTest {
 
+    private ListaG<Integer> setupIntegerEmptyList(){
+        ListaG<Integer> lista = new ListaG<>();
+        return lista;
+    }
+
+    private ListaG<String> setupStringEmptyList(){
+        ListaG<String> lista = new ListaG<>();
+        return lista;
+    }
+
+    private ListaG<Double> setupDoubleEmptyList(){
+        ListaG<Double> lista = new ListaG<>();
+        return lista;
+    }
+
     @Test
     void testInsertAtStart() {
-
-        ListaG<Integer> list = new ListaG<>();
+        ListaG<Integer> list = setupIntegerEmptyList();
         list.insertAtStart(1);
         assertEquals(1, list.getHeadData());
         assertEquals(1, list.getTailData());
@@ -22,7 +36,7 @@ class ListaGTest {
     @Test
     void testInsertAtEnd() {
 
-        ListaG<String> list = new ListaG<>();
+        ListaG<String> list = setupStringEmptyList();
         list.insertAtEnd("a");
         assertEquals("a", list.getHeadData());
         assertEquals("a", list.getTailData());
@@ -36,7 +50,7 @@ class ListaGTest {
     @Test
     void testMixedInsert() {
 
-        ListaG<Double> list = new ListaG<>();
+        ListaG<Double> list = setupDoubleEmptyList();
         list.insertAtEnd(1.0);
         list.insertAtStart(2.0);
         list.insertAtEnd(3.0);
@@ -48,7 +62,7 @@ class ListaGTest {
     @Test
     void testRemove() {
 
-        ListaG<Integer> list = new ListaG<>();
+        ListaG<Integer> list = setupIntegerEmptyList();
         list.insertAtEnd(1);
         list.insertAtEnd(2);
         list.insertAtEnd(3);
