@@ -3,7 +3,6 @@ package listasimple.list;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ListTest {
@@ -36,9 +35,6 @@ public class ListTest {
         assertFalse(list.isEmpty());
     }
 
-    private void assertTrue(boolean empty) {
-
-    }
 
     @Test
     public void testSize() {
