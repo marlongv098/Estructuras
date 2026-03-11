@@ -18,7 +18,7 @@ public class BusquedaLineal {
 # Desglose de operaciones por linea
 
 | Línea | Código                                  |Operaciones realizadas | Costo |
-|-------|----------------------------------------|-------|
+|-------|----------------------------------------|-------|------------------------|
 | 1     | for( int i = 0                                 | asignación  | 1 |
 | 2     | i < arreglo.length:                 | comparacion   | n+1 |
 | 3     | i++                                 | incremento   | n | 
