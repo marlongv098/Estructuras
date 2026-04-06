@@ -25,11 +25,18 @@ public class Persona {
         this.edad = edad;
     }
 
+    // Necesario para que buscar(T dato) en ListaEnlazada funcione correctamente
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Persona)) return false;
+        Persona otra = (Persona) o;
+        return edad == otra.edad && nombre.equals(otra.nombre);
+    }
+
     @Override
     public String toString() {
-        return "Persona{" +
-                "nombre='" + nombre + '\'' +
-                ", edad=" + edad +
-                '}';
+        return "Persona{nombre='" + nombre + "', edad=" + edad + "}";
     }
 }
+
