@@ -1,17 +1,5 @@
 package persona;
 
-/**
- * Entidad representa una persona cuyo identificador puede variar en tipo.
- *
- * Casos de uso reales:
- *   - Ciudadano identificado por cédula (String): new Entidad<>("1020304050", "Ana López")
- *   - Estudiante identificado por código (Integer): new Entidad<>(20231045, "Luis Pérez")
- *   - Usuario identificado por UUID (String):       new Entidad<>("a1b2-c3d4", "María Gil")
- *
- * Aquí T tiene sentido como parámetro genérico porque el tipo del
- * identificador SÍ varía según el contexto de negocio.
- * El nombre, en cambio, siempre es String — por eso no se parametriza.
- */
 public class Entidad<T> {
     private T id;
     private String nombre;
