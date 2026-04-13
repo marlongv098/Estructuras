@@ -6,8 +6,6 @@ import estructuras.TablaHashInterfaz;
 /**
  * Diccionario de palabras y definiciones.
  * Clase concreta que delega el almacenamiento a una TablaHash.
- * No implementa interfaz propia porque en este punto del proyecto
- * solo existe una implementación — agregar una interfaz no añadiría valor.
  * La dependencia se declara contra TablaHashInterfaz (no TablaHash directamente)
  * para mantener el desacoplamiento en la capa de estructura de datos.
  **/
@@ -26,9 +24,7 @@ public class Diccionario {
     /**
      * Constructor para inyección de dependencias.
      * Útil en tests o si en el futuro se quiere cambiar la implementación
-     * de la tabla hash (ej: TablaHashConArbol, TablaHashPersistente).
      *
-     * @param tablaHash implementación concreta de la tabla hash a usar
      */
     public Diccionario(TablaHashInterfaz<String, String> tablaHash) {
         this.tablaHash = tablaHash;
@@ -45,7 +41,6 @@ public class Diccionario {
     /**
      * Retorna la definición de una palabra.
      *
-     * @return la definición, o null si la palabra no existe
      */
     public String obtenerDefinicion(String palabra) {
         return tablaHash.obtener(palabra);
@@ -54,7 +49,6 @@ public class Diccionario {
     /**
      * Actualiza la definición de una palabra ya existente.
      *
-     * @throws IllegalArgumentException si la palabra no existe en el diccionario
      */
     public void actualizarDefinicion(String palabra, String nuevaDefinicion) {
         tablaHash.actualizar(palabra, nuevaDefinicion);

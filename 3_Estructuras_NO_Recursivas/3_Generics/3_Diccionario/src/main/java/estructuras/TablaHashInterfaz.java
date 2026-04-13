@@ -22,15 +22,11 @@ public interface TablaHashInterfaz<K, V> {
 
     /**
      * Actualiza el valor de una clave existente.
-     *
-     * @throws IllegalArgumentException si la clave no existe en la tabla
-     */
+     * */
     void actualizar(K clave, V nuevoValor);
 
     /**
      * Verifica si una clave existe en la tabla.
-     *
-     * @return true si la clave está presente, false en caso contrario
      */
     boolean contiene(K clave);
 

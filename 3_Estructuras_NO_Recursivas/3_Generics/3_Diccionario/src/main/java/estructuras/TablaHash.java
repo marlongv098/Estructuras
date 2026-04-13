@@ -76,7 +76,7 @@ public class TablaHash<K, V> implements TablaHashInterfaz<K, V> {
         LinkedList<Entrada<K, V>> cubeta = cubetas.get(indice);
 
         if (cubeta != null) {
-            // CORRECCIÓN: solo decrementa size si realmente se eliminó una entrada
+            // solo decrementa size si realmente se eliminó una entrada
             boolean eliminado = cubeta.removeIf(entrada -> entrada.getClave().equals(clave));
             if (eliminado) {
                 size--;
@@ -94,7 +94,7 @@ public class TablaHash<K, V> implements TablaHashInterfaz<K, V> {
         if (cubeta != null) {
             for (Entrada<K, V> entrada : cubeta) {
                 if (entrada.getClave().equals(clave)) {
-                    // CORRECCIÓN: se llama al setter real, no al método vacío
+                    //
                     entrada.setValor(nuevoValor);
                     return;
                 }
@@ -122,8 +122,6 @@ public class TablaHash<K, V> implements TablaHashInterfaz<K, V> {
 
     /**
      * Calcula el índice de cubeta para una clave.
-     * CORRECCIÓN: usa bitmask 0x7FFFFFFF en lugar de Math.abs() para evitar
-     * el overflow de Integer.MIN_VALUE (Math.abs(Integer.MIN_VALUE) == Integer.MIN_VALUE).
      */
     private int obtenerIndice(K clave) {
         return (clave.hashCode() & 0x7FFFFFFF) % cubetas.size();
@@ -198,7 +196,6 @@ public class TablaHash<K, V> implements TablaHashInterfaz<K, V> {
             return valor;
         }
 
-        // CORRECCIÓN: setter real que asigna el nuevo valor
         void setValor(V nuevoValor) {
             this.valor = nuevoValor;
         }
