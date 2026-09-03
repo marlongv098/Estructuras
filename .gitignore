@@ -1,0 +1,19 @@
+# Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Compilados sueltos (por si se compila manualmente fuera de Maven)
+*.class
+
+# macOS
+.DS_Store
+
+# Eclipse / VS Code (por si acaso)
+.classpath
+.project
+.settings/
+.vscode/
