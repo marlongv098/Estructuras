@@ -1,17 +1,19 @@
+package conjuntos;
+
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashSet;
 import java.util.Scanner;
 import java.util.Set;
+import java.util.TreeSet;
 
-public class PalabrasUnicasTexto {
-    private final Set<String> palabras = new HashSet<>();
+public class PalabrasUnicasOrdenadas {
+    private final Set<String> palabras = new TreeSet<>();
 
     public void procesarDesdeArchivo(Scanner scanner) {
         System.out.print("\nIngresa la ruta del archivo de texto: ");
         String rutaArchivo = scanner.nextLine();
         leerDesdeArchivo(rutaArchivo);
-        mostrarPalabras();
+        mostrarPalabrasOrdenadas();
     }
 
     public void leerDesdeArchivo(String rutaArchivo) {
@@ -27,9 +29,14 @@ public class PalabrasUnicasTexto {
         }
     }
 
-    public void mostrarPalabras() {
-        System.out.println("\nPalabras únicas encontradas en el archivo:");
+    public void mostrarPalabrasOrdenadas() {
+        System.out.println("\nPalabras únicas ordenadas alfabéticamente:");
         palabras.forEach(System.out::println);
-        System.out.println("Total: " + palabras.size() + " palabras únicas");
+        System.out.println("Total: " + palabras.size() + " palabras únicas ordenadas");
+    }
+
+    /** Vista de solo lectura del conjunto ordenado (útil para pruebas). */
+    public Set<String> getPalabras() {
+        return java.util.Collections.unmodifiableSet(palabras);
     }
 }
