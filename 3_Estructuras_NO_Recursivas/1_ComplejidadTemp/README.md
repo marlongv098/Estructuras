@@ -1,87 +1,60 @@
-# Cómo compilar y ejecutar este programa (Main.java)
+# Complejidad Temporal y Espacial — Ejemplos en Java
 
-Este `Main.java` usa **Java estándar** (sin librerías externas) pero **importa paquetes locales**:
+Proyecto Maven con cinco algoritmos clásicos usados para introducir el análisis de complejidad temporal (Big-O) y espacial: búsqueda lineal, búsqueda binaria, ordenamiento burbuja, quicksort y Fibonacci (con cuatro implementaciones distintas para comparar).
+
+## Estructura Maven
+
 ```
-BusquedaBinaria.*
-BusquedaLineal.*
-Fibonacci.*
-OrdenamientoBurbuja.*
-QuickSort.*
+1_ComplejidadTemp/
+├── pom.xml
+├── src/main/java/complejidad/
+│   ├── Main.java                     (menú interactivo para probar cada algoritmo)
+│   ├── busquedalineal/BusquedaLineal.java
+│   ├── busquedabinaria/BusquedaBinaria.java
+│   ├── ordenamientoburbuja/OrdenamientoBurbuja.java
+│   ├── quicksort/QuickSort.java
+│   └── fibonacci/Fibonacci.java      (recursivo, iterativo O(n), optimizado O(1), matriz O(log n))
+└── src/test/java/complejidad/
+    └── AlgoritmosTest.java
 ```
-Por lo tanto, además de `Main.java`, **deben existir** las clases correspondientes en carpetas con esos nombres dentro de `src/`.
+
+Cada subpaquete tiene su propio `README.md` con el análisis de complejidad temporal **y espacial** detallado, con demostraciones formales de las cotas (usando la notación O/Ω/Θ presentada en `1_Logica_Formal/`):
+
+* [`busquedalineal/README.md`](src/main/java/complejidad/busquedalineal/README.md) — O(n), mejor caso O(1)
+* [`busquedabinaria/README.md`](src/main/java/complejidad/busquedabinaria/README.md) — O(log n)
+* [`ordenamientoburbuja/README.md`](src/main/java/complejidad/ordenamientoburbuja/README.md) — O(n²), mejor caso O(n) con flag de intercambio
+* [`quicksort/README.md`](src/main/java/complejidad/quicksort/README.md) — O(n log n) promedio, O(n²) peor caso
+* [`fibonacci/README.md`](src/main/java/complejidad/fibonacci/README.md) — O(2ⁿ) → O(n) → O(1) espacio → O(log n) tiempo (cuatro variantes comparadas)
 
 ## Requisitos
-- **JDK 17 o superior** instalado.
-  - Comprueba con:
-    ```bash
-    java -version
-    javac -version
-    ```
 
-## Estructura de carpetas
+* JDK 21 o superior.
+* Maven.
 
-```
-3_Estructuras_NO_Recursivas/1_ComplejidadTemp/
-└─ src/
-   ├─ Main.java                      (sin `package`, en el paquete por defecto)
-   ├─ BusquedaBinaria/
-   │  └─ BusquedaBinaria.java        (método(s) estático(s), p. ej. busquedaBinaria(...))
-   ├─ BusquedaLineal/
-   │  └─ BusquedaLineal.java         (p. ej. busquedaLineal(...))
-   ├─ Fibonacci/
-   │  └─ Fibonacci.java              (fibonacciRec(int), fibonacciOptimizado(int))
-   ├─ OrdenamientoBurbuja/
-   │  └─ OrdenamientoBurbuja.java    (burbuja(int[]))
-   └─ QuickSort/
-      └─ QuickSort.java              (quicksort(int[], int, int))
-```
+## Compilar, probar y ejecutar
 
-> **Importante**: Dado que `Main.java` **no** declara `package`, debe estar directamente bajo `src/`.  
-
-## Compilar (macOS / Linux)
 ```bash
 cd 3_Estructuras_NO_Recursivas/1_ComplejidadTemp
-find src -name "*.java" > sources.txt
-mkdir -p out
-javac -encoding UTF-8 -d out @sources.txt
+mvn compile        # compila
+mvn test           # corre AlgoritmosTest.java (JUnit 5)
+mvn exec:java      # ejecuta el menú interactivo de Main.java
 ```
 
-## Compilar (Windows PowerShell)
-```powershell
-cd 3_Estructuras_NO_Recursivas/1_ComplejidadTemp
-Get-ChildItem -Recurse -Path src -Filter *.java | ForEach-Object { $_.FullName } > sources.txt
-mkdir out
-javac -encoding UTF-8 -d out @sources.txt
-```
+## Resumen comparativo
 
-## Ejecutar
-Como `Main` está en el **paquete por defecto**, se ejecuta así:
-```bash
-java -cp out Main
-```
+| Algoritmo | Mejor caso | Caso promedio | Peor caso | Espacio |
+|---|---|---|---|---|
+| Búsqueda lineal | O(1) | O(n) | O(n) | O(1) |
+| Búsqueda binaria | O(1) | O(log n) | O(log n) | O(1) |
+| Ordenamiento burbuja | O(n) | O(n²) | O(n²) | O(1) |
+| QuickSort | O(n log n) | O(n log n) | O(n²) | O(log n) prom. / O(n) peor caso |
+| Fibonacci recursivo | — | O(2ⁿ) | O(2ⁿ) | O(n) |
+| Fibonacci iterativo (array) | — | O(n) | O(n) | O(n) |
+| Fibonacci optimizado | — | O(n) | O(n) | O(1) |
+| Fibonacci matriz | — | O(log n) | O(log n) | O(log n) |
 
-## Errores comunes
-- **`error: package <X> does not exist`**  
-  → Falta la carpeta/clase de ese paquete en `src/`, o la clase no tiene `package` correcto.  
-  Verifica que los archivos estén exactamente bajo `src/<Paquete>/` y que comiencen con:  
-  `package <Paquete>;`
+## Correcciones aplicadas en esta revisión
 
-- **`Could not find or load main class Main`**  
-  → Revisa que **compilaste usando `-d out`** y ejecutas con `java -cp out Main`.  
-  Si añadieras un `package` a `Main`, tendrías que ejecutarlo con el **nombre cualificado** (por ejemplo, `java -cp out com.ejemplo.Main`).
-
-- **Clases desactualizadas**  
-  → Borra `out/` y recompila:
-  ```bash
-  rm -rf out && mkdir out
-  javac -encoding UTF-8 -d out @sources.txt
-  ```
-
-## Notas de buenas prácticas
-- Evita el paquete por defecto para `Main`. Mejor usa un paquete, por ejemplo:
-  ```java
-  package complejidad;
-  public class Main { ... }
-  ```
-  y ejecuta con `java -cp out complejidad.Main`.
-- Considera migrar a **Maven** o **Gradle** para gestionar compilación, pruebas y dependencias.
+* **`OrdenamientoBurbuja`**: se agregó el flag `huboIntercambio` para cortar la ejecución cuando una pasada no hace intercambios. Sin él, el algoritmo siempre hacía O(n²) comparaciones sin importar si el arreglo ya estaba ordenado, lo cual contradecía la afirmación de "mejor caso O(n)" que ya tenía su README.
+* **`Fibonacci`**: se agregó `fibonacciMatriz` (exponenciación de matrices, O(log n)) — el método que la tabla comparativa del README ya mencionaba pero que no estaba implementado — y se hizo estático `fibonacciIterativo` para que sea utilizable/testeable igual que los demás métodos.
+* Se migró todo el módulo de "paquete por defecto" (sin Maven, con `javac` manual) a estructura Maven estándar (`src/main/java`, `src/test/java`), con paquetes en minúscula según la convención de Java.

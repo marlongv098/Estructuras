@@ -55,6 +55,11 @@ public class Estudiante {
     }
 
     @Override
+    public int hashCode() {
+        return codigo.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "Estudiante{codigo=" + codigo
                 + ", nombre='" + nombre + " " + apellido + "'"

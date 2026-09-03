@@ -45,6 +45,11 @@ public class Producto {
     }
 
     @Override
+    public int hashCode() {
+        return codigoProducto.hashCode();
+    }
+
+    @Override
     public String toString() {
         return "Producto{codigo='" + codigoProducto
                 + "', nombre='" + nombre
