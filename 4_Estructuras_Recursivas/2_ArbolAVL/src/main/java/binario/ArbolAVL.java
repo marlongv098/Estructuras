@@ -112,4 +112,85 @@ class ArbolAVL<T extends Comparable<T>> {
         // Si no necesita balanceo, devolver el nodo sin cambios
         return nodo;
     }
+
+    /**
+     * Elimina un dato del árbol, re-balanceando en el camino de vuelta igual que insertar.
+     * Si el dato no existe, el árbol queda sin cambios.
+     */
+    public void eliminar(T dato) {
+        raiz = eliminar(raiz, dato);
+    }
+
+    private NodoAVL<T> eliminar(NodoAVL<T> nodo, T dato) {
+        if (nodo == null) {
+            return null; // el dato no existe, no hay nada que hacer
+        }
+
+        // 1. Eliminación normal de BST
+        if (dato.compareTo(nodo.getDato()) < 0) {
+            nodo.setIzquierdo(eliminar(nodo.getIzquierdo(), dato));
+        } else if (dato.compareTo(nodo.getDato()) > 0) {
+            nodo.setDerecho(eliminar(nodo.getDerecho(), dato));
+        } else {
+            // Este es el nodo a eliminar
+            if (nodo.getIzquierdo() == null || nodo.getDerecho() == null) {
+                NodoAVL<T> hijo = (nodo.getIzquierdo() != null) ? nodo.getIzquierdo() : nodo.getDerecho();
+                nodo = hijo; // 0 o 1 hijo: se reemplaza directamente (puede quedar null)
+            } else {
+                // 2 hijos: reemplazar por el sucesor in-order (el mínimo del subárbol derecho)
+                NodoAVL<T> sucesor = minimo(nodo.getDerecho());
+                nodo.setDato(sucesor.getDato());
+                nodo.setDerecho(eliminar(nodo.getDerecho(), sucesor.getDato()));
+            }
+        }
+
+        if (nodo == null) {
+            return null; // el nodo eliminado no tenía hijos
+        }
+
+        // 2. Actualizar altura
+        nodo.setAltura(1 + Math.max(altura(nodo.getIzquierdo()), altura(nodo.getDerecho())));
+
+        // 3. Re-balancear igual que en insertar, usando el factor de balance de los hijos
+        int balance = factorBalance(nodo);
+
+        if (balance > 1 && factorBalance(nodo.getIzquierdo()) >= 0) {
+            return rotacionDerecha(nodo);
+        }
+        if (balance > 1 && factorBalance(nodo.getIzquierdo()) < 0) {
+            nodo.setIzquierdo(rotacionIzquierda(nodo.getIzquierdo()));
+            return rotacionDerecha(nodo);
+        }
+        if (balance < -1 && factorBalance(nodo.getDerecho()) <= 0) {
+            return rotacionIzquierda(nodo);
+        }
+        if (balance < -1 && factorBalance(nodo.getDerecho()) > 0) {
+            nodo.setDerecho(rotacionDerecha(nodo.getDerecho()));
+            return rotacionIzquierda(nodo);
+        }
+
+        return nodo;
+    }
+
+    private NodoAVL<T> minimo(NodoAVL<T> nodo) {
+        NodoAVL<T> actual = nodo;
+        while (actual.getIzquierdo() != null) {
+            actual = actual.getIzquierdo();
+        }
+        return actual;
+    }
+
+    /** Búsqueda: O(log n) garantizado gracias al balanceo AVL (a diferencia de un BST simple). */
+    public boolean buscar(T dato) {
+        return buscar(raiz, dato);
+    }
+
+    private boolean buscar(NodoAVL<T> nodo, T dato) {
+        if (nodo == null) {
+            return false;
+        }
+        int cmp = dato.compareTo(nodo.getDato());
+        if (cmp == 0) return true;
+        return cmp < 0 ? buscar(nodo.getIzquierdo(), dato) : buscar(nodo.getDerecho(), dato);
+    }
 }

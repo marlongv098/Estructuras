@@ -77,11 +77,13 @@ public class ArbolBinario<T> {
         return actual;
     }
 
+    // Encuentra el mínimo de un subárbol: hay que bajar siempre por la IZQUIERDA
+    // (el mínimo de un BST siempre es el nodo más a la izquierda), no por la derecha.
     private T encontrarMinimo(Nodo<T> actual) {
         T minimo = actual.valor;
         while (actual.izquierdo != null) {
-            minimo = actual.izquierdo.valor;
-            actual = actual.derecho;
+            actual = actual.izquierdo;
+            minimo = actual.valor;
         }
         return minimo;
     }
