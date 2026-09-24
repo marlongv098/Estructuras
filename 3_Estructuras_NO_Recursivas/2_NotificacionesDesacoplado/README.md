@@ -1,81 +1,57 @@
-# HOWTO_EJECUTAR.md
+# Notificaciones Desacopladas (Inyección de Dependencias)
 
-## Requisitos
-- **JDK 17 o superior** instalado y configurado en tu sistema.
-- **IntelliJ IDEA** (Community o Ultimate).
+Ejemplo del patrón **Strategy** + **inyección de dependencias por constructor** para desacoplar un servicio de las implementaciones concretas de notificación (Email, SMS, WhatsApp) que usa.
 
-## Estructura esperada del proyecto
-Asegúrate de que las carpetas coincidan exactamente con los `package` declarados en cada archivo `.java`.
+## Diseño
 
 ```
-src/
- ├─ main/
- │   └─ Main.java                      (package main;)
- ├─ notificacion/
- │   ├─ Notificador.java               (package notificacion;)
- │   ├─ NotificadorEmail.java
- │   ├─ NotificadorSMS.java
- │   └─ NotificadorWhastApp.java
- └─ servicio/
-     └─ ServicioNotificacion.java      (package servicio;)
+Notificador (abstracta)
+   ├── NotificadorEmail
+   ├── NotificadorSMS
+   └── NotificadorWhastApp
+
+ServicioNotificacion  --(recibe en el constructor)--> Notificador
 ```
 
-## Ejecución en IntelliJ IDEA
+`ServicioNotificacion` no conoce ni depende de ninguna clase concreta de notificación: solo conoce el contrato `Notificador`. Esto permite:
 
-1. **Abrir el proyecto**
-   - Ve a **File → Open…**.
-   - Selecciona la carpeta raíz que contiene `src/`.
+* Agregar un nuevo canal (por ejemplo `NotificadorPush`) sin modificar `ServicioNotificacion`.
+* Probar `ServicioNotificacion` con un "espía" de prueba en vez de un canal real (ver `ServicioNotificacionTest`).
 
-2. **Configurar el SDK**
-   - Ve a **File → Project Structure…** (`Ctrl+Alt+Shift+S` en Windows/Linux, `Cmd+;` en macOS).
-   - En **Project SDK**, selecciona **Java 17** o superior.
-   - En **Project language level**, selecciona el mismo o superior.
+## Estructura Maven
 
-3. **Marcar carpeta de código fuente**
-   - En el panel lateral de IntelliJ, clic derecho en `src/` → **Mark Directory as → Sources Root**.
+```
+2_NotificacionesDesacoplado/
+├── pom.xml
+├── src/main/java/
+│   ├── main/Main.java
+│   ├── notificacion/{Notificador, NotificadorEmail, NotificadorSMS, NotificadorWhastApp}.java
+│   └── servicio/ServicioNotificacion.java
+└── src/test/java/servicio/ServicioNotificacionTest.java
+```
 
-4. **Crear configuración de ejecución**
-   - Arriba a la derecha, abre **Run/Debug Configurations**.
-   - Pulsa **+** → **Application**.
-   - En **Name**, escribe `Ejecutar Main`.
-   - En **Main class**, selecciona `main.Main`.
-   - En **Use classpath of module**, elige el módulo que contiene `src/`.
-   - Pulsa **Apply** y **OK**.
-
-5. **Ejecutar**
-   - Pulsa el botón verde **▶ Run** o usa `Shift+F10`.
-   - La consola debería mostrar:
-     ```
-     Hola, este es un correo electrónico!
-     Hola, este es un mensaje de texto!
-     Hola, este es un mensaje de WhatsApp!
-     ```
-
-## Ejecución desde la terminal (opcional)
-
-Si prefieres ejecutar desde la terminal en vez de IntelliJ:
+## Compilar, probar y ejecutar
 
 ```bash
-cd ruta/al/proyecto
-find src -name "*.java" > sources.txt
-mkdir -p out
-javac -encoding UTF-8 -d out @sources.txt
-java -cp out main.Main
+cd 3_Estructuras_NO_Recursivas/2_NotificacionesDesacoplado
+mvn compile
+mvn test
+mvn exec:java
 ```
 
-En Windows PowerShell:
-```powershell
-cd rutal\proyecto
-Get-ChildItem -Recurse -Path src -Filter *.java | ForEach-Object { $_.FullName } > sources.txt
-mkdir out
-javac -encoding UTF-8 -d out @sources.txt
-java -cp out main.Main
+Salida esperada:
+```
+Enviando Email: Hola, este es un correo electrónico!
+Enviando SMS: Hola, este es un mensaje de texto!
+Enviando WhatsApp: Hola, este es un mensaje de WhatsApp!
 ```
 
-## Notas
-- Si cambias el `package` de `Main`, también tendrás que ajustar la configuración de ejecución.
-- El código actual usa `servicioSMS` para enviar el mensaje de WhatsApp. Lo correcto sería:
+## Correcciones aplicadas en esta revisión
 
-  ```java
-  servicioWastApp.enviar("Hola, este es un mensaje de WhatsApp!");
-  ```
+* **Bug de `Main.java`** (ya diagnosticado en una versión anterior de este README pero nunca corregido en el código): el mensaje de WhatsApp se enviaba llamando a `servicioSMS.enviar(...)` en vez de `servicioWhatsApp.enviar(...)`, así que WhatsApp nunca recibía su propio mensaje. Se corrigió para usar la instancia correcta. `ServicioNotificacionTest` prueba cada notificador de forma aislada para que este tipo de error no pase inadvertido de nuevo.
+* **`Notificador`** pasó de ser una clase concreta con un método vacío a una clase **abstracta**: antes era posible instanciar `new Notificador()` directamente y obtener un "notificador" que silenciosamente no hacía nada. Al declarar `enviarMensaje` como `abstract`, el compilador obliga a toda subclase a implementarlo.
+* Se migró de "paquete por defecto ejecutado manualmente con `javac`" a estructura Maven estándar, y se agregaron pruebas unitarias con JUnit 5 (antes el proyecto no tenía ninguna).
+
+## Complejidad
+
+Cada operación (`enviar`, `enviarMensaje`) es una única llamada a método sin ciclos ni estructuras de datos de por medio: **O(1) en tiempo y en espacio**, independientemente de cuántos canales de notificación existan. El valor de este ejemplo no está en su complejidad algorítmica sino en el **desacoplamiento** — el costo de _agregar_ un nuevo canal es O(1) (una clase nueva) en vez de tener que modificar código existente, que es la propiedad de diseño (principio abierto/cerrado) que se busca ilustrar.

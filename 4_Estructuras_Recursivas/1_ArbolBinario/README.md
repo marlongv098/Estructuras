@@ -1,3 +1,41 @@
+# Árbol Binario de Búsqueda (BST)
+
+## Compilar, probar y ejecutar (Maven)
+
+```bash
+cd 4_Estructuras_Recursivas/1_ArbolBinario
+mvn compile
+mvn test
+mvn exec:java
+```
+
+## Corrección aplicada: `encontrarMinimo` bajaba en la dirección incorrecta
+
+Al eliminar un nodo con **dos hijos**, hay que reemplazarlo por el sucesor in-order, que es el **mínimo del subárbol derecho** — y para encontrar el mínimo de un subárbol hay que bajar siempre por la **izquierda** hasta quedarse sin hijo izquierdo. La versión anterior de `encontrarMinimo` hacía:
+
+```java
+while (actual.izquierdo != null) {
+    minimo = actual.izquierdo.valor;
+    actual = actual.derecho;   // ← bajaba por la DERECHA en vez de la izquierda
+}
+```
+
+Esto podía lanzar `NullPointerException` (si `actual.derecho` se volvía `null` mientras `actual.izquierdo` seguía sin serlo) o devolver un valor que no era realmente el mínimo del subárbol, corrompiendo el árbol al eliminar cualquier nodo con dos hijos. Se corrigió para bajar por `actual.izquierdo`. La prueba `eliminarNodoConDosHijosUsaElSucesorInorden` en `ArbolBinarioTest` cubre exactamente este caso.
+
+## Complejidad temporal y espacial
+
+| Operación | Árbol balanceado | Árbol degenerado (peor caso) |
+|---|---|---|
+| `insertar` | O(log n) | O(n) — si se insertan datos ya ordenados, el árbol degenera en una lista enlazada |
+| `buscar` | O(log n) | O(n) |
+| `eliminar` | O(log n) | O(n) |
+
+En todos los casos, el costo real es **O(h)** donde h es la altura del árbol — de ahí que este README hable de Θ(log n) para un árbol "completo" y Θ(n) para uno degenerado (ver más abajo). Este es precisamente el problema que resuelve el **árbol AVL** de `2_ArbolAVL` en este mismo repositorio: garantiza h = O(log n) **siempre**, balanceando automáticamente tras cada inserción/eliminación, sin importar el orden en que lleguen los datos.
+
+**Espacio**: O(n) — un `Nodo<T>` por elemento, cada uno con el dato y dos referencias (`izquierdo`, `derecho`). La recursión de `insertarRecursivo`/`buscarRecursivo`/`eliminarRecursivo` añade además O(h) de espacio en la pila de llamadas (O(log n) balanceado, O(n) degenerado).
+
+---
+
 # Introducción
 
 ### ¿Por qué son importantes los árboles binarios?

@@ -676,6 +676,19 @@ El grafo $G_3$ no contiene ni circuito ni camino hamiltoniano, ya que cualquier 
 **Tarea:**  
 Comience la implementación de su estructura grafo utilizando listas de adyacencia y matriz de adyacencia.
 
+---
+
+### Implementaciones
+
+Como respuesta al ejercicio anterior, cada uno de los siguientes algoritmos fue implementado desde cero como proyecto Maven independiente (código funcional, pruebas y una explicación de la complejidad temporal y espacial propia de cada uno):
+
+- [`1_BFS`](1_BFS/README.md) — recorrido en anchura, usando lista de adyacencia
+- [`2_DFS`](2_DFS/README.md) — recorrido en profundidad (recursivo e iterativo), detección de ciclos
+- [`3_Dijsktra`](3_Dijsktra/README.md) — camino más corto desde un único origen, con pesos no negativos
+- [`4_Floyd_Warshall`](4_Floyd_Warshall/README.md) — caminos más cortos entre todos los pares, usando matriz de adyacencia
+- [`5_Prim`](5_Prim/README.md) — árbol de expansión mínima (MST), haciendo crecer un solo árbol
+- [`6_Kruskal`](6_Kruskal/README.md) — árbol de expansión mínima (MST), ordenando aristas y usando Union-Find
+
 
 
 

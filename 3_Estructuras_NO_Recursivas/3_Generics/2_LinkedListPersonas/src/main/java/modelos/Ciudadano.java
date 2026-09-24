@@ -44,6 +44,14 @@ public class Ciudadano {
         return cedula.equals(otra.cedula);
     }
 
+    // El contrato de Object exige que dos objetos "equals" tengan el mismo hashCode.
+    // Sin esto, un Ciudadano "encontrado" por equals() podría no encontrarse dentro
+    // de un HashSet/HashMap, porque estos primero comparan por hashCode.
+    @Override
+    public int hashCode() {
+        return cedula.hashCode();
+    }
+
     @Override
     public String toString() {
         return "Ciudadano{cedula='" + cedula + "', nombre='" + nombre + " " + apellido + "'}";

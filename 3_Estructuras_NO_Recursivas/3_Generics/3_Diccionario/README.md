@@ -1,189 +1,51 @@
-# HOWTO_EJECUTAR (Proyecto Maven)
+# Diccionario (Tabla Hash con encadenamiento separado)
 
-Guía para compilar, ejecutar y probar un proyecto Java con **estructura Maven** usando paquetes:
-- `ui` (contiene `Main.java`)
-- `diccionario` (`Diccionario`, `DiccionarioInterfaz`)
-- `tablashash` (`TablaHash`, `TablaHashInterfaz`)
+Implementación de una tabla hash genérica `TablaHash<K,V>` (encadenamiento separado + rehash automático) usada para construir un `Diccionario` de palabras y definiciones.
 
----
+> **Nota de corrección**: el README anterior describía paquetes (`ui`, `diccionario`, `tablashash`) que no coincidían con el código real (`modelo.Diccionario`, `estructuras.TablaHash`), y el proyecto no tenía clase `Main`. Se actualizó este README y se agregó `ui.Main` con una demostración funcional.
 
-## 1) Estructura esperada
+## Estructura Maven
 
 ```
-<raiz-del-proyecto>/
-├─ pom.xml
-└─ src/
-   ├─ main/
-   │   └─ java/
-   │       ├─ ui/
-   │       │   └─ Main.java                 (package ui;)
-   │       ├─ diccionario/
-   │       │   ├─ Diccionario.java          (package diccionario;)
-   │       │   └─ DiccionarioInterfaz.java  (package diccionario;)
-   │       └─ tablashash/
-   │           ├─ TablaHash.java            (package tablashash;)
-   │           └─ TablaHashInterfaz.java    (package tablashash;)
-   └─ test/
-       └─ java/
-           ├─ diccionario/
-           │   └─ DiccionarioTest.java      (package diccionario;)
-           └─ tablashash/
-               └─ TablaHashTest.java        (package tablashash;)
+3_Diccionario/
+├── pom.xml
+├── src/main/java/
+│   ├── ui/Main.java
+│   ├── modelo/Diccionario.java
+│   └── estructuras/{TablaHash, TablaHashInterfaz}.java
+└── src/test/java/
+    ├── modelo/DiccionarioTest.java
+    └── estructuras/TablaHashTest.java
 ```
 
-> Los `package` en cada `.java` deben coincidir con su ruta relativa dentro de `src/main/java` o `src/test/java`.
+`Diccionario` depende de la interfaz `TablaHashInterfaz<K,V>`, no de la clase concreta `TablaHash` — esto permite inyectar una implementación distinta (o un doble de prueba) sin modificar `Diccionario`.
 
----
+## Compilar, probar y ejecutar
 
-## 2) Requisitos
-- **JDK 17+** instalado (`java -version`, `javac -version`).
-- **Apache Maven 3.8+** (`mvn -v`).
-
----
-
-## 3) `pom.xml` mínimo recomendado
-
-Incluye **JUnit 5** para pruebas y el plugin **exec** para ejecutar `ui.Main` desde Maven.
-
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.ejemplo</groupId>
-  <artifactId>proyecto-estructuras</artifactId>
-  <version>1.0.0</version>
-  <properties>
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <junit.version>5.10.2</junit.version>
-  </properties>
-
-  <dependencies>
-    <!-- JUnit 5 (tests) -->
-    <dependency>
-      <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter</artifactId>
-      <version>${junit.version}</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
-
-  <build>
-    <plugins>
-      <!-- Permite ejecutar la clase main con mvn exec:java -->
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>3.1.0</version>
-        <configuration>
-          <mainClass>ui.Main</mainClass>
-        </configuration>
-      </plugin>
-      <!-- Usa Surefire para correr JUnit 5 -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
-        <configuration>
-          <useModulePath>false</useModulePath>
-        </configuration>
-      </plugin>
-    </plugins>
-  </build>
-</project>
-```
-
-
----
-
-## 4) Compilar, ejecutar y probar
-
-### Compilar
 ```bash
-mvn clean compile
-```
-
-### Ejecutar la aplicación
-```bash
-mvn exec:java -Dexec.mainClass="ui.Main"
-```
-*No necesitas `-Dexec.mainClass` si ya está configurado en el `pom.xml`.*
-
-### Ejecutar pruebas
-```bash
+cd 3_Estructuras_NO_Recursivas/3_Generics/3_Diccionario
+mvn compile
 mvn test
+mvn exec:java
 ```
 
-### Construir JAR ejecutable (opcional)
-Agrega el plugin `maven-jar-plugin` y un **manifest** con la `Main-Class`, o usa `shade` para un fat‑jar:
-```xml
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-shade-plugin</artifactId>
-  <version>3.5.0</version>
-  <executions>
-    <execution>
-      <phase>package</phase>
-      <goals><goal>shade</goal></goals>
-      <configuration>
-        <transformers>
-          <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-            <mainClass>ui.Main</mainClass>
-          </transformer>
-        </transformers>
-      </configuration>
-    </execution>
-  </executions>
-</plugin>
-```
-Empaquetar:
-```bash
-mvn clean package
-```
-Ejecutar el jar generado (en `target/`):
-```bash
-java -jar target/proyecto-estructuras-1.0.0-shaded.jar
-```
+## Cómo funciona la tabla hash
 
----
+* **Encadenamiento separado**: cada "cubeta" (`bucket`) del arreglo es una `LinkedList<Entrada<K,V>>`; las claves cuyo hash cae en el mismo índice se acumulan en la misma lista en vez de sobrescribirse.
+* **Índice**: `(clave.hashCode() & 0x7FFFFFFF) % capacidad`. El `& 0x7FFFFFFF` limpia el bit de signo para evitar índices negativos si `hashCode()` es negativo.
+* **Factor de carga**: cuando `size / capacidad > 0.75`, se duplica la capacidad y se redistribuyen (`rehash`) todas las entradas — esto es lo que mantiene el promedio de O(1) a medida que la tabla crece, en vez de degradar a listas cada vez más largas.
 
-## 5) IntelliJ IDEA (recomendado)
+## Complejidad temporal y espacial
 
-1. **Abrir**: `File → Open…` y selecciona la carpeta con `pom.xml`.
-2. **SDK**: `File → Project Structure…` → Project SDK = **Java 17**.
-3. **Run**:
-   - Clic derecho sobre `Main.java` → **Run 'Main.main()'**; o
-   - **Run/Debug Configurations → + → Maven** y usa el goal `exec:java`.
+| Operación | Caso promedio | Peor caso | Motivo del peor caso |
+|---|---|---|---|
+| `insertar` | O(1) | O(n) | Todas las claves colisionan en la misma cubeta (mal `hashCode()`, o ataque adversario) |
+| `obtener` / `contiene` | O(1) | O(n) | Igual: hay que recorrer la cadena de la cubeta |
+| `eliminar` | O(1) | O(n) | Igual |
+| `rehash` | O(n) | O(n) | Redistribuye las n entradas existentes; ocurre O(log n) veces en total a medida que la tabla crece (duplicando capacidad), por lo que el costo **amortizado** por inserción sigue siendo O(1) |
 
----
+**Espacio**: O(n + capacidad) — el arreglo de cubetas (proporcional a la capacidad, que crece geométricamente) más una `Entrada<K,V>` por cada par clave-valor almacenado.
 
-## 6) Errores comunes
+### ¿Por qué O(1) es "promedio" y no garantizado?
 
-- **`package X does not exist`**  
-  Ruta/paquete no coinciden. Verifica que el archivo está bajo `src/main/java/<ruta del package>` y que el `package` en el `.java` coincide.
-
-- **`no main manifest attribute` al ejecutar el JAR**  
-  El JAR no es ejecutable. Usa `exec:java` o configura `shade`/`jar` con `Main-Class`.
-
-- **Pruebas no detectadas**  
-  Asegúrate de que las clases de test estén bajo `src/test/java` y usen `@Test` de JUnit 5.
-
----
-
-## 7) Ejemplo de comandos (de 0 a ejecución)
-
-```bash
-# Desde la raíz (donde está pom.xml)
-mvn -v
-mvn clean compile
-mvn test
-mvn exec:java -Dexec.mainClass="ui.Main"
-# (opcional) jar ejecutable
-mvn -q -DskipTests package
-java -jar target/proyecto-estructuras-1.0.0-shaded.jar
-```
-
----
-
+A diferencia de `TreeMap` (que garantiza O(log n) siempre, sin importar el `hashCode()`), una tabla hash depende de que `hashCode()` distribuya las claves uniformemente entre las cubetas. Si muchas claves distintas producen el mismo `hashCode()` (colisión), esa cubeta se convierte en una lista larga y las operaciones sobre ella degradan a O(k) donde k es el tamaño de esa cadena — en el caso extremo (todas las claves en una sola cubeta), a O(n). Por esto la elección de un buen `hashCode()` (como el de `String`, ya bien distribuido) es tan importante como el algoritmo de la tabla misma.

@@ -148,12 +148,57 @@
 ### ¿En qué se dividen las operaciones primitivas de un TAD?
 
 - **Principales**
-  - Constructoras
-  - Modificadoras
-  - Analizadoras
+  - **Constructoras**: crean una instancia nueva del TAD (p. ej. `CrearEmpleado`). Toda especificación de TAD necesita al menos una.
+  - **Modificadoras**: cambian el estado interno de una instancia ya creada, respetando la invariante (p. ej. `CambiarSalario`, `CambiarCargo`).
+  - **Analizadoras** (u observadoras): consultan información sin modificar el estado (p. ej. `InfoSalario`, `TieneFoto`). Deben ser "puras": mismo estado de entrada, misma salida.
 - **Secundarias**
-  - Destructoras
-  - Persistencia
+  - **Destructoras**: liberan o invalidan una instancia (en lenguajes con recolector de basura como Java suelen ser implícitas, pero siguen siendo parte de la especificación formal).
+  - **Persistencia**: operaciones para guardar/recuperar el estado del TAD más allá de la ejecución del programa (serialización a archivo, base de datos, etc.).
+
+---
+
+### De la especificación formal a Java: TAD Empleado (segunda aproximación)
+
+Traduciendo la representación como tupla (Nombre, Foto, Documento, Cargo, Salario) y sus operaciones formales a una clase Java, respetando la invariante de salario mínimo:
+
+```java
+public class Empleado {
+    private static final double SALARIO_MINIMO = 1_300_000.0; // ejemplo de invariante
+
+    private String nombre;
+    private byte[] foto;
+    private String documentoIdentidad;
+    private String cargo;
+    private double salario;
+
+    // Constructora: equivalente a CrearEmpleado
+    public Empleado(String nombre, String documentoIdentidad, String cargo, double salario) {
+        this.nombre = nombre;
+        this.documentoIdentidad = documentoIdentidad;
+        this.cargo = cargo;
+        cambiarSalario(salario); // reutiliza la validación de la invariante
+    }
+
+    // Modificadora: equivalente a CambiarSalario. La invariante se verifica AQUÍ,
+    // en el único punto de entrada que cambia el salario, no en cada lugar que lo usa.
+    public void cambiarSalario(double nuevoSalario) {
+        if (nuevoSalario < SALARIO_MINIMO) {
+            throw new IllegalArgumentException("El salario no puede ser menor al mínimo legal");
+        }
+        this.salario = nuevoSalario;
+    }
+
+    public void cambiarCargo(String nuevoCargo) { this.cargo = nuevoCargo; }
+    public void cambiarFoto(byte[] nuevaFoto) { this.foto = nuevaFoto; }
+
+    // Analizadoras: equivalentes a InfoSalario, InfoCargo, TieneFoto
+    public double infoSalario() { return salario; }
+    public String infoCargo() { return cargo; }
+    public boolean tieneFoto() { return foto != null; }
+}
+```
+
+Nótese cómo cada método formal (`CrearEmpleado`, `CambiarSalario`, ...) de las imágenes de especificación anteriores corresponde exactamente a un método público, y la **invariante** ("ningún salario por debajo del mínimo") se hace cumplir centralizándola en `cambiarSalario`, el único punto de modificación de ese campo — así es imposible dejar el objeto en un estado inválido desde fuera de la clase.
 
 ---
 
